@@ -1,0 +1,54 @@
+#import "../../../ui/Order/graphql/CustomsCartFragment.graphql"
+#import "../../Voucher/graphql/OrderInfoFragment.graphql"
+#import "../../Voucher/graphql/CustomerInfoFragment.graphql"
+#import "../../Voucher/graphql/FlightVoucherProductFragment.graphql"
+#import "../../Voucher/graphql/CarsVoucherProductFragment.graphql"
+#import "../../Voucher/graphql/StaysVoucherProductFragment.graphql"
+#import "../../Voucher/graphql/CustomProductVoucherFragment.graphql"
+#import "../../Voucher/graphql/TourVoucherProductFragment.graphql"
+#import "../../Voucher/graphql/GTETourVoucherProductFragment.graphql"
+#import "../../Voucher/graphql/GTEStaysVoucherProductFragment.graphql"
+#import "../../Voucher/graphql/VacationPackageVoucherFragment.graphql"
+
+query paymentLinkVoucher($payByLinkId: String!) {
+  payByLinkVoucher(input: { payByLinkId: $payByLinkId }) {
+    id: pdfUrl
+    numberOfItems: itemCount
+    pdfUrl
+    voucherReady
+    payByLinkType
+    payerInfo {
+      ...CustomerInfoFragment
+    }
+    orderInfo {
+      ...OrderInfoFragment
+    }
+    customerInfo {
+      ...CustomerInfoFragment
+    }
+    flights {
+      ...FlightVoucherProductFragment
+    }
+    cars {
+      ...CarsVoucherProductFragment
+    }
+    stays {
+      ...StaysVoucherProductFragment
+    }
+    customs {
+      ...CustomProductVoucherFragment
+    }
+    tours {
+      ...TourVoucherProductFragment
+    }
+    toursAndTickets {
+      ...GTETourVoucherProductFragment
+    }
+    gteStays: stayProducts {
+      ...GTEStaysVoucherProductFragment
+    }
+    vacationPackages {
+      ...VacationPackageVoucherFragment
+    }
+  }
+}

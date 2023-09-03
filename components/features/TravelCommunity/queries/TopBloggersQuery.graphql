@@ -1,0 +1,34 @@
+query TopBloggersQuery ($type: String, $page: Int, $languageId: String, $limit: Int = 12 ) {
+  topBloggers (type: $type, page: $page, languageId: $languageId, limit: $limit) {
+    metadata {
+      title
+      subtitle
+      pages
+      languages {
+        code
+        name
+      }
+    }
+    bloggers {
+      id
+      name
+      url: front_url
+      image {
+        id
+        name
+        url: front_url
+        isDefaultImage
+      }
+      faceImage: face_image {
+        id
+        name
+        url: front_url
+      }
+      country
+      languages {
+        code
+      }
+
+    }
+  }
+}

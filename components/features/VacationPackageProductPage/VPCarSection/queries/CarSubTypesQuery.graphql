@@ -1,0 +1,11 @@
+query carSubtypes {
+  subTypes(where: { domain: Cars }, stage: DRAFT) {
+    id
+    subtype
+    typeImage(locales: en) {
+      id
+      handle
+      caption
+    }
+  }
+}

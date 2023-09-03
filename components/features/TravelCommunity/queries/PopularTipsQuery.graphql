@@ -1,0 +1,25 @@
+query popularTipsQuery ($type: String){
+  popularTips (type: $type) {
+    id
+    title
+    metadata {
+      description
+    }
+    url: frontUrl
+    image {
+      id
+      name
+      url: frontUrl
+      alt: title
+    }
+    author {
+      id
+      name
+      image: face_image {
+        id
+        name
+        url: frontUrl(height: "20", width: "20")
+      }
+    }
+  }
+}

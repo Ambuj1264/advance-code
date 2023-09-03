@@ -1,0 +1,6 @@
+query headerLocaleLinks($url: String!) {
+  localeLinks: getLocaleUrls(url: $url) {
+    uri: url
+    locale
+  }
+}

@@ -1,0 +1,7 @@
+query dateAvailability($slug: String!) {
+  dateAvailability: getHotelAvailableDates(slug: $slug) {
+    min: firstAvailableDate
+    max: lastAvailableDate
+    unavailableDates
+  }
+}

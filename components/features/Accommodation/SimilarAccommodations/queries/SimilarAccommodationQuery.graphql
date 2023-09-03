@@ -1,0 +1,43 @@
+query similarAccommodation(
+  $slug: String!,
+  $adultsCount: Int,
+  $childrenCount: Int,
+  $roomsCount: Int,
+  $dateFrom: String,
+  $dateTo: String
+) {
+  similarAccommodation(
+    slug: $slug,
+    adults: $adultsCount,
+    children: $childrenCount,
+    roomsCount: $roomsCount,
+    dateFrom: $dateFrom,
+    dateTo: $dateTo,
+  ) {
+    seeMoreLink
+    accommodations {
+      id
+      name
+      slug: uri
+      minPrice: min_price
+      image {
+        id
+        url: front_url
+        name
+      }
+      url
+      props {
+        iconId: id
+        title
+      }
+      specs {
+        iconId: id
+        name
+        value
+      }
+      reviewTotalScore: review_score_formatted
+      reviewTotalCount: review_count
+    }
+    totalQuantity: totalAccommodationsCount
+  }
+}

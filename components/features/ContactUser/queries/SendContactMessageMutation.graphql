@@ -1,0 +1,6 @@
+mutation SendContactUsMutation($userId: Int!, $text: String!) {
+    sendContactMessage (userId: $userId, text: $text) {
+        status
+        errorMessages
+    }
+}

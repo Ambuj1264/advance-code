@@ -1,0 +1,8 @@
+#import "./TourSearchFiltersFragment.graphql"
+query tourCategoryDefaultFiltersQuery {
+  tourSearch {
+    defaultFilters: filterOptions {
+      ...Filters
+    }
+  }
+}

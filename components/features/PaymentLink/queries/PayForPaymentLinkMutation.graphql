@@ -1,0 +1,7 @@
+#import "./PaymentLinkMutationFragment.graphql"
+
+mutation payForPaymentLinkMutation($input: OrderPayForPayByLinkParamsInput!) {
+  payForPayByLink(input: $input) {
+    ...PaymentLinkMutationFragment
+  }
+}

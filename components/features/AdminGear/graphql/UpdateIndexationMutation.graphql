@@ -1,0 +1,16 @@
+mutation updateIndexation(
+  $objectType: String!,
+  $objectId: Int,
+  $isIndexed: Boolean,
+  $locale: String!,
+) {
+  updateObjectIndexRule(
+    object: $objectType
+    objectId: $objectId
+    isIndexed: $isIndexed
+    locale: $locale
+  ) {
+    id
+    isIndexed
+  }
+}

@@ -1,0 +1,7 @@
+query bloggerLanguagesQuery($type: String!) {
+  bloggerLanguages: getAllBloggersLanguages (type: $type) {
+    id
+    name
+    code
+  }
+}

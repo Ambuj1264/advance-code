@@ -1,0 +1,13 @@
+query getCarSearchCategories($input: CarGetSearchCategoriesInput) {
+  searchPageUrl: routePrefix(route: "cars")
+  searchPageUrlGTI: routePrefix(route: "cars_front")
+  carGetSearchCategories(input: $input) { 
+      searchCategories {
+        id
+        name
+        visible
+        uri
+        imageUrl
+      }
+    }
+}

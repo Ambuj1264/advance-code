@@ -1,0 +1,9 @@
+#import "./SavedCardsFragment.graphql"
+
+mutation addUserCards($input: PaymentAddUserCardsParamsInput!) {
+  addUserCards(input: $input) {
+    savedCards {
+      ...SavedCardsFragment
+    }
+  }
+}

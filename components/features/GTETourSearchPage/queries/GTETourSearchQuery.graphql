@@ -1,0 +1,65 @@
+#import "./GTETourSearchFragment.graphql"
+query gteTourSearchQuery (
+  $input: ToursSearchInput
+  $where: ToursTourDtoFilterInput
+  $first: Int
+  $last: Int
+  $after: String
+  $before: String
+  $order: [ToursTourDtoSortInput!]
+) {
+  gteTourSearch: toursAndTicketsSearch (
+    input: $input,
+    where: $where,
+    first: $first,
+    last: $last,
+    after: $after,
+    before: $before,
+    order: $order
+  ) {
+    totalCount
+    filters {
+      activities {
+        activityId
+        subtypeId
+        name
+        active
+      }
+      locations {
+        attractionId
+        locationId
+        name
+        active
+      }
+      duration {
+        name
+        fromMinutes
+        toMinutes
+        isActive
+      }
+      price {
+        minValue
+        maxValue
+        count
+      }
+      reviews {
+        name
+        reviewScore
+        isActive
+      }
+      time {
+        name
+        fromHour
+        endHour
+        isActive
+      }
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    ...GTETourSearchFragment
+  }
+}

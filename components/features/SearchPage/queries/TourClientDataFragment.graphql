@@ -1,0 +1,8 @@
+fragment ClientData on TourSearchTour {
+    banner {
+        text
+        class
+    }
+    basePrice
+    price
+} 

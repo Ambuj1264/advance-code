@@ -1,0 +1,76 @@
+fragment StaysCartFragment on OrderStayCartInfo {
+  id
+  productId
+  address
+  type
+  uri
+  numberOfGuests
+  numberOfAdults
+  numberOfChildren
+  childrenAges
+  title
+  cartItemId
+  discountAmount
+  discountAmountPriceObject: discountPriceData {
+    price
+    currency
+    priceDisplayValue: displayValue
+  }
+  discountPercentage
+  totalPrice
+  imageUrl
+  available
+  editable
+  currency
+  from
+  to
+  updated
+  createdTime
+  cancellationPolicy
+  cancellationString
+  cityOsmId
+  cityName
+  countryOsmId
+  countryName
+  valueProps {
+    iconId
+    title
+  }
+  rooms {
+    id
+    type
+    name
+    privateBathroom
+    size
+    maxPersons
+    roomBookings {
+      extraBedCount
+      adults
+      children
+      mesh
+      requestId
+      source
+      masterRateCode
+      extras {
+        id
+        name
+        price
+        childPrice
+        required
+        count
+        chargeType
+      }
+    }
+  }
+  specs {
+    iconId
+    name
+    value
+  }
+
+  priceObject: priceData {
+    price
+    currency
+    priceDisplayValue: displayValue
+  }
+}

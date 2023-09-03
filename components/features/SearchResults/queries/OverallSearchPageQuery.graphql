@@ -1,0 +1,40 @@
+query OverallSearchPageQuery($input: SearchWithFiltersParamsInput!) {
+  searchWithFilters(input: $input) {
+    name
+    countryCode
+    nextPage
+    type
+    isDefault
+    resultItems {
+      id: metadataUri
+      title
+      destinationId
+      destinationName
+      countryName
+      countryCode
+      metadataUri
+      pageVariation
+      pageType
+      slug
+      description
+      imageSrc
+      reviewScore {
+        totalScore
+        totalCount
+      }
+      subResultItems {
+        id: metadataUri
+        title
+        destinationId
+        destinationName
+        countryName
+        countryCode
+        metadataUri
+        pageVariation
+        pageType
+        slug
+      }
+    }
+    googleMetatags
+  }
+}

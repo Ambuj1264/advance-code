@@ -1,0 +1,16 @@
+query gteTourAgeBands ($productCode: String) {
+    toursAndTicketsGetAgeBands (productCode: $productCode) {
+        minTravelersPerBooking
+        maxTravelersPerBooking
+        requiresAdultForBooking
+        ageBands {
+            priceType
+            unitType
+            ageBand
+            startAge
+            endAge
+            minTravelersPerBooking
+            maxTravelersPerBooking
+        }
+    }
+}

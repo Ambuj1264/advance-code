@@ -1,0 +1,56 @@
+fragment LandingPageSectionContentPlaceFragmentWithOptionalFields on GraphCMSPlace {
+  id
+  mainImage(locales: en) {
+    id
+    handle
+    caption
+  }
+  fromName: fromNameNew (locales: $locale) {
+    id
+    value
+  }
+  name: nameNew (locales: $locale) {
+    id
+    value
+  }
+  inName: inNameNew (locales: $locale) {
+    id
+    value
+  }
+  toName: toNameNew (locales: $locale) {
+    id
+    value
+  }
+  continentGroup
+  continentGroupOrder
+  flag(locales: en) {
+    id
+    handle
+    caption: fileName
+  }
+  countries {
+    id
+    flag(locales: en) {
+      id
+      handle
+    }
+    name: nameNew (locales: $locale) {
+      id
+      value
+    }
+    inName: inNameNew (locales: $locale) {
+      id
+      value
+    }
+    toName: toNameNew (locales: $locale) {
+      id
+      value
+    }
+    isMainCountry
+    mainImage(locales: en) {
+      id
+      handle
+      caption
+    }
+  }
+}

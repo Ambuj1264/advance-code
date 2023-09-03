@@ -1,0 +1,10 @@
+query publishStayContinentPage (
+  $productType: StaysNlgStaysProductType
+) {
+  publishContinentPage(parameters: {
+      productType: $productType,
+  }) {
+    success
+    errorMessage
+  }
+}

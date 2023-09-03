@@ -1,0 +1,41 @@
+query bestPlacesLandingPageQuery($filterType: String = "destination", $filterLimit: Int) {
+  frontAttractionFilters (type: $filterType, limit: $filterLimit) {
+    attractions {
+      id
+      name
+      latitude
+      longitude
+    }
+
+    attractionTypes {
+      id
+      name
+    }
+  }
+
+  settings {
+    searchAnyLocationString
+    latitude: googlemap_latitude
+    longitude: googlemap_longitude
+    frontBestPlacesMapImage {
+      id
+      url: frontUrl
+      alt
+      width
+      height
+    }
+    frontBestPlacesPageHeader {
+      metadata {
+        title
+        subtitle
+      }
+      header {
+        image {
+          id
+          url: frontUrl
+          alt
+        }
+      }
+    }
+  }
+}

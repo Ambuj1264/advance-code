@@ -1,0 +1,3 @@
+query ArticleTourLandingUrlQuery {
+  tourLandingUrl: getToursLandingUrl
+}

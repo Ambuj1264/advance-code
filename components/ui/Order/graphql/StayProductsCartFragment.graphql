@@ -1,0 +1,62 @@
+fragment StayProductsCartFragment on OrderStayProductCartInfo {
+  id
+  title
+  totalPrice
+  currency
+  available
+  editable
+  imageUrl
+  discountAmount
+  discountAmountPriceObject: discountPriceData {
+    price
+    currency
+    priceDisplayValue: displayValue
+  }
+  discountPercentage
+  cartItemId
+  dateCheckingIn
+  dateCheckingOut
+  totalNumberOfAdults
+  totalNumberOfChildren
+  childrenAges
+  isForVacationPackage
+  from
+  to
+  createdTime
+  updated
+  dateCreated
+  dateUpdated
+
+  product {
+    productId
+    name
+    address
+    productPageUri
+    timeCheckingIn
+    timeCheckingOut
+    valueProps {
+      iconId
+      title
+    }
+    specs {
+      iconId
+      name
+      value
+    }
+  }
+
+  rooms {
+    availabilityId
+    name
+    mealType
+    number
+    dateFreeCancellationUntil
+    cancellationType
+  }
+
+  priceObject: priceData {
+    price
+    currency
+    priceDisplayValue: displayValue
+  }
+}

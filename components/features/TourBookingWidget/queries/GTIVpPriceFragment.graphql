@@ -1,0 +1,6 @@
+fragment GTIVpPriceData on MonolithVacationPackagePrice  {
+  value: price
+  currency
+  discount
+  discountPercentage
+}

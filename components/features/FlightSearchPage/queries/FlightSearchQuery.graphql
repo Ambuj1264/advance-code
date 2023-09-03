@@ -1,0 +1,142 @@
+query flightSearchQuery(
+  $originId: String!
+  $destinationId: String
+  $flightType: String
+  $adults: Int!
+  $children: Int!
+  $infants: Int!
+  $cabinType: String
+  $offset: Int
+  $priceFrom: Int
+  $priceTo: Int
+  $durationToSec: Int
+  $durationFromSec: Int
+  $layoverLengthFromSec: Int
+  $layoverLengthToSec: Int
+  $searchId: String
+  $departureDateFrom: FlightDateTime!
+  $returnDateFrom: FlightDateTime
+  $departureTo: FlightDateTime
+  $returnTo: FlightDateTime
+  $orderBy: FlightSearchSorting,
+  $maxNumberOfStops: Int,
+) {
+  flightSearch(
+    input: {
+      flyFrom: $originId
+      flyTo: $destinationId
+      departureFrom: $departureDateFrom
+      departureTo: $departureTo
+      returnFrom: $returnDateFrom
+      returnTo: $returnTo
+      flightType: $flightType
+      adults: $adults
+      children: $children
+      infants: $infants
+      cabinType: $cabinType
+      offset: $offset
+      searchId: $searchId
+      limit: 24
+      sorting: $orderBy
+      filters: {
+        durationFromSec: $durationFromSec
+        durationToSec: $durationToSec
+        layoverLengthFromSec: $layoverLengthFromSec
+        layoverLengthToSec: $layoverLengthToSec
+        priceFrom: $priceFrom
+        priceTo: $priceTo
+        maxNumberOfStops: $maxNumberOfStops
+      }
+    }
+  ) {
+    searchId
+    resultCount
+    filters {
+      price {
+        count
+        minValue
+        maxValue
+      }
+      durationSec {
+        count
+        minValue
+        maxValue
+      }
+      lengthOfLayoverSec {
+        count
+        minValue
+        maxValue
+      }
+    }
+    itineraries {
+      nightsInDestination
+      bookingToken
+      inboundDurationSec
+      outboundDurationSec
+      totalDurationSec
+      price
+      outboundRoute {
+        airline {
+          code
+          name
+          imageUrl
+        }
+        cityFrom {
+          code
+          name
+        }
+        cityTo {
+          code
+          name
+        }
+        bagsRecheckRequired
+        guarantee
+        flightClass: fareCategory
+        flightNumber
+        flyFrom {
+          code
+          name
+        }
+        flyTo {
+          code
+          name
+        }
+        layOverSec
+        durationSec
+        localArrival
+        localDeparture
+      }
+      inboundRoute {
+        airline {
+          code
+          name
+          imageUrl
+        }
+        cityFrom {
+          code
+          name
+        }
+        cityTo {
+          code
+          name
+        }
+        bagsRecheckRequired
+        guarantee
+        flightClass: fareCategory
+        flightNumber
+        flyFrom {
+          code
+          name
+        }
+        flyTo {
+          code
+          name
+        }
+        layOverSec
+        durationSec
+        localArrival
+        localDeparture
+      }
+    }
+  }
+}

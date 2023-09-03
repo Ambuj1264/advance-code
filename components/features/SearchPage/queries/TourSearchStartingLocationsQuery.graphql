@@ -1,0 +1,6 @@
+query tourSearchStartingLocationsQuery($name: [String!]) {
+  tourStartingLocations:getTourStartingLocations(name: $name) {
+    id
+    name
+  }
+}

@@ -1,0 +1,26 @@
+query paymentProviderSettings($input: GetPaymentProviderSettingsParamsInput!) {
+  paymentProviderSettings(parameters: $input) {
+    preferredProvider
+    serverTime
+    paymentProviders: paymentProviderSettings {
+      provider
+      clientPublicKey
+      clientKey
+      merchantAccount
+      environment
+      suggestedCurrency: currency
+      enableSaveCard
+      clientLibraryLocation
+      additionalProviderSettings {
+        provider
+        clientPublicKey
+        clientKey
+        merchantAccount
+        environment
+        suggestedCurrency: currency
+        enableSaveCard
+        clientLibraryLocation
+      }
+    }
+  }
+}

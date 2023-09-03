@@ -1,0 +1,62 @@
+fragment LandingPageContentPlaceNameFragment on GraphCMSPlace {
+  inName: inNameNew (locales: $locale) {
+    id
+    value
+  }
+  toName: toNameNew (locales: $locale) {
+    id
+    value
+  }
+  fromName: fromNameNew (locales: $locale) {
+    id
+    value
+  }
+  name: nameNew (locales: $locale) {
+    id
+    value
+  }
+  defaultName: nameNew (locales: en) {
+    id
+    value
+  }
+  mainImage(locales: en) {
+    id
+    handle
+    caption
+    videoId
+    videoStartingTime
+    videoEndTime
+  }
+  images(locales: en, first: 1) {
+    id
+    handle
+    caption
+    videoId
+    videoStartingTime
+    videoEndTime
+  }
+  alpha2Code
+  continentGroup
+  continentGroupOrder
+  alpha2Code
+  countries {
+    id
+    alpha2Code
+    inName: inNameNew (locales: $locale) {
+      id
+      value
+    }
+    toName: toNameNew (locales: $locale) {
+      id
+      value
+    }
+    fromName: fromNameNew (locales: $locale) {
+      id
+      value
+    }
+    name: nameNew (locales: $locale) {
+      id
+      value
+    }
+  }
+}

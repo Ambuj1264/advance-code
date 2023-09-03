@@ -1,0 +1,9 @@
+query FlightGetLocations ($input: GetFlightLocationsParamsInput!) {
+  flightGetLocations (input: $input) {
+    locations {
+      id
+      name
+      countryCode
+    }
+  }
+}

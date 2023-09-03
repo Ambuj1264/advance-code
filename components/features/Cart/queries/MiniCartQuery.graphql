@@ -1,0 +1,112 @@
+query miniCartQuery($cartId: String, $currency: String) {
+  cart(input: { cartId: $cartId, currency: $currency }) {
+    flights {
+      itemId: externalBookingId
+      cartItemId
+      title
+      available
+      totalPrice
+      expiredTime
+      priceObject: priceData {
+        price
+        currency
+        priceDisplayValue: displayValue
+      }
+    }
+    cars {
+      itemId: offerId
+      cartItemId
+      title
+      available
+      totalPrice
+      expiredTime
+      imageUrl
+      provider
+      priceObject: priceData {
+        price
+        currency
+        priceDisplayValue: displayValue
+      }
+    }
+    tours {
+      itemId: tourId
+      cartItemId
+      title
+      available
+      totalPrice
+      imageUrl
+      priceObject: priceData {
+        price
+        currency
+        priceDisplayValue: displayValue
+      }
+    }
+    toursAndTickets {
+      itemId: productCode
+      cartItemId
+      title
+      available
+      totalPrice
+      imageUrl
+      priceObject: priceData {
+        price
+        currency
+        priceDisplayValue: displayValue
+      }
+    }
+    stays {
+      itemId: id
+      cartItemId
+      title
+      available
+      totalPrice
+      imageUrl
+      priceObject: priceData {
+        price
+        currency
+        priceDisplayValue: displayValue
+      }
+    }
+
+    gteStays: stayProducts {
+      itemId: id
+      cartItemId
+      title
+      available
+      totalPrice
+      imageUrl
+      priceObject: priceData {
+        price
+        currency
+        priceDisplayValue: displayValue
+      }
+    }
+    customs {
+      itemId: id
+      cartItemId
+      title
+      available
+      totalPrice
+      imageUrl
+      priceObject: priceData {
+        price
+        currency
+        priceDisplayValue: displayValue
+      }
+    }
+    vacationPackages {
+      itemId: id
+      cartItemId
+      title
+      available
+      totalPrice
+      imageUrl
+      priceObject: priceData {
+        price
+        currency
+        priceDisplayValue: displayValue
+      }
+    }
+    itemCount
+  }
+}

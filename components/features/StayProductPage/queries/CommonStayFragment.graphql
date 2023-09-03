@@ -1,0 +1,35 @@
+fragment CommonStayFragment on GraphCMSStaysProductPage {
+  metadataUri
+  mainImage (locales: en) {
+    id
+    handle
+    caption
+  }
+  hotelImages (locales: en) {
+    id
+    handle
+    caption
+  }
+  images (locales: en) {
+    id
+    handle
+    caption
+  }
+  starClass
+  checkInTime
+  checkOutTime
+  distanceFromCenter
+  reviewCount
+  reviewScore
+  breakfastAvailability
+  parkingAvailability
+  wifiAvailability
+  subType {
+    id
+    name {
+      value
+    }
+  }
+  maxOccupancy
+  roomTypes
+}

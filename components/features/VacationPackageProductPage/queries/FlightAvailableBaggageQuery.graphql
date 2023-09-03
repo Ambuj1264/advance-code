@@ -1,0 +1,22 @@
+query flightAvailableBaggageQuery ($input: CheckFlightParamsInput!) {
+  flightCheckFlight(input: $input) {
+    bookingToken
+    flightsChecked
+    availableBaggages {
+      id
+      price
+      passengerGroups
+      priority
+      bags {
+        category
+        count
+        restrictions {
+          weight
+          height
+          width
+          length
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+query staticRoomsQuery ($input: StaysStaticRoomsInput!) {
+    staticRooms(input: $input) {
+        roomTypeName: roomName
+        roomType
+        roomTypeInfo: roomInfo {
+            images {
+                id
+                handle
+                caption
+            }
+            numberOfPersons
+            roomSize: roomSizeFrom
+            beds {
+                bedType: type
+                count
+            }
+            privateShower
+            wifiAvailability
+            amenities
+        }
+    }
+}

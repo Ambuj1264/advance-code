@@ -1,0 +1,18 @@
+query pageMetadataQuery($path: String!) {
+  pageMetadata(path: $path) {
+    title
+    description
+    isIndexed
+    hreflangs {
+      locale: lang
+      uri: href
+    }
+    facebookLikeUrl: facebook_like_url
+    ogImage {
+      id
+      url: frontUrl
+      name
+      alt
+    }
+  }
+}

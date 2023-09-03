@@ -1,0 +1,58 @@
+query accommodationAvailabilityQuery (
+    $parameters: MonolithStaysGetHotelRatesRequestInput!
+) {
+    monolithOrganizedHotelRates(parameters: $parameters) {
+        groupedRates {
+        title
+        fromPrice
+        rateReference
+        maxOccupancy
+        maxAvailableRooms
+        detailedRooms {
+            availableRooms
+            rates {
+                provider
+                productId
+                booked
+                canceled
+                rateReference
+                mesh
+                providerCode
+                providerBookingCode
+                price {
+                    currency
+                    value
+                }
+                roomRates {
+                    index
+                    roomRateName
+                    room {
+                        name
+                        roomType
+                        specialType
+                        providerCode
+                        subProviderCode
+                    }
+                    meal {
+                        mealType
+                        subProviderCode
+                    }
+                    numberOfAdults
+                    numberOfChildren
+                    cancellationType
+                    paymentType
+                    remark
+                }
+                cancellationPolicies {
+                    dateFrom
+                    dateTo
+                    price {
+                        currency
+                        value
+                    }
+                }
+            }
+        }
+    }
+    }
+}

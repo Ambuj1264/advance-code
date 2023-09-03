@@ -1,0 +1,26 @@
+query voucherUpsellQuery($locale: [GraphCMSLocale!]!) {
+  voucherUpsells(stage: DRAFT, locales: $locale) {
+    id
+    vacationPackagesSlug
+    gttpVacationPackagesSlug
+    voucherUpsellItems {
+      id
+      upsellImage(locales: en) {
+        id
+        url
+        handle
+      }
+      gttpUpsellImage(locales: en) {
+        id
+        url
+        handle
+      }
+      upsellProductType
+      title {
+        id
+        stringId
+        value
+      }
+    }
+  }
+}

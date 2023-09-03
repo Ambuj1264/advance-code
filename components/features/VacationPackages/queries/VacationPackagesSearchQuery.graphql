@@ -1,0 +1,60 @@
+#import "./VacationPackagesSearchNodeFragment.graphql"
+query vacationPackagesSearch(
+  $input: VacationPackageSearchInputV2Input
+) {
+  vacationPackages: searchVacationPackages(
+    input: $input
+  ) {
+    totalCount
+    filters {
+      numberOfDays
+      allDays
+      types {
+        id
+        name
+        available
+        type
+      }
+      countries {
+        id
+        name
+        available
+      }
+      activitiesList {
+        id: ids
+        name
+        available
+      }
+      destinationsList {
+        id: ids
+        name
+        available
+      }
+      price {
+        minValue
+        maxValue
+        count
+      }
+    }
+    nodes: vacationPackages {
+      ...VacationPackagesSearchNodeFragment
+      cmsObject {
+        description
+      }
+      price {
+        priceBreakdown {
+          items {
+            type
+            name
+            netPrice
+            salePrice
+            source
+            priceAge
+          }
+          totalNetPrice
+          totalSalePrice
+        }
+      }
+    }
+  }
+}

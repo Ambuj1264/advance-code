@@ -1,0 +1,12 @@
+query publishStayCountryPage (
+  $countryOsmId: Int!,
+  $productType: StaysNlgStaysProductType
+) {
+  publishCountryPage(parameters: {
+      countryOsmId: $countryOsmId,
+      productType: $productType,
+  }) {
+    success
+    errorMessage
+  }
+}

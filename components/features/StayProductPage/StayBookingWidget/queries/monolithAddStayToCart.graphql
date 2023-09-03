@@ -1,0 +1,8 @@
+mutation monolithAddStayToCart($input: OrderAddStayToCartParamsInput!) {
+  monolithAddStayToCart(input: $input) {
+    success
+    available
+    priceChanged
+    price
+  }
+}

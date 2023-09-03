@@ -1,0 +1,21 @@
+fragment ReviewsFragment on ReviewsWithStatus {
+  meta {
+      locales
+      pages
+    }
+  reviews {
+    id
+    text: content
+    user {
+      id
+      name
+      avatarImage: face_image {
+        id
+        url: front_url
+      }
+    }
+    reviewScore: rating
+    createdDate: created_time
+    isVerified: verified
+  }
+}

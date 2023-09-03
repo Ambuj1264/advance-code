@@ -1,0 +1,6 @@
+#import "./StaysSearchFragment.graphql"
+query VacationPackageStaysSearch($input: VacationPackageStaysPeriodSearchInput!) {
+  vacationPackageStaysSearch(input: $input) {
+    ...StaysSearchFragment
+  }
+}

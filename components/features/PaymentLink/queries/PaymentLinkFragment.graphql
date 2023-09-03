@@ -1,0 +1,11 @@
+fragment PaymentLinkFragment on OrderPayByLinkResult {
+  id: payByLinkId
+  payByLinkId
+  type
+  amount
+  currency
+  expiresAt
+  paid
+  cancelled
+  percentageOfTotal
+}

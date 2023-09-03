@@ -1,0 +1,9 @@
+fragment CustomerInfoFragment on OrderCustomerInfo {
+  name
+  email
+  nationality
+  phoneNumber
+  companyId: businessId
+  companyName
+  companyAddress
+}

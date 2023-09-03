@@ -1,0 +1,74 @@
+#import "components/ui/LandingPages/queries//LandingPageSectionContentPlaceFragment.graphql"
+fragment LandingPageStayQueryFragment on GraphCMSStaysProductPage {
+  id
+  name: title
+  reviewCount
+  reviewScore
+  mainImage(locales: en) {
+    id
+    handle
+    caption
+  }
+  images(locales: en) {
+    id
+    handle
+    caption
+  }
+  place {
+    ...LandingPageSectionContentPlaceFragment
+  }
+  url: metadataUri
+  metadataUri
+  slug
+  subType {
+    id
+    subtype
+    name {
+      value
+    }
+    pluralName {
+      value
+    }
+    subTypeModifiers(locales: $locale) {
+      modifierType
+      modifierTitle {
+        value
+      }
+    }
+  }
+  quickfactList {
+    quickfacts {
+      id
+      quickfactId
+      title
+      name {
+        id
+        value
+      }
+      icon(locales: [en]) {
+        id
+        handle
+      }
+    }
+  }
+  valuePropsList {
+    valueProps(first: 1) {
+      id
+      title
+      icon(locales: [en]) {
+        id
+        handle
+      }
+    }
+  }
+  starClass
+  checkInTime
+  checkOutTime
+  distanceFromCenter
+  breakfastAvailability
+  parkingAvailability
+  wifiAvailability
+  fromPrice
+  maxOccupancy
+  address
+}

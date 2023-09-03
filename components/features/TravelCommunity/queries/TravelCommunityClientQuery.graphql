@@ -1,0 +1,10 @@
+#import "./travelCommunityClientDataFragment.graphql"
+
+query travelCommunityClientQuery {
+  bestTravelPlans: frontBestTravelPlans(limit: 4) {
+    tours {
+      id
+      ...TravelCommunityClientData
+    }
+  }
+}

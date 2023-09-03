@@ -1,0 +1,24 @@
+fragment PaymentProvidersFragment on OrderCartPaymentProviders {
+  serverTime
+  preferredPaymentProvider
+  paymentProviders {
+    suggestedCurrency: currency
+    provider
+    clientKey
+    merchantAccount
+    environment
+    enableSaveCard
+    clientPublicKey
+    clientLibraryLocation
+    additionalProviderSettings {
+      suggestedCurrency: currency
+      provider
+      clientKey
+      merchantAccount
+      environment
+      enableSaveCard
+      clientPublicKey
+      clientLibraryLocation
+    }
+  }
+}

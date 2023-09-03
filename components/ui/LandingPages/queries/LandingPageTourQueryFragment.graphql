@@ -1,0 +1,69 @@
+#import "components/ui/LandingPages/queries/LandingPageSectionContentPlaceFragment.graphql"
+
+fragment LandingPageTourQueryFragment on GraphCMSTourProductPage {
+  id
+  title
+  reviewCount
+  reviewScore
+  images(locales: en) {
+    id
+    handle
+    caption
+  }
+  startPlace {
+    ...LandingPageSectionContentPlaceFragment
+  }
+  metadataUri
+  subTypes {
+    id
+    tagId
+    subtype
+    name {
+      value
+    }
+    pluralName {
+      value
+    }
+    subTypeModifiers {
+      modifierType
+      modifierTitle {
+        value
+      }
+    }
+  }
+  quickfactList {
+    quickfacts {
+      id
+      quickfactId
+      title
+      name {
+        id
+        value
+      }
+      icon(locales: [en]) {
+        id
+        handle
+      }
+    }
+  }
+  valuePropsList {
+    valueProps(first: 1) {
+      id
+      title
+      icon(locales: [en]) {
+        id
+        handle
+      }
+    }
+  }
+  fromPrice
+  duration
+  difficulty
+  languages
+  available
+  minimumAge
+  startingTime
+  startingPlace
+  endingPlace
+  ticketType
+}

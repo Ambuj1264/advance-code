@@ -1,0 +1,6 @@
+mutation saveCartMutation($input: OrderSaveCartParamsInput!) {
+  saveCart(input: $input) {
+    linkId
+    success
+  }
+}

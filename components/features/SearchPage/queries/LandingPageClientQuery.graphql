@@ -1,0 +1,23 @@
+#import "./TourClientDataFragment.graphql"
+query LandingPageClientQuery {
+  topToursSearch {
+    tours {
+      id
+      ...ClientData
+    }
+  }
+
+  newestToursSearch {
+    tours {
+      id
+      ...ClientData
+    }
+  }
+
+  topHolidayToursSearch {
+    tours {
+      id
+     ...ClientData
+    }
+  }
+}

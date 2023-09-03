@@ -1,0 +1,6 @@
+mutation deleteUserProfile {
+  deleteUserProfile {
+    deleted
+    message
+  }
+}

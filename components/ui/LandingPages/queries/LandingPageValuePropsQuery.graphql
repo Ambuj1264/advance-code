@@ -1,0 +1,14 @@
+query flightsValuePropsQuery($locale: GraphCMSLocale!, $pageType: GraphCMSPageType = FrontPage) {
+  landingValueProps: valuePropsLists(stage: DRAFT, where: { pageType: $pageType }, first: 1, locales: [$locale]) {
+    id
+    valueProps(first: 4) {
+      id
+      title
+      icon(locales: [en] ) {
+        id
+        handle
+        svgAsString @client
+      }
+    }
+  }
+}

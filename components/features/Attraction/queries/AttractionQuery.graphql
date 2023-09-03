@@ -1,0 +1,85 @@
+#import "../../../ui/ArticleLayout/queries/ContentWidgetsFragment.graphql"
+
+query attractionQuery($slug: String!) {
+  contentPage: attraction(slug: $slug) {
+    id
+    title
+    name
+    shortDescription
+    reviewTotalScore
+    reviewTotalCount
+    isGoogleReview
+    frontUrl
+    isIndexed
+    isABTestEnabled
+    latitude
+    longitude
+    location
+    tourCategoryUrls
+    toursSearchUrl: bestToursCategoryUrl
+    hotelsSearchUrl: bestHotelsCategoryUrl
+    carsSearchUrl: bestCarsCategoryUrl
+    props {
+      title
+      iconId
+    }
+    hrefLangs {
+      locale: localeId
+      uri
+    }
+    metadata {
+      facebookLikeUrl: facebook_like_url
+    }
+    image {
+      id
+      alt
+      name
+      width
+      height
+      url: cdnUrl
+    }
+    images {
+      id
+      alt
+      name
+      url: frontUrl
+    }
+    imageMap {
+      id
+      alt
+      name
+      url: frontUrl
+    }
+    contentPageMainFormatted @client,
+    content: attractionContent {
+      contentPageLeftSidebar {
+        ...ContentWidgetsFragment
+      }
+      contentPageMain {
+        ...ContentWidgetsFragment
+      }
+      contentPageRightSidebar {
+        ...ContentWidgetsFragment
+       }
+    }
+    nearbyMapPoints(toursLimit: 20, carsLimit: 20, hotelsLimit: 20, attractionsLimit: 20, destinationsLimit: 20, radius: 30) {
+      id: orm_id
+      type
+      latitude
+      longitude
+      title
+      url
+      description
+      reviewTotalScore
+      reviewTotalCount
+      isGoogleReview
+      image {
+        id
+        alt
+        name
+        url: frontUrl
+      }
+    }
+  }
+  tourLandingUrl: getToursLandingUrl
+}

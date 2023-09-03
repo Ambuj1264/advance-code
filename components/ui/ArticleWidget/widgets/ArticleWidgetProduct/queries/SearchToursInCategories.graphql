@@ -1,0 +1,7 @@
+#import "../../../../ArticleLayout/queries/ContentTourFragment.graphql"
+
+query SearchToursInCategories ($categoryIDs: [Int!], $limit: Int = 100) {
+    searchToursInCategories (categoryIDs: $categoryIDs, limit: $limit) {
+      ...ContentTourFragment
+    }
+}

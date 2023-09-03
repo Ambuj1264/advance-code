@@ -1,0 +1,9 @@
+#import "./CartFragment.graphql"
+
+query cartQuery($cartId: String) {
+  carProductBaseUrl: routePrefix(route: "cars_universal")
+  carSearchBaseUrl: routePrefix(route: "cars_front")
+  cart(input:{ cartId: $cartId }) {
+    ...CartFragment
+  }
+}

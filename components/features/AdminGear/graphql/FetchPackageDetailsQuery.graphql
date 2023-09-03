@@ -1,0 +1,27 @@
+query fetchPackageDetails($id: Int!) {
+  bookingInfo(id: $id) {
+    id
+    bookingNumber
+    urlAdminBooking
+    customerName
+    customerEmail
+    tourName
+    cancelled: canceled
+    reservation
+    duration
+    pickupTime
+    departureTime
+    dropoff
+    pickupLocationObject: pickupLocation {
+      label
+      value
+    }
+    pickupInformationObject: pickupInformation {
+      label
+      value
+    }
+    tourOperator: establishmentName
+    operatorPhoneNumber: establishmentPhone
+    operatorEmailAddress: establishmentEmail
+  }
+}

@@ -1,0 +1,156 @@
+query tGDestinationsContentQuery(
+  $where: GraphCMSDestinationLandingPageWhereInput
+  $locale: [GraphCMSLocale!]!
+  $stage: GraphCMSStage = DRAFT
+) {
+  destinationLandingPages(where: $where, locales: $locale, stage: $stage) {
+    id
+    title
+    metaDescription
+    description
+    breadcrumbs {
+      title
+      metadataUri
+    }
+    location {
+      latitude
+      longitude
+    }
+    type
+    mainImage: destinationCoverImage {
+      id
+      url
+      width
+      height
+      handle
+      caption
+    }
+    place {
+      id
+      name: nameNew(locales: $locale) {
+        id
+        value
+      }
+      country {
+        id
+        name: nameNew(locales: $locale) {
+          id
+          value
+        }
+        alpha2Code
+      }
+      countries(where: { isMainCountry: true }) {
+        id
+        flightId
+        name: nameNew(locales: $locale) {
+          id
+          value
+        }
+        alpha2Code
+        continentGroup
+      }
+      flightId
+      carId
+      stayId
+      tourId
+      mainImage {
+        id
+        handle
+        height
+        width
+        caption
+      }
+      images(locales: en) {
+        id
+        handle
+        height
+        width
+        caption
+      }
+    }
+    destinationCoverImage(locales: en) {
+      id
+      handle
+      caption
+    }
+    country: countryName
+    region
+    timezone
+    size: area
+    population
+    language
+    lifeExpectancy
+    yearlyVisitors
+    website
+    elevationAboveSea
+    quickfactsList {
+      quickfacts {
+        id
+        title
+        name {
+          id
+          value
+        }
+        icon(locales: $locale) {
+          id
+          handle
+        }
+      }
+    }
+    valuePropsList {
+      valueProps(first: 4) {
+        id
+        title
+        icon(locales: $locale) {
+          id
+          handle
+          svgAsString @client
+        }
+      }
+    }
+    sections(where: { isActive: true }) {
+      id
+      image {
+        id
+        url
+        width
+        height
+        handle
+        caption
+      }
+      title
+      description
+      compositeId
+      sectionType
+      subSections(where: { isActive: true }) {
+        id
+        image {
+          id
+          url
+          width
+          height
+          handle
+          caption
+        }
+        sectionType
+        title
+        description
+        compositeId
+        sectionParentType
+      }
+    }
+    attractions {
+      id
+      title
+      mainImage(locales: $locale) {
+        id
+        handle
+        caption
+      }
+      location {
+        latitude
+        longitude
+      }
+    }
+  }
+}

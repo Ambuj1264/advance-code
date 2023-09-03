@@ -1,0 +1,24 @@
+query StaysSearchMapQueryGTE($input: StaysSearchAvailabilitiesInput!) {
+  searchMap(input: $input) {
+    currency
+    cards {
+      productId
+      name
+      coordinates {
+        latitude
+        longitude
+      }
+      image {
+        handle
+      }
+      productPageUrl
+      price {
+        price
+        currency
+        priceDisplayValue: displayValue
+      }
+      userRatingAverage: userRatingAverageOutOf5
+      userRatingsTotal
+    }
+  }
+}

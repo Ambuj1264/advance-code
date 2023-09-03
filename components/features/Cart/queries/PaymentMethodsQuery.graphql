@@ -1,0 +1,58 @@
+query paymentMethodQuery($input: OrderGetPaymentMethodsForCartParamsInput!) {
+  paymentMethodsForCart(input: $input) {
+    savedCards {
+      id
+      cardType
+      pan
+      expYear
+      expMonth
+      currencyCode
+      isUsersPrimaryCard
+      firstName
+      lastName
+      businessId
+      businessName
+      businessAddress
+      providers
+      created
+    }
+    travelshiftPaymentMethods {
+      paymentMethods {
+        id: type
+        name
+        type
+        brands
+        paymentFeePercentage
+        adyenAmount
+        adyenCurrency
+        totalAmount
+        paymentType
+        configuration {
+          key
+          value
+        }
+        issuers {
+          disabled
+          id
+          name
+        }
+        priceObject: priceData {
+          price
+          currency
+          priceDisplayValue: displayValue
+        }
+      }
+      storedPaymentMethods {
+        id
+        name
+        brand
+        expiryMonth
+        expiryYear
+        holderName
+        lastFour
+        shopperEmail
+        supportedShopperInteractions
+      }
+    }
+  }
+}

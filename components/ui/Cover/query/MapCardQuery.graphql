@@ -1,0 +1,40 @@
+query getMapCardData($id: Int!, $bookingId: Int!, $isAttraction: Boolean!, $isTour: Boolean!, $isPostBooking: Boolean!) {
+    attraction(id: $id) @include(if: $isAttraction) {
+      id
+      name
+      url
+      image {
+        id
+        alt
+        name
+        url: frontUrl
+      }
+      reviewTotalScore
+      reviewTotalCount
+      isGoogleReview
+    }
+    tour(id: $id) @include(if: $isTour) {
+      id
+      name
+      front_url
+      image {
+        id
+        alt
+        name
+        url: frontUrl
+      }
+      review_score
+      review_count
+    }
+    itineraryMapDetail(request: {bookingId: $bookingId, id: $id}) @include(if: $isPostBooking) {
+      id
+      name
+      image {
+        id
+        alt
+        url
+      }
+    }
+    # TODO: add other entities https://app.asana.com/0/44356902189869/1199219488083808/f
+}
+

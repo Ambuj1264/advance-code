@@ -1,0 +1,128 @@
+#import "./countryTourServerDataFragment.graphql"
+
+query countryPageQuery {
+  frontBestTravelPlans(limit: 4) {
+    metadata {
+      title
+      subtitle
+      url
+    }
+    tours {
+      id
+      ...CountryServerData
+    }
+  }
+
+  frontTopTours(limit: 8) {
+    metadata {
+      title
+      subtitle
+      url
+    }
+    tours {
+      id
+      ...CountryServerData
+    }
+  }
+
+  frontTopAttractions {
+    metadata {
+      title
+      subtitle
+      url
+    }
+    attractions {
+      id
+      title
+      name
+      url
+      image {
+        id
+        url: frontUrl
+        name: alt
+      }
+    }
+  }
+
+  frontTopArticles(limit: 6) {
+    metadata {
+      title
+      subtitle
+      url
+    }
+    articles {
+      id
+      url: frontUrl
+      title
+      metadata {
+        description
+      }
+      image {
+        id
+        name: alt
+        url: frontUrl
+      }
+    }
+  }
+
+  frontTopGalleries(limit: 7) {
+    metadata {
+      title
+      subtitle
+      url
+    }
+    images: galleries {
+      id
+      name: alt
+      url: image_url
+    }
+  }
+
+  settings {
+    frontTopTravelCommunity {
+      metadata {
+        title
+        subtitle
+        url
+      }
+      categories {
+        id: title
+        title
+        description
+        uri
+        pageType
+        iconPageType
+        type
+        isLegacy
+        image {
+          id
+          url: frontUrl
+          name
+          alt
+        }
+      }
+    }
+
+    frontServices {
+      title
+      uri
+      isLegacy
+      type
+      pageType
+    }
+
+    frontVideoId
+  }
+
+  frontHeader {
+    metadata {
+      title
+      subtitle: description
+    }
+    image {
+      id
+      url: frontUrl
+      name: alt
+    }
+  }
+}

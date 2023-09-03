@@ -1,0 +1,20 @@
+query topCarRentals {
+  topCarRentals: bestCarEstablishmentsWithMeta(limit: null) {
+    metadata {
+      title
+      subtitle
+    }
+    establishments {
+      id
+      url: frontUrl
+      image: face_image {
+        id
+        url: frontUrl
+        name
+        alt
+      }
+      reviewTotalScore: reviews_average_formatted
+      reviewTotalCount: reviews_count
+    }
+  }
+}

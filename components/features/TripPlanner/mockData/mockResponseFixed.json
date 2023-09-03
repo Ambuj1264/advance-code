@@ -1,0 +1,100 @@
+[
+  {
+    "trip": {
+      "id": "trip1",
+      "arrivalAirport": {
+        "name": "Keflavik airport",
+        "placeId": "ChIJ028JtkoSVUYRKwWpU6oR-YM",
+        "lat": 12.0021,
+        "lng": -1.8499
+      },
+      "days": [
+        {
+          "id": "0",
+          "attractions": [
+            {
+              "placeId": "ChIJA3lEavfNUkYRSbno0zpzghc",
+              "userRatingsTotal": 120000,
+              "rating": 4.5,
+              "name": "Trevi fountain",
+              "description": "A beautiful fountain"
+            },
+            {
+              "placeId": "ChIJA3lEavfNUkYRSbno0zpzghc",
+              "userRatingsTotal": 5555,
+              "rating": 4.2,
+              "name": "Colusseum",
+              "description": "Very round"
+            }
+          ],
+          "hotel": {
+            "placeId": "ChIJA3lEavfNUkYRSbno0zpzghc",
+            "name": "Otivm Hotel",
+            "userRatingsTotal": 100,
+            "rating": 4.8
+          },
+          "regions": ["Rome"]
+        },
+        {
+          "id": "1",
+          "attractions": [
+            {
+              "placeId": "ChIJA3lEavfNUkYRSbno0zpzghc",
+              "userRatingsTotal": 1000,
+              "rating": 4.5,
+              "name": "Pantheon",
+              "description": "The Pantheon is a former Roman temple and since the year 609 a Catholic church, in Rome, Italy, on the site of an earlier temple commissioned by Marcus Agrippa during the reign of Augustus. It was rebuilt by the emperor Hadrian and probably dedicated c. 126 AD."
+            },
+            {
+              "placeId": "ChIJA3lEavfNUkYRSbno0zpzghc",
+              "userRatingsTotal": 5555,
+              "rating": 4.2,
+              "name": "Piazza Navona",
+              "description": "Elegant square dating from the 1st century A.D., with a classical fountain, street artists & bars."
+            }
+          ],
+          "hotel": {
+            "placeId": "ChIJA3lEavfNUkYRSbno0zpzghc",
+            "name": "Otivm Hotel",
+            "userRatingsTotal": 100,
+            "rating": 4.8
+          },
+          "regions": ["Rome"]
+        },
+        {
+          "id": "2",
+          "attractions": [
+            {
+              "placeId": "ChIJA3lEavfNUkYRSbno0zpzghc",
+              "userRatingsTotal": 1000,
+              "rating": 4.5,
+              "name": "Pantheon",
+              "description": "The Pantheon is a former Roman temple and since the year 609 a Catholic church, in Rome, Italy, on the site of an earlier temple commissioned by Marcus Agrippa during the reign of Augustus. It was rebuilt by the emperor Hadrian and probably dedicated c. 126 AD."
+            },
+            {
+              "placeId": "ChIJA3lEavfNUkYRSbno0zpzghc",
+              "userRatingsTotal": 5555,
+              "rating": 4.2,
+              "name": "Piazza Navona",
+              "description": "Elegant square dating from the 1st century A.D., with a classical fountain, street artists & bars."
+            }
+          ],
+          "hotel": {
+            "placeId": "ChIJA3lEavfNUkYRSbno0zpzghc",
+            "name": "Otivm Hotel",
+            "userRatingsTotal": 100,
+            "rating": 4.8
+          },
+          "regions": ["Rome"]
+        }
+      ],
+      "departureAirport": {
+        "name": "Reykjavik airport",
+        "placeId": "ChIJ4cIVJD8HVUYRYvgMLR--gCo",
+        "lat": 12.8777,
+        "lng": -4.0005
+      }
+    },
+    "tripMapLink": "https://storage.cloud.google.com/travelplan-country-data-dev/DNK/trips/3/latest/trip_map.html"
+  }
+]

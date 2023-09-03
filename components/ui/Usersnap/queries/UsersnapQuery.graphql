@@ -1,0 +1,5 @@
+query UsersnapQuery {
+  configuration(where: {configurationType: UserSnap}) {
+    usersnapConfiguration: configuration
+  }
+}

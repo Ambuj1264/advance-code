@@ -1,0 +1,31 @@
+#import "../../../ui/Order/graphql/StayProductsCartFragment.graphql"
+
+fragment GTEStaysVoucherProductFragment on OrderStayProductVoucher {
+  id: internalId
+  bookingNumber: internalId
+  externalId
+  bookingDate
+  editableStatus
+  vatAmount
+  voucherPriceObjects: priceDatas {
+    priceObject: priceData {
+      price
+      currency
+      priceDisplayValue: displayValue
+    }
+    vatPriceObject: vatPriceData {
+      price
+      currency
+      priceDisplayValue: displayValue
+    }
+  }
+  vatPercentage
+  bookingInfoReference: stayProductItems {
+    internalId
+    externalId
+    availabilityId
+  }
+  cart {
+    ...StayProductsCartFragment
+  }
+}

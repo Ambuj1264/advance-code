@@ -1,0 +1,23 @@
+fragment LandingPageSectionsPlaceFragment on GraphCMSPlace {
+  inName: inNameNew (locales: $locale) {
+    value
+  }
+  toName: toNameNew (locales: $locale) {
+    value
+  }
+  fromName: fromNameNew (locales: $locale) {
+    value
+  }
+  continentGroup
+  countries {
+    inName: inNameNew (locales: $locale) {
+      value
+    }
+    toName: toNameNew (locales: $locale) {
+      value
+    }
+    fromName: fromNameNew (locales: $locale) {
+      value
+    }
+  }
+}

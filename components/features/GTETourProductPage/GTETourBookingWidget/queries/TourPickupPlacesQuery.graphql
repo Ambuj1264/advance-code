@@ -1,0 +1,6 @@
+query tourPickupPlacesQuery ($productCode: String, $query: String, $type: String) {
+  filterPickupPlaces (productCode: $productCode, query: $query, type: $type, take: 5 ) {
+    id: locationRef
+    name: locationName
+  } 
+}

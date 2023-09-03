@@ -1,0 +1,11 @@
+query CarSearchDefaultFilterQuery($input: CarGetOffersInput!) {
+  carOffers: carGetOffers(input: $input) {
+    filters {
+      type
+      options: items {
+        optionId: id
+        name
+      }
+    }
+  }
+}

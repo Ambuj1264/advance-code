@@ -1,0 +1,35 @@
+
+query currentCartQuery {
+  currentCart {
+    id
+    count
+    items {
+      itemId: item_id
+      productId: product_id
+      type
+      name
+      persons
+      adults
+      teenagers
+      children
+      date
+      time
+      tourDetails: tour_details {
+        pickupType: pickup_type
+        tourPickup: tour_pickup
+        placeId: place_id
+        placeName: place_name
+        options {
+          id
+          selectedValue: selected_value
+          optionAnswers: option_answers {
+            answers {
+              externalId: external_id
+              answer
+            }
+          }
+        }
+      }
+    }
+  }
+}

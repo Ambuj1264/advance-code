@@ -1,0 +1,28 @@
+query BloggerSearchQuery ($text: String, $typeOfBlogs: String, $categoryIds: [Int], $page: Int, $orderBy: String){
+  searchBlogs(text: $text, sort: $orderBy , categoryIDs: $categoryIds, type: $typeOfBlogs, page: $page) {
+    metadata {
+      totalPages: pages
+      totalResults
+    }
+    blogs {
+      id
+      title
+      bannerId
+      url: frontUrl
+      description: short_content(length: 200)
+      image {
+        id
+        url: frontUrl
+      }
+      author {
+        id
+        name
+        image {
+          id
+          url: frontUrl
+        }
+      }
+
+    }
+  }
+}

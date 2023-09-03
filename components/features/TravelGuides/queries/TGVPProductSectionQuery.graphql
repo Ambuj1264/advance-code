@@ -1,0 +1,13 @@
+#import "components/features/VacationPackages/queries/VacationPackagesSearchNodeFragment.graphql"
+
+query TGVPProductSectionQuery(
+  $input: VacationPackageSearchInputV2Input
+) {
+  vacationPackageSections(
+    input: $input
+  ) {
+    nodes: vacationPackages {
+      ...VacationPackagesSearchNodeFragment
+    }
+  }
+}

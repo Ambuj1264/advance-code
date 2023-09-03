@@ -1,0 +1,24 @@
+query latestTipsQuery ($type: String){
+  latestTips (type: $type, limit: 30) {
+    id
+    title
+    metadata {
+      description
+    }
+    url: frontUrl
+    image {
+      id
+      name
+      url: frontUrl
+    }
+    author {
+      id
+      name
+      image: face_image {
+        id
+        name
+        url: frontUrl(height: "20", width: "20")
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+#import "./LandingPageSectionContentPlaceFragmentWithOptionalFields.graphql"
+#import "./LandingPageSectionsFragment.graphql"
+
+query sectionsQuerySorted(
+  $where: GraphCMSSectionWhereInput
+  $sectionWhere: GraphCMSLandingPageWhereInput!
+  $locale: [GraphCMSLocale!]!
+  $stage: GraphCMSStage = DRAFT
+  $orderBy: GraphCMSLandingPageOrderByInput = combinedRank_ASC
+  $first: Int
+  $after: String
+  $continentGroup: [Int]!
+  $metadataUri: String!
+) {
+  sections(where: $where, locales: $locale, stage: $stage) {
+    ...LandingPageSectionsFragment
+  }
+
+  sectionContent: landingPagesSortByContinentGroupNew(
+    where: $sectionWhere
+    locales: $locale
+    stage: $stage
+    first: $first
+    after: $after
+    orderBy: $orderBy
+    continentGroup: $continentGroup
+    metadataUri: $metadataUri
+  ) {
+    edges {
+      cursor
+      node {
+        ...SectionContentFragment
+      }
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+  }
+}

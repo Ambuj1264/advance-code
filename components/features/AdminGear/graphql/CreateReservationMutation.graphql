@@ -1,0 +1,6 @@
+mutation createPaymentLinkReservation($input: OrderCreateReservationParamsInput!) {
+  createReservationWithPaymentLinks(input: $input) {
+    success
+    refusalReason
+  }
+}

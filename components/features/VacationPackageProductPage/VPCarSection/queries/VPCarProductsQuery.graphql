@@ -1,0 +1,95 @@
+query vpCarProducts($input: VacationPackageCarSearchInput!) {
+  carOffers: vacationPackageMultiLocationCarSearch(input: $input) {
+    id
+    results {
+      resultCount
+      offers {
+        selected
+        idContext
+        provider
+        carInfo {
+          vehicleCategory
+          name
+          orSimilar
+          images {
+            imageId: id
+            name
+            url
+            alt
+          }
+        }
+        included {
+          includedId: id
+          name
+          coverageAmount
+          coverageCurrency
+        }
+        vendor {
+          id
+          name
+          reviewCount
+          reviewAverageFormatted
+          image {
+            id: url
+            name
+            url
+            alt
+          }
+          pickupLocation {
+            locationType
+          }
+        }
+        totalCharge {
+          estimatedTotalAmount
+          currency
+        }
+        rentalRate {
+          vehicleCharges {
+            basePrice {
+              amount
+            }
+            discount {
+              percent
+              amount
+            }
+          }
+        }
+        productProps: valueProps {
+          iconKey
+        }
+        priceOrderScore
+        recommendedOrderScore
+        filters {
+          filterId: id
+          items
+        }
+        quickFacts {
+          airConIncluded
+          bagQuantity
+          category
+          depositRequired
+          doors
+          fuelPolicy
+          highlandCapabilities
+          manualTransmission
+          minAge
+          passengerQuantity
+          model
+          milage {
+            unlimited
+            distance
+          }
+        }
+      }
+      filters {
+        filterId: id
+        type
+        options: items {
+          filterOptionId: id
+          name
+          isPrefilled
+        }
+      }
+    }
+  }
+}

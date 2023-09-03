@@ -1,0 +1,49 @@
+query bestPlacesSearchQuery(
+  $type: String
+  $limit: Int = 24
+  $page: Int = 1
+  $sortBy: String = "popularity"
+  $destinationId: Int = null
+  $attractionTypeIds: [Int] = null
+  $centerLatitude: Float = null
+  $centerLongitude: Float = null
+  $radius: Int = 30
+) {
+  searchAttractions(
+    type: $type
+    page: $page
+    limit: $limit
+    sortBy: $sortBy
+    destinationId: $destinationId
+    attractionTypeIds: $attractionTypeIds
+    centerLatitude: $centerLatitude
+    centerLongitude: $centerLongitude
+    radius: $radius
+  ) {
+    metadata {
+      title
+      subtitle
+      url
+      pages
+      totalResults
+    }
+    attractions {
+      id
+      name
+      excerptDescription
+      location
+      latitude
+      longitude
+      image {
+        id
+        name
+        url: frontUrl
+        isDefaultImage
+      }
+      url: frontUrl
+      reviewTotalScore
+      reviewTotalCount
+      hasTranslation
+    }
+  }
+}

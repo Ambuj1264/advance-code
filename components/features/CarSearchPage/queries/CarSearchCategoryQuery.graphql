@@ -1,0 +1,56 @@
+query carSearchCategory($slug: String!) {
+  carSearchCategoryByUri(uri: $slug) {
+    id
+    metadata {
+        title
+        subtitle
+    }
+    categoryName: name
+    informationTitle: description_subtitle
+    information: description
+    name: aboutTitle
+    description: aboutDescription
+    defaultPickup: default_pickup {
+      name
+    }
+    defaultDropoff: default_dropoff {
+      name
+    }
+    image {
+      id
+      url: front_url
+      alt
+      name
+    }
+    reviews: reviews_stat {
+      count
+      rating
+    }
+    autoFilter: auto_filter
+    cars(limit: 3, order_by: "popularity") {
+      id
+      name
+      category: categoryString
+      seats
+      automatic
+      bags: luggage
+      image {
+        id
+        url: front_url
+        alt
+        name
+      }
+      establishment {
+        name
+        image: face_image {
+          id
+          url: front_url
+          name
+          alt
+        }
+        reviewTotalScore: reviews_average_formatted
+        reviewTotalCount: reviews_count
+      }
+    }
+  }
+}

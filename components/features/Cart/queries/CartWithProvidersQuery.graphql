@@ -1,0 +1,17 @@
+#import "./CartFragment.graphql"
+#import "./PaymentProvidersFragment.graphql"
+
+query cartWithPaymentProvidersQuery($cartId: String, $currencyCode: String!) {
+  carProductBaseUrl: routePrefix(route: "cars_universal")
+  carSearchBaseUrl: routePrefix(route: "cars_front")
+  cartWithPaymentProviders(
+    input: { cartId: $cartId, currency: $currencyCode }
+  ) {
+    cart {
+      ...CartFragment
+    }
+    paymentProviderSettings {
+     ...PaymentProvidersFragment
+    }
+  }
+}

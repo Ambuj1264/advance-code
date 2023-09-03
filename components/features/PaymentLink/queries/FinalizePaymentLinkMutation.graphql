@@ -1,0 +1,9 @@
+#import "./PaymentLinkMutationFragment.graphql"
+
+mutation finalizePaymentLinkMutation(
+  $input: OrderFinalizePayForPayByLinkParamsInput!
+) {
+  finalizePayByLink(input: $input) {
+    ...PaymentLinkMutationFragment
+  }
+}

@@ -1,0 +1,86 @@
+#import "./OrderPriceBreakdownFragment.graphql"
+#import "./OrderCarLocationDetailsFragment.graphql"
+fragment CarCartFragment on OrderCarCartInfo {
+  id: offerId
+  offerId
+  cartItemId
+  category
+  pickupLocation
+  pickupSpecify
+  dropoffLocation
+  dropoffSpecify
+  pickupId
+  dropoffId: dropOffId
+  flightNumber
+  provider
+  numberOfDays
+  priceOnArrival
+  priceOnArrivalPriceObject: priceOnArrivalPriceData {
+    price
+    currency
+    priceDisplayValue: displayValue
+  }
+  discountAmount
+  discountAmountPriceObject: discountPriceData {
+    price
+    currency
+    priceDisplayValue: displayValue
+  }
+  discountPercentage
+  extras {
+    id
+    name
+    count
+    price
+    translationKeys {
+      keys {
+        key
+        variables {
+          key
+          value
+        }
+      }
+    }
+  }
+  insurances {
+    id
+    name
+    count
+    price
+  }
+  title
+  totalPrice
+  priceBreakdown {
+    ...OrderPriceBreakdownFragment
+  }
+  payOnArrival {
+    ...OrderPriceBreakdownFragment
+  }
+  imageUrl
+  available
+  editable
+  from
+  to
+  updated
+  createdTime
+  expiredTime
+  advancedNoticeSec
+  driverAge
+  driverCountry
+  locationDetails {
+    pickup {
+      ...OrderCarLocationDetailsFragment
+    }
+    dropoff {
+      ...OrderCarLocationDetailsFragment
+    }
+  }
+  vendor {
+    name
+  }
+  priceObject: priceData {
+    price
+    currency
+    priceDisplayValue: displayValue
+  }
+}

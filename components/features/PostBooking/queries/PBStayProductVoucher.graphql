@@ -1,0 +1,121 @@
+query GetStayProductVoucher(
+  $input: TravelplanGetStayProductVoucherRequestInput!
+) {
+  stayProductVoucher(request: $input) {
+    bookingDetails {
+      dateBooked
+      bookingNumber
+      externalBookingId
+      voucherInfo {
+        id
+        voucherId
+        url
+        created
+      }
+    }
+    travelersDetails {
+      name
+      email
+      phoneNumber
+      country
+    }
+    serviceDetails {
+      numberOfNights
+      numberOfGuests
+      numberOfAdults
+      numberOfChildren
+      timeOfCheckin
+      timeOfCheckout
+      childrenAges
+      checkIn
+      checkOut
+      address
+      cityName
+      countryName
+      title
+      type
+      starRating
+      rooms {
+        id
+        type
+        name
+        size
+        maxPersons
+        privateBathroom
+        roomBookings {
+          extraBedCount
+          adults
+          children
+          mesh
+          cancellationPolicies {
+            dateFrom
+            dateTo
+            price {
+              currency
+              value
+            }
+          }
+          requestId
+          source
+          masterRateCode
+          productId
+          breakfast
+          childrenAges
+          extras {
+            id
+            name
+            price
+            childPrice
+            isRequired
+            chargeType
+            value
+          }
+        }
+      }
+      specs {
+        iconId
+        name
+        value
+      }
+      cancellationPolicy
+      cancellationString
+    }
+    paymentDetails {
+      currency
+      totalPrice
+      vatAmount
+      vatPercentage
+      payOnArrival {
+        name
+        currency
+        quantity
+        pricePerUnit
+        totalPrice
+        isMinAmount
+        isMaxAmount
+        includeInBasePrice
+        type
+      }
+      priceBreakdown {
+        name
+        currency
+        quantity
+        pricePerUnit
+        totalPrice
+        isMinAmount
+        isMaxAmount
+        includeInBasePrice
+        type
+      }
+    }
+    roomDetails {
+      id
+      externalId
+      availabilityId
+      name
+      mealType
+      cancellationType
+      dateFreeCancellationUntil
+    }
+  }
+}

@@ -1,0 +1,23 @@
+query($slug: String!) {
+  tourCategoryInformation (slug: $slug) {
+    id
+    reviews {
+      id
+      user {
+        id
+        name
+        avatarImage: face_image {
+          id
+          alt
+          url: front_url
+        }
+      }
+      itemName
+      itemUrl
+      text: content
+      createdDate: created_time
+      reviewScore: rating
+      isVerified: verified
+    }
+  }
+}

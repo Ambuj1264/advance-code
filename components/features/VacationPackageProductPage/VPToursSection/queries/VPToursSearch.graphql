@@ -1,0 +1,59 @@
+query VacationPackageTourSearch($input: VacationPackageTourSearchInput!) {
+  vacationPackageTourSearch(input: $input) {
+    days {
+      dayNumber
+      tours {
+        id
+        productCode
+        linkUrl: url
+        name
+        description
+        image {
+          id: handle
+          handle
+          caption
+        }
+        likelyToSellOut
+        reviewScore
+        reviewCount
+        price
+        durationInMinutes
+        timeFrom
+        timeTo
+        valuePropsList {
+          id
+          valueProps {
+            id: title
+            #title
+            icon {
+              id: handle
+              handle
+            }
+          }
+        }
+        quickFactVariables {
+          startPlace
+          languages
+          difficulty: difficultyString
+          available
+          minimumAge
+          duration
+        }
+        quickFactList {
+          id
+          quickfacts {
+            id: title
+            icon {
+              id: handle
+              handle
+            }
+            title
+            name {
+              value
+            }
+          }
+        }
+      }
+    }
+  }
+}

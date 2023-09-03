@@ -1,0 +1,5 @@
+mutation carAddToCart($input: OrderAddCarToCartInput!) {
+  carAddToCart (input: $input) {
+    success
+  }
+}

@@ -1,0 +1,30 @@
+query GetTourVoucher($input: TravelplanGetTourVoucherRequestInput!) {
+  tourVoucher(request: $input) {
+    bookingDetails {
+      bookingNumber
+      dateBooked
+      voucherInfo {
+        created
+        id
+        url
+        voucherId
+      }
+    }
+    paymentDetails {
+      totalPrice
+      currency
+      totalPrice
+      vatAmount
+      vatPercentage
+    }
+    serviceDetails {
+      title
+    }
+    travelersDetails {
+      name
+      email
+      nationality: country
+      phoneNumber
+    }
+  }
+}

@@ -1,0 +1,19 @@
+query PriceGroupsQuery($id: Int!) {
+  tour(id: $id, lightweight: true) {
+    id
+    priceGroups: price_groups {
+      adults {
+        minAge: min_age
+        maxAge: max_age
+      }
+      teenagers {
+        minAge: min_age
+        maxAge: max_age
+      }
+      children {
+        minAge: min_age
+        maxAge: max_age
+      }
+    }
+  }
+}

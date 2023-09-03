@@ -1,0 +1,16 @@
+fragment SavedCardsFragment on PaymentSavedCard{
+  id
+  cardType
+  pan
+  expYear
+  expMonth
+  currencyCode
+  isUsersPrimaryCard
+  firstName
+  lastName
+  businessId
+  businessName
+  businessAddress
+  providers
+  created
+}

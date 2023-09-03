@@ -1,0 +1,15 @@
+export enum UserFields {
+  id = "id",
+  email = "email",
+  firstName = "firstName",
+  lastName = "lastName",
+  nationality = "nationality",
+  gender = "gender",
+  birthdate = "birthdate",
+  passportno = "passportno",
+  passportExpiration = "passportExpiration",
+  noPassportExpiration = "noPassportExpiration",
+  phone = "phone",
+  relation = "relation",
+  base64Image = "base64Image",
+}

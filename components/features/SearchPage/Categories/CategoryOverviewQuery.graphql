@@ -1,0 +1,24 @@
+query categoryOverview {
+  categoryOverview {
+    id
+    name
+    tours
+    description
+    url
+    image {
+      url
+      name
+    }
+    subCategories {
+      id
+      name
+      tours
+      description
+      url
+      image {
+        url
+        name
+      }
+    }
+  }
+}

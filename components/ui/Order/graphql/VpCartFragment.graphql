@@ -1,0 +1,32 @@
+#import "../../../ui/Order/graphql/FlightCartFragment.graphql"
+#import "../../../ui/Order/graphql/CarCartFragment.graphql"
+#import "../../../ui/Order/graphql/StaysCartFragment.graphql"
+#TODO: maybe we can reuse it for VP voucher, it has different type - OrderVacationPackageBookingInfo
+fragment VpCartFragment on OrderVacationPackageCartInfo {
+  id
+  title
+  cartItemId
+  totalPrice
+  imageUrl
+  currency
+  discountAmount
+  discountAmountPriceObject: discountPriceData {
+    price
+    currency
+    priceDisplayValue: displayValue
+  }
+  discountPercentage
+  startPlace
+  endPlace
+  from
+  to
+  searchLink
+  children
+  infants
+  adults
+  priceObject: priceData {
+    price
+    currency
+    priceDisplayValue: displayValue
+  }
+}

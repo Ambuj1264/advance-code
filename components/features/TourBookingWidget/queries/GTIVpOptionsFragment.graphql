@@ -1,0 +1,27 @@
+#import "./GTIVpPriceFragment.graphql"
+fragment GTIVpOptionsData on MonolithVacationPackage {
+  id
+  price {
+    ...GTIVpPriceData
+  }
+  options {
+    id
+    name
+    price {
+      ...GTIVpPriceData
+    }
+    isRequired: required
+    perPerson
+    question
+    items {
+      id
+      name
+      isDefault
+      isIncluded
+      price {
+        ...GTIVpPriceData
+      }
+    }
+  }
+  error
+}

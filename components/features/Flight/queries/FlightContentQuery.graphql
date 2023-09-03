@@ -1,0 +1,91 @@
+query flightContentQuery ($input: CheckFlightParamsInput!) {
+  flightCheckFlight(input: $input) {
+    bookingToken
+    documentOptions {
+      documentNeed
+    }
+    availableBaggages {
+      id
+      price
+      passengerGroups
+      priority
+      bags {
+        category
+        count
+        restrictions {
+          weight
+        	height
+        	width
+        	length
+        }
+      }
+    }
+    inboundRoute: inbound {
+      airline {
+        code
+        imageUrl
+        name
+      }
+      flyFrom {
+        code
+        name
+      }
+      flyTo {
+        code
+        name
+      }
+      cityFrom {
+        code
+        name
+      }
+      cityTo {
+        code
+        name
+      }
+      bagsRecheckRequired
+      guarantee
+      flightClass: fareCategory
+      flightNumber
+      localDeparture
+      localArrival
+      layOverSec
+      durationSec
+    }
+    inboundDurationSec
+    outboundDurationSec
+    totalDurationSec
+    nightsInDestination
+    outboundRoute: outbound {
+      airline {
+        code
+        imageUrl
+        name
+      }
+      flyFrom {
+        code
+        name
+      }
+      flyTo {
+        code
+        name
+      }
+      cityFrom {
+        code
+        name
+      }
+      cityTo {
+        code
+        name
+      }
+      bagsRecheckRequired
+      guarantee
+      flightClass: fareCategory
+      flightNumber
+      localDeparture
+      localArrival
+      layOverSec
+      durationSec
+    }
+  }
+  cartLink: route(name: "cart", function: "index")
+}

@@ -1,0 +1,44 @@
+query VPDestination(
+  $where: GraphCMSDestinationLandingPageWhereUniqueInput!
+  $locale: [GraphCMSLocale!]! = [en]
+  $stage: GraphCMSStage = DRAFT
+) {
+    destinationLandingPage(where: $where, locales: $locale, stage: $stage) {
+        id
+        title
+        description
+        type
+        country: countryName
+        region
+        timezone
+        size: area
+        population
+        language
+        lifeExpectancy
+        yearlyVisitors
+        website
+        elevationAboveSea
+        mainImage: destinationCoverImage {
+            id
+            url
+            width
+            height
+            handle
+            caption
+        }
+        quickfactsList {
+            quickfacts {
+                id
+                title
+                name {
+                    id
+                    value
+                }
+                icon(locales: $locale) {
+                    id
+                    handle
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+fragment ArticleSearchServerData on Tour {
+  id
+  name
+  linkUrl: front_url
+  description: description_excerpt
+  averageRating: review_score_formatted
+  reviewsCount: review_count
+  ssrPrice: price {
+      display_price
+  }
+  image {
+      id
+      url: frontUrl
+      name
+      alt
+  }
+  specs {
+      iconId: id
+      name
+      value
+  }
+  props {
+      iconId: id
+      title
+  }
+}

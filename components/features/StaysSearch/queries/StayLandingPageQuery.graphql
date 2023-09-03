@@ -1,0 +1,32 @@
+#import "components/ui/LandingPages/queries/LandingPageContentPlaceNameFragment.graphql"
+query stayLandingPageQuery(
+  $where: GraphCMSLandingPageWhereInput
+  $locale: [GraphCMSLocale!]!
+  $stage: GraphCMSStage = DRAFT
+) {
+  landingPages(where: $where, locales: $locale, stage: $stage) {
+    id
+    uniqueId
+    title
+    subtitle
+    pageVariation
+    pageType
+    image(locales: en) {
+      id
+      caption
+      handle
+      videoId
+      videoStartingTime
+      videoEndTime
+    }
+    destination {
+      id
+      stayId
+      ...LandingPageContentPlaceNameFragment
+    }
+    subType {
+      id
+      subtype
+    }
+  }
+}

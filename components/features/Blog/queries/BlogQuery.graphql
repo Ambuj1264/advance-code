@@ -1,0 +1,67 @@
+#import "../../../ui/ArticleLayout/queries/ContentWidgetsFragment.graphql"
+
+query blogQuery($slug: String!) {
+    contentPage: blog (slug: $slug) {
+        isMobile,
+        id,
+        title,
+        uri,
+        frontUrl,
+        uriMetaEditing,
+        isIndexed,
+        publishedTime,
+        modifiedTime,
+        hrefLangs {
+            locale: localeId,
+            uri,
+        },
+        image {
+            id,
+            alt,
+            name,
+            width,
+            height,
+            url: cdn_url,
+        },
+        metadata {
+            facebookLikeUrl: facebook_like_url
+            facebookCommentsUrlOverride: comments_url_override
+        }
+        images {
+            id,
+            alt,
+            name,
+            url: front_url
+        },
+        author {
+            id
+            name
+            url: front_url
+            faceImage: face_image {
+                id
+                alt
+                avatarUrl: front_url
+            }
+            userInfo {
+                id
+                verified
+            }
+            roles {
+              id
+            }
+        },
+        contentPageMainFormatted @client,
+        content: blogContent {
+            contentPageLeftSidebar {
+              ...ContentWidgetsFragment
+            },
+            contentPageRightSidebar {
+              ...ContentWidgetsFragment
+            },
+            contentPageMain {
+                ...ContentWidgetsFragment
+            },
+        }
+    }
+    tourLandingUrl: getToursLandingUrl
+}

@@ -1,0 +1,24 @@
+query marketplaceInformationQuery($url: String!, $locale: [GraphCMSLocale!]!) {
+  values: marketplaceConfig(where: {url: $url}, stage: DRAFT, locales: $locale) {
+    id
+    contactEmail
+    helpCenterTimePeriod {
+        id
+        value
+    }
+    phoneNumbers(first: 500) {
+      id
+      phone
+      isTollFree
+      country {
+        id
+        alpha2Code
+        flag (locales: en) {
+          id
+          url
+          name: fileName
+        }
+      }
+    }
+  }
+}

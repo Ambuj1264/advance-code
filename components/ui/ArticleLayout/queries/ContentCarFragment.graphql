@@ -1,0 +1,40 @@
+fragment ContentCarFragment on Car {
+  id
+  name
+  orSimilar
+  linkUrl: pickupUrl
+  slug: uri
+  price
+  image {
+    id
+    name
+    url: frontUrl
+    alt
+  }
+  category: categoryString
+  passengerQuantity: seats
+  bagQuantity: luggage 
+  automaticTransmission: automatic
+  fuelPolicy: fuel
+  model
+  depositRequired: deposit
+  doors
+  highlandCapabilities: offroad
+  airConIncluded: air_condition
+  minAge: minimumAge
+  year
+  kmUnlimited
+  kmIncluded
+  establishment {
+    id
+    reviewCount: reviews_count
+    reviewTotalScore: reviews_average_formatted
+    name
+    image: face_image {
+      id
+      name
+      url: frontUrl
+      alt
+    }
+  }
+}

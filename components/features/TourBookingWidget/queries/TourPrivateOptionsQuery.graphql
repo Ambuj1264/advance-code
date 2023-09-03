@@ -1,0 +1,11 @@
+query tourPrivateOptions($slug: String!) {
+  tour(slug: $slug, lightweight: false) {
+    id
+    availablePrivateOptions: tourPrivateOptions {
+      id
+      travellers
+      price
+      season
+    }
+  }
+}

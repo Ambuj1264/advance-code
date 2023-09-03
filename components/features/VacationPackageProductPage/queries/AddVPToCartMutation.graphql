@@ -1,0 +1,11 @@
+mutation AddVPToCartMutation($input: OrderAddVPToCartParamsInput!) {
+  addVacationPackageToCart(input: $input) {
+    message
+    success
+    itemErrors {
+      type
+      errorMessage
+      statusCode
+    }
+  }
+}

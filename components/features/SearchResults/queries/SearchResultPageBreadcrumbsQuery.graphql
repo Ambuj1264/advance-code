@@ -1,0 +1,11 @@
+query SearchResultPageBreadcrumbsQuery(
+  $where: GraphCMSBreadcrumbWhereInput
+  $locale: [GraphCMSLocale!]!
+  $stage: GraphCMSStage = DRAFT
+) {
+  breadcrumbs(where: $where, locales: $locale, stage: $stage) {
+    id
+    url: metadataUri
+    name: title
+  }
+}

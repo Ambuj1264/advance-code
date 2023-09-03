@@ -1,0 +1,19 @@
+query pageUriQuery(
+  $where: GraphCMSLandingPageWhereInput
+  $locale: [GraphCMSLocale!]!
+  $stage: GraphCMSStage = DRAFT
+) {
+  landingPageUrls: landingPages(where: $where, locales: $locale, stage: $stage) {
+    id
+    pageType
+    metadataUri
+    destination {
+      id
+      flightId
+      name: nameNew (locales: $locale) {
+        id
+        value
+      }
+    }
+  }
+}

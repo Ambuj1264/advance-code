@@ -1,0 +1,142 @@
+query GetFlightVoucher($input: TravelplanGetFlightVoucherRequestInput!) {
+	flightVoucher(request: $input) {
+		bookingDetails {
+			bookingNumber
+			dateBooked
+			externalBookingId
+			voucherInfo {
+				id
+				voucherId
+				url
+				created
+			}
+		}
+		travelersDetails {
+			name
+			email
+			nationality: country
+			phoneNumber
+		}
+		serviceDetails {
+			numberOfNights
+			arrivalCity
+			travelers {
+				adults
+				infants
+				children
+				totalPassengersCount: totalPassangerCount
+			}
+			departureRoute {
+				localDeparture
+				localArrival
+				utcDeparture
+				utcArrival
+				checkin
+				durationSec
+				layOverSec
+				guarantee
+				bagsRecheckRequired
+				flightNumber
+				price
+				fareCategory
+				flyFrom {
+					code
+					name
+				}
+				flyTo {
+					code
+					name
+				}
+				airline {
+					code
+					name
+					imageUrl
+				}
+				operatingAirline {
+					code
+					name
+					imageUrl
+				}
+				countryFrom {
+					code
+					name
+				}
+				countryTo {
+					code
+					name
+				}
+				cityFrom {
+					code
+					name
+				}
+				cityTo {
+					code
+					name
+				}
+			}
+			returnRoute {
+				localDeparture
+				localArrival
+				utcDeparture
+				utcArrival
+				checkin
+				durationSec
+				layOverSec
+				guarantee
+				bagsRecheckRequired
+				flightNumber
+				price
+				fareCategory
+				flyFrom {
+					code
+					name
+				}
+				flyTo {
+					code
+					name
+				}
+				airline {
+					code
+					name
+					imageUrl
+				}
+				operatingAirline {
+					code
+					name
+					imageUrl
+				}
+				countryFrom {
+					code
+					name
+				}
+				countryTo {
+					code
+					name
+				}
+				cityFrom {
+					code
+					name
+				}
+				cityTo {
+					code
+					name
+				}
+			}
+			baggage {
+				id
+				price
+				category
+				dimensionsSum
+				weight
+				length
+				height
+				width
+				count
+			}
+		}
+		paymentDetails {
+			totalPrice
+			currency
+		}
+	}
+}

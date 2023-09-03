@@ -1,0 +1,80 @@
+query staysSearchQueryGTE($input: StaysSearchAvailabilitiesInput!) {
+  searchAvailabilities(input: $input) {
+    currency
+    productCountTotal
+    productCountWithFreeCancellations
+    cards {
+      id: productId
+      name
+      description
+      productPageUrl
+      userRatingAverage: userRatingAverageOutOf5
+      userRatingsTotal
+      isAboutToSellOut
+      isYouJustMissedIt
+      price {
+        priceDisplayValue: displayValue
+        price
+        currency
+      }
+      image {
+        id: handle
+        caption
+        handle
+      }
+      quickfacts: quickFacts {
+        breakfast
+        distanceFromCityCenter
+        hotelStarRating
+        parking
+        productType
+        timeOfCheckIn
+        timeOfCheckOut
+        wirelessInternet
+      }
+      valueProps: valueProperties
+    }
+
+    # filters
+    priceMaximum {
+        priceDisplayValue: displayValue
+        price
+        defaultPrice
+        currency
+      }
+    priceMinimum {
+        priceDisplayValue: displayValue
+        price
+        defaultPrice
+        currency
+      }
+    priceDistribution {
+      id: valueMaximum
+      count
+    }
+    facilitiesFilters {
+      ...AvailabilityFilterFragment
+    }
+    mealTypeFilters {
+      ...AvailabilityFilterFragment
+    }
+    productTypeFilters {
+      ...AvailabilityFilterFragment
+    }
+    starRatingFilters {
+      ...AvailabilityFilterFragment
+    }
+    roomTypeFilters {
+      ...AvailabilityFilterFragment
+    }
+  }
+}
+
+fragment AvailabilityFilterFragment on StaysAvailabilityFilters {
+  id
+  options {
+    count
+    id
+    label
+  }
+}

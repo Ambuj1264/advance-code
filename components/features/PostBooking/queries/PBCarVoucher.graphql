@@ -1,0 +1,135 @@
+query GetCarVoucherQuery($input: TravelplanGetCarVoucherRequestInput!) {
+    carVoucher(
+        request: $input,
+    ) {
+        bookingDetails {
+            bookingNumber
+            bookingDate: dateBooked
+            externalBookingId
+            voucherInfo {
+                id
+                voucherId
+                url
+                created
+            }
+        }
+        travelersDetails {
+            name
+            email
+            phoneNumber
+            nationality: country
+        }
+        serviceDetails {
+            numberOfDays: nrDaysRented
+            pickUpLocation
+            pickUpTime
+            dropOffLocation
+            supplier
+            provider
+            dropOffTime
+            pickUpInformation
+            dropOffInformation
+            numberOfDrivers
+            pickup {
+                address
+                streetNumber
+                cityName
+                postalCode
+                state
+                country
+                phoneNumber
+                additionalParkInfo
+                counterLocation
+                lat
+                lng
+                price
+                openingHours {
+                    isOpen
+                    openFrom
+                    openTo
+                    dayOfWeek
+                }
+                locationId
+                isPickup
+                specifyFlight
+                code
+                extendedLocationCode
+                name
+                cityId
+                airportId
+            }
+            dropOff: dropoff {
+                address
+                streetNumber
+                cityName
+                postalCode
+                state
+                country
+                phoneNumber
+                additionalParkInfo
+                counterLocation
+                lat
+                lng
+                price
+                openingHours {
+                    isOpen
+                    openFrom
+                    openTo
+                    dayOfWeek
+                }
+                locationId
+                isPickup
+                specifyFlight
+                code
+                extendedLocationCode
+                name
+                cityId
+                airportId
+            }
+            serviceLevel
+            rentedCarType
+            category
+            emergencyPhoneNumber
+            extras {
+                id
+                name
+                price
+            }
+            insurances {
+                id
+                name
+                price
+            }
+            priceOnArrival
+        }
+        paymentDetails {
+            totalPrice
+            currency
+            vatAmount
+            vatPercentage
+            priceBreakdown {
+                name
+                currency
+                quantity
+                pricePerUnit
+                totalPrice
+                isMinAmount
+                isMaxAmount
+                includeInBasePrice
+                type
+            }
+            payOnArrival {
+                name
+                currency
+                quantity
+                pricePerUnit
+                totalPrice
+                isMinAmount
+                isMaxAmount
+                includeInBasePrice
+                type
+            }
+        }
+
+    }
+}

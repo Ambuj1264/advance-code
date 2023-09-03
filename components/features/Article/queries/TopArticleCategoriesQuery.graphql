@@ -1,0 +1,23 @@
+query topArticleCategoriesQuery {
+    settings {
+      articleSearchPageTopCategories {
+        metadata {
+          title
+          subtitle
+        },
+        categories {
+          id
+          title
+          uri
+          image {
+            id
+            name
+            url: frontUrl
+            alt
+          }
+          pageType
+          isLegacy
+        }
+      }
+  }
+}

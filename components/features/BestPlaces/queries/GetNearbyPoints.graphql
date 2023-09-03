@@ -1,0 +1,28 @@
+query getNearByPoints(
+  $latitude: Float!,
+  $longitude: Float!,
+  $destinationId: Int,
+  $radius: Int = 30,
+  $destinationLimit: Int = 200,
+  $attractionsLimit: Int = 0,
+  $attractionTypeIds: [Int]
+) {
+  getNearbyPoints(
+    centerLatitude: $latitude
+    centerLongitude: $longitude
+    attractionDestinationId: $destinationId
+    radius: $radius
+    toursLimit: 0
+    carsLimit: 0
+    hotelsLimit: 0
+    attractionsLimit: $attractionsLimit,
+    destinationsLimit: $destinationLimit,
+    attractionTypeIds: $attractionTypeIds
+  ) {
+    id: orm_id
+    type
+    latitude
+    longitude
+    orm_name
+  }
+}

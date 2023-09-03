@@ -1,0 +1,42 @@
+query vpSingleTourQuery ($input: VacationPackageSingleTourProductInput) {
+  vacationPackageTourSingleProduct (input: $input) {
+    internalId
+    productCode
+    durationInMinutes
+    options {
+      optionCode
+      name
+      description
+      times {
+        startTime
+        available
+        unavailableReason
+        totalPrice
+      }
+      guidedLanguages {
+        locale
+        localeName
+        type
+      }
+    }
+    pickup {
+      allowCustomTravelerPickup
+    }
+    questions {
+      id
+      providerBookingQuestionId
+      type
+      group
+      label
+      hint
+      required
+      maxLength
+      units
+      allowedAnswers
+      conditions {
+        key
+        value
+      }
+    }
+  } 
+}

@@ -1,0 +1,5 @@
+query tourQueryUrl($id: Int!, $marketplace: String!) {
+  tour(id: $id, marketplace: $marketplace) {
+    url: front_url
+  }
+}

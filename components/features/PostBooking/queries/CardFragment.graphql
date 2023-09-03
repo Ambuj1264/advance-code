@@ -1,0 +1,86 @@
+fragment CardFragment on TravelplanCardQlDto {
+  address
+  airlineName: nameOfAirline
+  arrivalAirportCode
+  arrivalAirportName
+  arrivalCityName
+  arrivalDate: dateOfArrivalLocal
+  bagsCarried: numberOfBagsCarried
+  bagsChecked: numberOfBagsChecked
+  bagsInCabin: numberOfBagsInCabin
+  boardingPassButtonUrl
+  bookingId
+  bookingNumber
+  budget
+  cardType
+  carRentalSummary
+  cityName
+  countryName
+  dateOfCheckin
+  dateOfCheckout
+  dateOfDropoffFrom
+  dateOfDropoffTo
+  dateOfPickupFrom
+  dateOfPickupTo
+  dateOfVacationEnd
+  dateOfVacationStart
+  departureAirportCode
+  departureAirportName
+  departureCityName
+  departureDate: dateOfDepartureLocal
+  difficulty
+  dropOffLocation
+  entrance
+  eTicketUrl
+  flightNumber
+  googlePlace {
+    googlePlaceId
+    latitude
+    longitude
+    userRatingAverage
+    userRatingCount
+    photoReference
+  }
+  hasCarRentals
+  hasFlights
+  icon
+  id
+  imageHandle
+  imageUrl
+  isBreakfastIncluded
+  isExpired
+  inceptionDay
+  inceptionMonth
+  inceptionYear
+  latitude
+  longitude
+  name
+  numberOfAdults
+  numberOfChildren
+  numberOfInfants
+  numberOfSeniors
+  numberOfStayNights
+  numberOfTravelers
+  numberOfYouths
+  orderId
+  phoneNumber
+  pickUpLocation
+  populationCount
+  populationYear
+  region
+  roomTypes
+  size
+  startingLocation
+  startingTime
+  timeOfCheckin
+  timeOfCheckout
+  timeToSpend
+  timezone
+  timeOpens
+  timeCloses
+  travelMode
+  tourId
+  travelDistanceInMeters
+  type
+  voucherUrl
+}

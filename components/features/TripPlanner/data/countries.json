@@ -1,0 +1,53 @@
+{
+  "countries": [
+    {
+      "id": "DNK",
+      "name": "Denmark",
+      "airports": [
+        "Copenhagen Airport"
+      ]
+    },
+    {
+      "id": "GBR",
+      "name": "Great Britain",
+      "airports": [
+        "Heathrow Airport"
+      ]
+    },
+    {
+      "id": "ISL",
+      "name": "Iceland",
+      "airports": [
+        "Keflavík Airport"
+      ]
+    },
+    {
+      "id": "ITA",
+      "name": "Italy",
+      "airports": [
+        "Leonardo da Vinci International Airport"
+      ]
+    },
+    {
+      "id": "IRL",
+      "name": "Ireland",
+      "airports": [
+        "Dublin Airport"
+      ]
+    },
+    {
+      "id": "NOR",
+      "name": "Norway",
+      "airports": [
+        "Oslo Airport"
+      ]
+    },
+    {
+      "id": "ESP",
+      "name": "Spain",
+      "airports": [
+        "Madrid-Barajas Adolfo Suárez Airport"
+      ]
+    }
+  ]
+}

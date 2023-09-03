@@ -1,0 +1,5 @@
+query TravelPlanGeneratedCheck($request: TravelplanIsItineraryGeneratedRequestInput!) {
+  isItineraryGenerated(request: $request) {
+    isItineraryGenerated
+  }
+}

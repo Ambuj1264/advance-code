@@ -1,0 +1,24 @@
+mutation addCarToCart($id: Int, $carnectOfferId: String, $carPickupDate: String!, $carPickupTime: String!, $carPickupId: Int!, $carDropoffDate: String!, $carDropoffTime: String!, $carDropoffId: Int!, $carPickupSpecificValue: String, $carDropoffSpecificValue: String, $extras: [carExtra], $insurances: [String], $driverAge: String, $driverCountryCode: String, $externalPickupId: String, $externalDropoffId: String, $cartId: Int  ) {
+  addCarToCart (input: {
+    id: $id,
+    carnect_offer: $carnectOfferId,
+    from_submit: $carPickupDate,
+    time_pickup: $carPickupTime,
+    to_submit: $carDropoffDate,
+    time_dropoff: $carDropoffTime,
+    pickup_specify: $carPickupSpecificValue,
+    dropoff_specify: $carDropoffSpecificValue,
+    extras: $extras,
+    car_pickup_id: $carPickupId,
+    car_dropoff_id: $carDropoffId,
+    externalPickupId: $externalPickupId,
+    externalDropoffId: $externalDropoffId,
+    insurances: $insurances,
+    country: $driverCountryCode,
+    driver_age: $driverAge
+  },
+    cart_id: $cartId
+  ) {
+    success
+  }
+}

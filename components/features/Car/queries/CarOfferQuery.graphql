@@ -1,0 +1,213 @@
+query carOffer($input: CarGetSingleOfferInput!) {
+  cartLink: route(name: "cart", function: "index")
+  searchPageUrl: routePrefix(route: "cars")
+  searchPageUrlGTI: routePrefix(route: "cars_front")
+  carOffer: carGetSingleOffer(input: $input) {
+    title
+    pickupTime
+    returnTime
+    locationDetails {
+      pickup {
+        address
+        additionalParkInfo
+        isAirportPickup: specifyFlight
+        isHotelPickup: specifyHotel
+        phoneNumber
+        cityName
+        locationId
+        streetNumber
+        postalCode
+        country
+        lat
+        lng
+        openingHours {
+          isOpen
+          openFrom
+          openTo
+          dayOfWeek
+        }
+        name
+      }
+      dropoff {
+        address
+        isAirportDropoff: specifyFlight
+        isHotelDropoff: specifyHotel
+        phoneNumber
+        cityName
+        locationId
+        streetNumber
+        postalCode
+        country
+        additionalParkInfo
+        counterLocation
+        lat
+        lng
+        openingHours {
+          isOpen
+          openFrom
+          openTo
+          dayOfWeek
+        }
+        name
+      }
+    }
+    pickupId: pickupLocationId
+    dropoffId: returnLocationId
+    offer {
+      idContext
+      establishment: vendor {
+        vendorId: id
+        reviewCount
+        reviewTotalScore: reviewAverageFormatted
+        name
+        image {
+          id: url
+          name
+          url
+          alt
+        }
+        pickupLocation {
+          locationType
+        }
+      }
+      carInfo {
+        vehicleCategory
+        name
+        images {
+          id: url
+          name
+          url
+        }
+        orSimilar
+      }
+      rentalRate {
+        vehicleCharges {
+          discount {
+            percent
+          }
+          deposit {
+            description
+            translationKeys {
+              keys {
+                key
+                variables {
+                  key
+                  value
+                }
+              }
+            }
+          }
+        }
+      }
+      quickFacts {
+        airConIncluded
+        bagQuantity
+        category
+        depositRequired
+        doors
+        fuelPolicy
+        highlandCapabilities
+        manualTransmission
+        minAge
+        passengerQuantity
+        model
+        milage {
+          unlimited
+          distance
+        }
+      }
+      provider
+      extras {
+        id
+        name
+        type
+        description
+        required
+        quantity
+        amount
+        code
+        periodType
+        translationKeys {
+          keys {
+            key
+            variables {
+              key
+              value
+            }
+          }
+        }
+        payableNow
+        insuranceInfo {
+          policyName
+          description
+          inclusionsList {
+            title
+            content
+            translationKeys {
+              keys {
+                key
+                variables {
+                  key
+                  value
+                }
+              }
+            }
+          }
+          disclaimer
+          translationKeys {
+            keys {
+              key
+              variables {
+                key
+                value
+              }
+            }
+          }
+        }
+        questions {
+          key
+          questionType
+        }
+      }
+      included {
+        includedId: id
+        type
+        name
+        coverageAmount
+        coverageCurrency
+        description
+        code
+        details {
+          charge {
+            amount
+            description
+          }
+        }
+        translationKeys {
+          keys {
+            key
+            variables {
+              key
+              value
+            }
+          }
+        }
+      }
+      documents {
+        type
+        url
+      }
+    }
+    availableLocations {
+      idContext
+      pickupLocation {
+        name
+        locationType
+      }
+      returnLocation {
+        name
+        locationType
+      }
+    }
+  }
+}

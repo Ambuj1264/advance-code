@@ -1,0 +1,23 @@
+query articleSearchTopArticlesQuery($slug: String, $landing: Boolean, $page: Int = 1, $limit: Int = 24) {
+  topArticles: frontArticleCatagoryTopArticles(slug: $slug, landing: $landing, page: $page, limit: $limit) {
+    metadata {
+      title
+      subtitle
+    }
+    totalArticles
+    articles {
+      id
+      url: frontUrl
+      title
+      metadata {
+        description
+      }
+      image {
+        id
+        name: alt
+        url: frontUrl
+      }
+      bannerId
+    }
+  }
+}

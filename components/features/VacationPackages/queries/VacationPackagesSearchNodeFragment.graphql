@@ -1,0 +1,60 @@
+fragment VacationPackagesSearchNodeFragment on VacationPackageDto {
+  id
+  price {
+    amount
+    priceBreakdown {
+      items {
+        type
+        name
+        netPrice
+        salePrice
+        source
+        priceAge
+      }
+      totalNetPrice
+      totalSalePrice
+    }
+  }
+  cmsObject {
+    id
+    title
+    metaDescription
+    metaUri
+    startsIn
+    endsIn
+    days
+    available
+    nights
+    startTime
+    endTime
+    flagHandle
+    countryName
+    quickfacts {
+      id: title
+      icon {
+        id: handle
+        handle
+      }
+      title
+      name {
+        value
+        locale
+      }
+    }
+    valueProps {
+      id: title
+      title
+      icon {
+        id: handle
+        handle
+      }
+    }
+    reviewCount
+    reviewScore
+    image {
+      id: handle
+      handle
+      caption: altText
+    }
+  }
+}

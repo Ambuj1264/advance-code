@@ -1,0 +1,25 @@
+fragment HotelServerData on Hotel {
+  accommodationId: id
+  searchBoost
+  name
+  linkUrl: url
+  description: excerptDescription
+  ssrPrice: price
+  reviewTotalScore: review_score_formatted
+  reviewTotalCount: review_count
+  image {
+      id
+      url: front_url
+      alt
+      name
+  }
+  specs {
+      iconId: id
+      name
+      value
+  }
+  props {
+      iconId: id
+      title
+  }
+}

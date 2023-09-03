@@ -1,0 +1,145 @@
+#import "components/features/VacationPackageProductPage/queries/AttractionsFragment.graphql"
+query tourContentQuery (
+  $where: GraphCMSTourProductPageWhereInput!
+  $locale: [GraphCMSLocale!]! = [en]
+  $stage: GraphCMSStage = DRAFT
+) {
+  tourProductPages(where: $where, locales: $locale, stage: $stage) {
+    tourContentId: id
+    tourId
+    title
+    description
+    reviewCount
+    reviewScore
+    duration
+    difficulty
+    languages
+    available
+    minimumAge
+    startingTime
+    startingPlace
+    endingPlace
+    numberOfDays
+    ticketType
+    landingPageUri
+    fromPrice
+    isIndexed
+    isLikelyToSellOut
+    additionalInfoList
+    safetyInfoList
+    includedList    
+    startPlace {
+      id
+      tourId
+      name: nameNew {
+        id
+        value
+      }
+      alpha2Code
+      countries {
+        id
+        name: nameNew {
+          id
+          value
+        }
+        alpha2Code
+      }
+    }
+    images (locales: en, where: { width_not: 0 }) {
+      id
+      handle
+      caption
+    }
+    metadataUri
+    breadcrumbs {
+      name: title
+      url: metadataUri
+    }
+    tourOptions {
+      id
+      title
+      description
+    }
+    cancellationDescription
+    dayItems {
+      id
+      title
+      description
+      attractionLandingPages {
+        id
+        title
+        mainImage(locales: $locale) {
+          id
+          handle
+          caption
+        }
+      }
+      destinationLandingPages {
+        id
+        title
+        mainImage: destinationCoverImage {
+          id
+          handle
+        }
+      }
+    }
+    quickfactList {
+      quickfacts {
+        id
+        quickfactId
+        title
+        name {
+          id
+          value
+        }
+        icon(locales: [en] ) {
+          id
+          handle
+        }
+      }
+    }
+    valuePropsList {
+      valueProps(first: 4) {
+        id
+        valuePropId
+        title
+        icon(locales: [en] ) {
+          id
+          handle
+          svgAsString @client
+        }
+      }
+    }
+    included {
+      id
+      title: description
+    }
+    attractions {
+      location {
+        latitude
+        longitude
+      }
+      ...AttractionsFragment
+    }
+    destinations {
+      id
+      title
+      mainImage: destinationCoverImage {
+        id
+        url
+        width
+        height
+        handle
+        caption
+      }
+    }
+    additionalInfo {
+        id
+        title: description
+    }
+    safetyInfo {
+        id
+        title: description
+    }
+  }
+}

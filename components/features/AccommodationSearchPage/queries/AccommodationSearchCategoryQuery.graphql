@@ -1,0 +1,23 @@
+query AccommodationSearchCategoryQuery($slug: String!) {
+  hotelSearchCategoryByUri(uri: $slug) {
+    id
+    categoryName: name
+    informationTitle: about_title
+    information: description
+    name: aboutTitle
+    description: aboutDescription
+    url: front_url
+    city: bindCity
+    image {
+      id
+      url: front_url
+      name
+    }
+    defaultLocationsList: defaultLocation {
+      id
+      name
+      type
+    }
+    stringifiedAutoFilter: auto_filter
+  }
+}

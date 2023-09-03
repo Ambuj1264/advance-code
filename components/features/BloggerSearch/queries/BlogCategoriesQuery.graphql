@@ -1,0 +1,10 @@
+query blogCategoriesQuery {
+    localCategories: blogCategories(bloggerType: local) {
+      id
+      name
+    }
+    travelCategories: blogCategories(bloggerType: travel) {
+      id
+      name
+    }
+}

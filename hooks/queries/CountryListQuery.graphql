@@ -1,0 +1,17 @@
+query countryListQuery($locale: [GraphCMSLocale!]!) {
+  getCountryList: places(
+    where: { placeType: Country, alpha2Code_not: "EU" }
+    stage: DRAFT
+    first: 250,
+    locales: $locale
+  ) {
+    name: nameNew {
+      value
+    }
+    countryCode: alpha2Code
+    flag(locales: [en]) {
+      id
+      handle
+    }
+  }
+}

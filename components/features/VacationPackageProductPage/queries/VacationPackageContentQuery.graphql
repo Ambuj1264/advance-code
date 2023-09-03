@@ -1,0 +1,157 @@
+#import "components/features/VacationPackageProductPage/queries/VacationPackagesCommonFragment.graphql"
+query vacationPackageContentQuery(
+  $where: GraphCMSVacationPackagesProductPageWhereInput
+  $locale: [GraphCMSLocale!]!
+  $stage: GraphCMSStage = DRAFT
+  $hrefLangLocales: [GraphCMSLocale!] = [en]
+) {
+  cartLink: route(name: "cart", function: "index")
+  vacationPackagesProductPages(where: $where, locales: $locale, stage: $stage) {
+    ...VacationPackagesCommonData
+    quickfactsList(locales: [en]) {
+      quickfacts(locales: $locale) {
+        id
+        quickfactId
+        title
+        name(locales: $locale) {
+          id
+          value
+        }
+        icon(locales: [en]) {
+          id
+          handle
+        }
+        information: extraInformation(locales: $locale) {
+          id
+          value
+        }
+      }
+    }
+    tripId
+    isDeleted
+    description
+    location {
+      latitude
+      longitude
+    }
+    metaDescription
+    metadataUri
+    canonicalUrl
+    destinations(locales: [en]) {
+      id
+      title
+      name(locales: $locale) {
+        value
+      }
+      uniqueId
+      mainImage: destinationCoverImage(locales: [en]) {
+        id
+        url
+        width
+        height
+        handle
+        caption
+      }
+    }
+    vacationPackageAttractions {
+      id
+      title
+      mainImage(locales: [en]) {
+        id
+        handle
+        caption
+      }
+      location {
+        latitude
+        longitude
+      }
+    }
+    vacationPackageDays {
+      id
+      title
+      description
+      staysDestinationId
+      attractionLandingPages {
+        id
+        title
+        mainImage(locales: [en]) {
+          id
+          handle
+          caption
+        }
+        location {
+          latitude
+          longitude
+        }
+      }
+      destinationLandingPages(locales: [en]) {
+        id
+        uniqueId
+        title
+        name(locales: $locale) {
+          value
+        }
+        location {
+          latitude
+          longitude
+        }
+        mainImage: destinationCoverImage(locales: [en]) {
+          id
+          handle
+          caption
+        }
+      }
+    }
+    dayData: localizations(locales: [en], includeCurrent: true) {
+      id
+      days
+      nights
+    }
+    startPlace(locales: [en]) {
+      id
+      countries {
+        id: alpha2Code
+        alpha2Code
+        name(locales: $locale) {
+          id
+          value
+        }
+      }
+      name(locales: $locale) {
+        id
+        value
+      }
+      flightId
+      carId
+      stayId
+    }
+    endPlace(locales: [en]) {
+      id
+      name(locales: $locale) {
+        id
+        value
+      }
+      flightId
+      carId
+      stayId
+    }
+    visitedPlaces(locales: [en]) {
+      mainImage {
+        id
+        handle
+        caption
+      }
+      images {
+        id
+        handle
+        caption
+      }
+    }
+    hreflangs: localizations(locales: $hrefLangLocales, includeCurrent: true) {
+      id
+      locale
+      uri: metadataUri
+    }
+    travelplanMetadata
+  }
+}

@@ -1,0 +1,11 @@
+mutation updateActiveCurrency($currencyCode: String!) {
+  setCurrentCurrency(id: $currencyCode) {
+    id
+    activeCurrency: currentCurrency {
+      id
+      currencyCode: id
+      name
+      rate
+    }
+  }
+}

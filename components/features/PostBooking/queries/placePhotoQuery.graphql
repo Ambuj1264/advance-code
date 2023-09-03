@@ -1,0 +1,6 @@
+query gtePhotoQuery($photoReference: String!, $maxWidth: Int
+) {
+  getPlacePhoto(photoReference: $photoReference, maxWidth: $maxWidth) {
+    photo
+  }
+}

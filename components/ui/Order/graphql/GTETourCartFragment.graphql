@@ -1,0 +1,62 @@
+fragment GTETourCartFragment on OrderTourAndTicketCartInfo {
+  id
+  productCode
+  productOptionCode
+  linkUrl: uri
+  paxMix {
+    ageBand
+    numberOfTravelers
+  }
+  languageGuide {
+    language
+    type
+  }
+  extras {
+    id
+    name
+    answer
+    included
+    price
+    required
+    count
+  }
+  valueProps {
+    iconId
+    title
+  }
+  durationSec
+  durationText
+  pickup
+  advancedNoticeSec
+  bookingRef
+  startTime
+  title
+  cartItemId
+  totalPrice
+  imageUrl
+  available
+  editable
+  currency
+  from
+  to
+  startingLocation {
+    locationName
+  }
+  bookingQuestionAnswers {
+    answer
+    label
+    question
+    travelerNum
+    unit
+  }
+  priceObject: priceData {
+    price
+    currency
+    priceDisplayValue: displayValue
+  }
+  option {
+    id
+    optionCode
+    title
+  }
+}

@@ -1,0 +1,161 @@
+query tour($slug: String!, $locale: String!, $preview: Boolean, $forceLivePricing: Boolean) {
+  tour(slug: $slug, lightweight: false, onlyLocalizedSlug: true, preview: $preview, forceLivePricing: $forceLivePricing) {
+    id
+    url: front_url
+    basePrice: base_price
+    currency
+    name
+    isIndexed: is_indexed
+    isLivePricing: is_livePricing
+    establishment {
+      id
+      name
+      url
+    }
+    tourType: tour_type
+    information: description
+    additionalInformation: good_to_know
+    image {
+      id
+      url: front_url
+      name: alt
+    }
+    images {
+      id
+      url: front_url
+      name: alt
+    }
+    durationInSeconds: duration
+    isFreePickup: is_free_pickup
+    reviewTotalScore: review_score_formatted
+    reviewTotalCount: review_count
+    durationAsText
+    languages {
+      name
+    }
+    difficultyLevel: difficulty_level
+    availabilityPeriod: availability_period
+    minimumAge: minimum_age
+    shouldBringItems: what_to_bring {
+      id
+      name
+      included
+    }
+    includedItems: includes {
+      id
+      name
+      included
+    }
+    activityItems: activities {
+      id
+      name
+      included
+    }
+    attractionsItems: attractions {
+      id
+      name
+      latitude
+      longitude
+      location
+      url: frontUrl
+      image {
+        id
+        url: front_url
+        name: alt
+     }
+     reviewTotalScore
+     reviewTotalCount
+     hasContent: has_content
+    }
+    contentTemplates: content_templates {
+      id
+      name
+      information: description
+      items {
+        id
+        name
+        information: description
+        images {
+          id
+          url: front_url
+        }
+      }
+    }
+    itinerary: itinerary_days {
+      id
+      day
+      name: day_title
+      information: body
+      image: display_image {
+        id
+        url: front_url
+        name
+      }
+      contentTemplates: content_templates {
+        id
+      }
+    }
+    videoUrl: video
+    guides {
+      id
+      name
+      information: description
+      avatarImage: profile_picture {
+        id
+        url: front_url
+      }
+      images: gallery {
+        id
+        url: front_url
+      }
+      coverImage: cover_picture {
+        id
+        url: front_url
+      }
+      linkUrl: front_url
+      languages {
+        name
+      }
+    }
+    props {
+      iconId: id
+      title
+      description
+    }
+    specs{
+      iconId: id
+      name
+      value
+    }
+    transport {
+      pickup
+      pickupType: pickup
+      departureNote: departure_point
+      enableNotKnown: enable_not_known
+      required
+      price
+      airports {
+        name
+      }
+      places {
+        id
+        name
+      }
+    }
+    metadata {
+      title
+      description
+      canonicalUrl: canonical_url
+    }
+    priceGroups: price_groups {
+      adults {
+        lowestPriceGroupSize: lowest_price_group_size
+      }
+    }
+    localePrice: locale_price (locale_id: $locale) {
+      price
+      currency
+    }
+  }
+  bookUrl: route(name: "tours-action", function: "book")
+}

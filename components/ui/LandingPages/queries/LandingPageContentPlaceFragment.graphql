@@ -1,0 +1,17 @@
+#import "./LandingPageContentPlaceNameFragment.graphql"
+fragment LandingPageContentPlaceFragment on GraphCMSPlace {
+  id
+  mainImage(locales: en) {
+    id
+    handle
+    caption
+    videoId
+    videoStartingTime
+    videoEndTime
+  }
+  flightId
+  carId
+  stayId
+  tourId
+  ...LandingPageContentPlaceNameFragment
+}

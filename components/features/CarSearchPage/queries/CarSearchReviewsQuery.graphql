@@ -1,0 +1,21 @@
+query carSearchReviews($slug: String) {
+  reviews: car_reviews(uri: $slug, limit: 52) {
+    id
+    user {
+      id
+      name
+      avatarImage: face_image {
+        id
+        alt
+        url: frontUrl
+      }
+    }
+    itemName
+    itemUrl
+    itemImageId
+    text: content
+    createdDate: created_time
+    reviewScore: rating
+    isVerified: verified
+  }
+}

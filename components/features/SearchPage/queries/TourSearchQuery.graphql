@@ -1,0 +1,18 @@
+#import "./TourClientDataFragment.graphql"
+#import "./TourServerDataFragment.graphql"
+#import "./TourSearchFiltersFragment.graphql"
+
+query tourSearchQuery($filters: TourSearchFilters) {
+    tourSearch(filters: $filters) {
+        totalTours
+        totalPages
+        filters: filterOptions {
+            ...Filters
+        }
+        tours {
+            id
+            ...ServerData
+            ...ClientData
+        }
+    }
+}

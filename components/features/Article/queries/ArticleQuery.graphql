@@ -1,0 +1,64 @@
+#import "../../../ui/ArticleLayout/queries/ContentWidgetsFragment.graphql"
+
+query articleQuery($slug: String!, $categorySlug: String!) {
+  contentPage: article(slug: $slug, categorySlug: $categorySlug) {
+    id,
+    title,
+    uri,
+    frontUrl,
+    uriMetaEditing,
+    isIndexed,
+    draft,
+    publishedTime,
+    modifiedTime,
+    hrefLangs {
+      locale: localeId,
+      uri,
+    },
+    image {
+      id,
+      alt,
+      name,
+      width,
+      height,
+      url: cdn_url,
+    },
+    metadata {
+      ogDescription: og_description
+      facebookLikeUrl: facebook_like_url
+      facebookCommentsUrlOverride: comments_url_override
+    }
+    images {
+      id,
+      alt,
+      name,
+      url: front_url
+    },
+    author {
+      id
+      name
+      url: front_url
+      faceImage: face_image {
+        id
+        alt
+        avatarUrl: front_url
+      }
+      userInfo {
+        id
+        verified
+      }
+    },
+    contentPageMainFormatted @client,
+    content: articleContentNew {
+      contentPageLeftSidebar {
+        ...ContentWidgetsFragment
+      },
+      contentPageRightSidebar {
+        ...ContentWidgetsFragment
+      },
+      contentPageMain {
+        ...ContentWidgetsFragment
+      },
+    }
+  }
+}

@@ -1,0 +1,8 @@
+query getSettingsQuery{
+    settings{
+        has_facebook
+        has_google_oauth
+        has_weibo
+        has_apple
+    }
+}

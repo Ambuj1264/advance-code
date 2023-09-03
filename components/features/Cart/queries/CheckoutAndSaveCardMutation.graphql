@@ -1,0 +1,25 @@
+mutation checkoutAndSaveCardMutation(
+  $checkoutParams: OrderCheckoutParamsInput
+  $saveCardParams: OrderSaveCardParamsInput
+) {
+  checkoutAndSaveCards(
+    input: {
+      checkoutParams: $checkoutParams
+      saveCardParams: $saveCardParams
+    }
+  ) {
+    success
+    resultCode
+    voucherId
+    jsonAction
+    bookedProducts {
+      cartItemId
+      revenue
+      currency
+    }
+    paymentProvider
+    refusalReason
+    forgotPasswordUrl
+    userCreated
+  }
+}

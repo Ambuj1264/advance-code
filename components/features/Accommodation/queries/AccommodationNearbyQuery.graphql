@@ -1,0 +1,31 @@
+query getAccommodationNearByPoints(
+  $latitude: Float!,
+  $longitude: Float!,
+) {
+  getNearbyPoints(
+    centerLatitude: $latitude
+    centerLongitude: $longitude
+    radius: 30
+    toursLimit: 0
+    carsLimit: 0
+    hotelsLimit: 0
+    attractionsLimit: 20
+    destinationsLimit: 0
+  ) {
+    id: orm_id
+    type
+    latitude
+    longitude
+    orm_name
+    title
+    image {
+      id
+      url: front_url
+      name
+    }
+    reviewTotalCount
+    reviewTotalScore
+    isGoogleReview
+    url
+  }
+}

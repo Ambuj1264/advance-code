@@ -1,0 +1,7 @@
+query frontValuePropsQuery($product_type: String) {
+  frontValueProps(product_type: $product_type) {
+    title
+    iconId: id
+    description
+  }
+}

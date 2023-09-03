@@ -1,0 +1,67 @@
+#import "../../../ui/Order/graphql/FlightCartFragment.graphql"
+#import "../../../ui/Order/graphql/CarCartFragment.graphql"
+#import "../../../ui/Order/graphql/TourCartFragment.graphql"
+#import "../../../ui/Order/graphql/StaysCartFragment.graphql"
+#import "../../../ui/Order/graphql/StayProductsCartFragment.graphql"
+#import "../../../ui/Order/graphql/CustomsCartFragment.graphql"
+#import "../../../ui/Order/graphql/VpCartFragment.graphql"
+#import "../../../ui/Order/graphql/GTETourCartFragment.graphql"
+
+fragment CartFragment on OrderCartInfo {
+  flights {
+    ...FlightCartFragment
+  }
+  cars {
+    ...CarCartFragment
+  }
+  tours {
+    ...TourCartFragment
+  }
+  stays {
+    ...StaysCartFragment
+  }
+  gteStays: stayProducts {
+    ...StayProductsCartFragment
+  }
+  customs {
+    ...CustomsCartFragment
+  }
+  toursAndTickets {
+    ...GTETourCartFragment
+  }
+  vacationPackages {
+    ...VpCartFragment
+    flights {
+      ...FlightCartFragment
+      documentNeed
+    }
+    cars {
+      ...CarCartFragment
+    }
+    gteStays: stayProducts {
+    ...StayProductsCartFragment
+  }
+    toursAndTickets {
+      ...GTETourCartFragment
+    }
+    available
+    editable
+    updated
+    createdTime
+    expiredTime
+  }
+  itemCount
+  totalPrice
+  totalOnArrival
+  customerInfo {
+    name
+    email
+    nationality
+    phoneNumber
+  }
+  priceObject: priceData {
+    price
+    currency
+    priceDisplayValue: displayValue
+  }
+}

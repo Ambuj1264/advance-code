@@ -1,0 +1,3 @@
+query carProductUrl {
+  carProductUrl: routePrefix(route: "cars_universal")
+}

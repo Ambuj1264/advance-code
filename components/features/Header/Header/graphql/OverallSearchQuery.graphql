@@ -1,0 +1,31 @@
+query OverallSearchQuery($input: SearchParamsInput!) {
+  search(input: $input) {
+    name
+    countryCode
+    type
+    resultItems {
+      id: title
+      title
+      destinationId
+      destinationName
+      countryName
+      countryCode
+      metadataUri
+      pageVariation
+      pageType
+      slug
+      subResultItems {
+        id: title
+        title
+        destinationId
+        destinationName
+        countryName
+        countryCode
+        metadataUri
+        pageVariation
+        pageType
+        slug
+      }
+    }
+  }
+}

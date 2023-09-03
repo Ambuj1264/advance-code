@@ -1,0 +1,3 @@
+fragment HotelClientData on Hotel {
+  price: total_price
+}

@@ -1,0 +1,29 @@
+query carSearchReviewsPaginated($slug: String, $page: Int) {
+    reviews: car_reviews_pagination(uri: $slug, limit: 4, page: $page) {
+    reviews {
+      id
+      user {
+        id
+        name
+        avatarImage: face_image {
+          id
+          alt
+          url: frontUrl
+        }
+      }
+      itemName
+      itemUrl
+      itemImageId
+      text: content
+      createdDate: created_time
+      reviewScore: rating
+      isVerified: verified
+    }
+    meta {
+      page
+      pages
+      per_page
+      total_count
+    }
+  }
+}

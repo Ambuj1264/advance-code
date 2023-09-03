@@ -1,0 +1,67 @@
+fragment StaysSearchFragment on VacationPackageStaySearchResult {
+    products {
+      day
+      groupedWithDays
+      hotelRegionId
+      type
+      subtype
+      roomTypes
+      price
+      name
+      mainImage {
+        id: handle
+        handle
+      }
+      description
+      distanceFromCenter
+      checkInTime
+      checkOutTime
+      dateCheckingIn
+      dateCheckingOut
+      quickFacts {
+        id: title
+        title
+        icon {
+          id: handle
+          handle
+        }
+        name {
+          value
+        }
+      }
+      productId
+      currency
+      type
+      rating
+      userRatingsTotal
+      lat
+      lng
+      address
+      starClass
+      selected
+      roomCombinations {
+        rooms {
+          id: roomName
+          roomName
+          images {
+            id: handle
+            caption
+            handle
+          }
+          numberOfPersons
+        }
+        availabilities {
+          availabilityId
+          freeCancellationUntil
+          priceObject: price {
+            price
+            currency
+            priceDisplayValue: displayValue
+          }
+          mealType
+          cancellationType
+          isSelected
+        }
+      }
+    }
+}

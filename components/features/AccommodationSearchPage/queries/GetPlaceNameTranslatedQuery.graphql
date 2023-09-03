@@ -1,0 +1,3 @@
+query GetPlaceNameTranslatedQuery($id:String, $searchType:String){
+ getPlaceNameTranslated(id:$id searchType:$searchType)
+}

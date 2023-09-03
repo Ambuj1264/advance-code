@@ -1,0 +1,17 @@
+#import "./AccommodationServerDataFragment.graphql"
+
+query popularAccommodationQuery {
+  topHotelsSearch {
+    metadata {
+      title
+      subtitle
+    }
+    hotels {
+      id
+      city {
+        name
+      }
+      ...HotelServerData
+    }
+  }
+}

@@ -1,0 +1,45 @@
+import { Marketplace, SupportedLanguages } from "../../../../types/enums";
+
+export const hreflangLocalesByMarketplace: {
+  [k in Marketplace]: SupportedLanguages[] | undefined;
+} = {
+  [Marketplace.GUIDE_TO_ICELAND]: [
+    SupportedLanguages.English,
+    SupportedLanguages.German,
+    SupportedLanguages.Danish,
+    SupportedLanguages.Spanish,
+    SupportedLanguages.French,
+    SupportedLanguages.Icelandic,
+    SupportedLanguages.Italian,
+    SupportedLanguages.Japanese,
+    SupportedLanguages.Korean,
+    SupportedLanguages.Dutch,
+    SupportedLanguages.Norwegian,
+    SupportedLanguages.Polish,
+    SupportedLanguages.Russian,
+    SupportedLanguages.Swedish,
+    SupportedLanguages.Thai,
+    SupportedLanguages.Finnish,
+    SupportedLanguages.LegacyChinese,
+  ],
+  [Marketplace.GUIDE_TO_EUROPE]: [
+    SupportedLanguages.English,
+    SupportedLanguages.Polish,
+    SupportedLanguages.Danish,
+    SupportedLanguages.Norwegian,
+    SupportedLanguages.German,
+    SupportedLanguages.French,
+    SupportedLanguages.Japanese,
+    SupportedLanguages.Spanish,
+    SupportedLanguages.Thai,
+    SupportedLanguages.Russian,
+    SupportedLanguages.LegacyChinese,
+    SupportedLanguages.Italian,
+    SupportedLanguages.Korean,
+    SupportedLanguages.Swedish,
+    SupportedLanguages.Dutch,
+  ],
+  [Marketplace.GUIDE_TO_THE_PHILIPPINES]: [SupportedLanguages.English],
+  [Marketplace.ICELAND_PHOTO_TOURS]: undefined,
+  [Marketplace.NORWAY_TRAVEL_GUIDE]: undefined,
+};

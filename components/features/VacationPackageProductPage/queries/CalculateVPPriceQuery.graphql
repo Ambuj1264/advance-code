@@ -1,0 +1,67 @@
+query vpCalculatePrice($input: VacationPackagePriceCalculationInput!) {
+  calculateVacationPackagePrice(input: $input) {
+    amount
+    currency
+    flightIncluded
+    carIncluded
+    staysIncluded
+    priceType
+    priceChange
+    flightPrices {
+      bookingToken
+      flightPrice
+      bagPrice
+    }
+    carPrices {
+      offerReference
+      totalPrice
+      totalOnArrival
+      payOnArrival {
+        totalPrice
+      }
+    }
+    stayPrices {
+      key
+      value {
+        selected
+        price
+        productId
+        roomCombinations {
+          rooms {
+            roomName
+            images {
+              id
+              caption
+              handle
+            }
+            numberOfPersons
+          }
+          availabilities {
+            availabilityId
+            freeCancellationUntil
+            priceObject: price {
+              price
+              currency
+              priceDisplayValue: displayValue
+            }
+            mealType
+            cancellationType
+            isSelected
+          }
+        }
+      }
+    }
+    priceBreakdown {
+      items {
+        type
+        name
+        netPrice
+        salePrice
+        source
+        priceAge
+      }
+      totalNetPrice
+      totalSalePrice
+   }
+  }
+}

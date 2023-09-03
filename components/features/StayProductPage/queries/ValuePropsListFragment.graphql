@@ -1,0 +1,13 @@
+fragment ValuePropsListFragment on GraphCMSStaysProductPage {
+    valuePropsList {
+      valueProps(first: 4) {
+        id
+        title
+        icon(locales: [en] ) {
+          id
+          handle
+          svgAsString @client
+        }
+      }
+    }
+}

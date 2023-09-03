@@ -1,0 +1,50 @@
+fragment GTETourSearchFragment on TourSearchConnection {
+  nodes {
+    id
+    name
+    linkUrl: url
+    description
+    image {
+      id: handle
+      handle
+      caption
+    }
+    likelyToSellOut
+    reviewScore
+    reviewCount
+    price
+    durationInMinutes
+    valuePropsList {
+      valueProps {
+        id: title
+        title
+        icon {
+          id: handle
+          handle
+        }
+      }
+    }
+    quickFactVariables {
+      startPlace
+      languages
+      difficulty: difficultyString
+      available
+      minimumAge
+      duration
+      ticketType: admission
+    }
+    quickFactList {
+      quickfacts {
+        id: title
+        icon {
+          id: handle
+          handle
+        }
+        title
+        name {
+          value
+        }
+      }
+    }
+  }
+}

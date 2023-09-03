@@ -1,0 +1,31 @@
+#import "./FlightVoucherProductFragment.graphql"
+#import "./CarsVoucherProductFragment.graphql"
+#import "./StaysVoucherProductFragment.graphql"
+#import "./CustomerInfoFragment.graphql"
+#import "./OrderInfoFragment.graphql"
+#import "./CustomProductVoucherFragment.graphql"
+
+fragment CommonVoucherFragment on OrderVoucherResults {
+  id: pdfUrl
+  numberOfItems: itemCount
+  pdfUrl
+  voucherReady
+  orderInfo {
+    ...OrderInfoFragment
+  }
+  customerInfo {
+    ...CustomerInfoFragment
+  }
+  flights {
+    ...FlightVoucherProductFragment
+  }
+  cars {
+    ...CarsVoucherProductFragment
+  }
+  stays {
+    ...StaysVoucherProductFragment
+  }
+  customs {
+    ...CustomProductVoucherFragment
+  }
+}

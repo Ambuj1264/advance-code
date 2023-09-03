@@ -1,0 +1,17 @@
+#import "./countryTourClientDataFragment.graphql"
+
+query countryPageClientQuery {
+  frontBestTravelPlans(limit: 4) {
+    tours {
+      id
+      ...CountryClientData
+    }
+  }
+
+  frontTopTours(limit: 8) {
+    tours {
+      id
+      ...CountryClientData
+    }
+  }
+}

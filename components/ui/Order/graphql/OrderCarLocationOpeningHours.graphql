@@ -1,0 +1,6 @@
+fragment OrderCarLocationOpeningHours on OrderCarCartOpeningHours {
+  isOpen
+  openFrom
+  openTo
+  dayOfWeek
+}

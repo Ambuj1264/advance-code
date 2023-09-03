@@ -1,0 +1,38 @@
+#import "./LandingPageSectionContentPlaceFragmentWithOptionalFields.graphql"
+#import "./LandingPageSectionsFragment.graphql"
+
+query sectionsQuery(
+  $where: GraphCMSSectionWhereInput
+  $sectionWhere: GraphCMSLandingPageWhereInput!
+  $locale: [GraphCMSLocale!]!
+  $stage: GraphCMSStage = DRAFT
+  $orderBy: GraphCMSLandingPageOrderByInput = combinedRank_ASC,
+  $first: Int
+  $after: String
+) {
+  sections(where: $where, locales: $locale, stage: $stage) {
+    ...LandingPageSectionsFragment
+  }
+
+  sectionContent: landingPagesConnection(
+    where: $sectionWhere
+    locales: $locale
+    stage: $stage
+    first: $first
+    orderBy: $orderBy
+    after: $after
+  ) {
+    edges {
+      cursor
+      node {
+        ...SectionContentFragment
+      }
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+  }
+}

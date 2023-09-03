@@ -1,0 +1,35 @@
+#import "./AccommodationServerDataFragment.graphql"
+#import "./AccommodationClientDataFragment.graphql"
+query AccommodationCategoryDefaultQuery(
+  $page: Int
+  $slug: String
+  $orderBy: String
+  $orderDirection: String
+  $limit: Int
+) {
+  accommodationSearch: hotelSearchV2(
+    limit: $limit,
+    page: $page,
+    only_available: false,
+    slug: $slug,
+    order_by: $orderBy
+    order_direction: $orderDirection
+  ) {
+    totalAccommodations: total_results_count
+    accommodations: hotels {
+      ...HotelServerData
+      ...HotelClientData
+      stars
+      popularity
+      amenityIds {
+        id
+      }
+      category {
+        id
+      }
+      city {
+        name
+      }
+    }
+  }
+}

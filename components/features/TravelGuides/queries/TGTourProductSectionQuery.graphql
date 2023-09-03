@@ -1,0 +1,17 @@
+#import "components/ui/LandingPages/queries/LandingPageTourQueryFragment.graphql"
+
+query tGTourSectionsQuery(
+  $where: GraphCMSTourProductPageWhereInput
+  $locale: [GraphCMSLocale!]!
+  $stage: GraphCMSStage = DRAFT
+) {
+  tourProductPages(
+    where: $where
+    locales: $locale
+    stage: $stage
+    first: 16
+    orderBy: combinedRating_DESC
+  ) {
+    ...LandingPageTourQueryFragment
+  }
+}

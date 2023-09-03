@@ -1,0 +1,61 @@
+#import "components/ui/LandingPages/queries/LandingPageSectionContentPlaceFragmentWithOptionalFields.graphql"
+query tGSectionQuery(
+  $where: GraphCMSLandingPageWhereInput
+  $locale: [GraphCMSLocale!]!
+  $stage: GraphCMSStage = DRAFT
+  $first: Int
+) {
+  landingPages(
+    where: $where
+    locales: $locale
+    stage: $stage
+    first: $first
+    orderBy: combinedRank_ASC
+  ) {
+    id
+    destination {
+      ...LandingPageSectionContentPlaceFragmentWithOptionalFields
+    }
+    origin {
+      ...LandingPageSectionContentPlaceFragmentWithOptionalFields
+    }
+    title
+    image(locales: en) {
+      id
+      handle
+      caption
+    }
+    slug
+    pageType
+    pageVariation
+    metadataUri
+    staticMap (locales: en) {
+     id
+     handle
+     caption
+   }
+    subType {
+      id
+      subtype
+      name {
+        value
+      }
+      pluralName {
+        value
+      }
+      parentSubType {
+        name {
+          value
+        }
+        pluralName {
+          value
+        }
+      }
+      typeImage(locales: en) {
+        id
+        handle
+        caption
+      }
+    }
+  }
+}

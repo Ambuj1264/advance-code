@@ -1,0 +1,12 @@
+query flightQuery ($input: CheckFlightParamsInput!) {
+  flightCheckFlight(input: $input) {
+    sessionId
+    bookingToken
+    flightsChecked
+    flightsInvalid
+    priceChange
+    totalBagPrice
+    flightPrice
+    showHealthDeclaration: showHealthDecleration
+  }
+}

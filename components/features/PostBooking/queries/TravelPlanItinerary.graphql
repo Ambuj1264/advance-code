@@ -1,0 +1,32 @@
+#import "./CardFragment.graphql"
+
+query travelPlanItinerary($request: TravelplanGetItineraryRequestInput!) {
+  itinerary(request: $request) {
+    title
+    days {
+      date
+      dayNumber
+      segments {
+        index
+        segmentType
+        content: contentEntries {
+          index
+          icon
+          iconAlpha2CountryCode
+          iconAlpha3CountryCode
+          title
+          text
+          date: iconDate
+
+          travelMode
+          travelDuration
+          travelDistanceInMeters
+
+          cards: cardsV2 {
+            ...CardFragment
+          }
+        }
+      }
+    }
+  }
+}

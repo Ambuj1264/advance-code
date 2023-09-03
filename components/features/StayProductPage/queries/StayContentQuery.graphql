@@ -1,0 +1,68 @@
+#import "./QuickfactListFragment.graphql"
+#import "./ValuePropsListFragment.graphql"
+#import "./CommonStayFragment.graphql"
+#import "components/features/VacationPackageProductPage/queries/AttractionsFragment.graphql"
+query stayContentQuery (
+  $where: GraphCMSStaysProductPageWhereInput!
+  $attractionsConditions:  GraphCMSLocationInput!
+  $locale: [GraphCMSLocale!]!
+  $stage: GraphCMSStage = DRAFT
+) {
+  staysProductPages(where: $where, locales: $locale, stage: $stage) {
+    id
+    productId: stayProductId
+    title
+    description
+    location {
+      latitude
+      longitude
+    }
+    address
+    ...CommonStayFragment
+    ...ValuePropsListFragment
+    ...QuickfactListFragment
+    rooms: staysRooms {
+      id
+      name: title
+      images (locales: en) {
+        id
+        handle
+        caption
+      }
+      numberOfPersons
+      roomSize
+      bedTypes
+      privateShower
+      wifiAvailability
+      roomDetails {
+        id
+        icon(locales: [en] ) {
+          id
+          handle
+        }
+        title {
+          value
+        }
+      }
+    }
+    amenities {
+      id
+      icon(locales: [en] ) {
+        id
+        handle
+      }
+      title {
+        id
+        value
+      }
+    }
+    nearbyAttractions {
+      location {
+        latitude
+        longitude
+        distance(from: $attractionsConditions)
+      }
+      ...AttractionsFragment
+    }
+  }
+}

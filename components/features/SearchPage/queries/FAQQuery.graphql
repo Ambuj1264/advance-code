@@ -1,0 +1,9 @@
+query getFAQ ($landingPage: landingPage, $pageType: pageType, $slug: String) {
+  getFaq(landingPage: $landingPage, pageType: $pageType, slug: $slug) {
+    questions {
+      id
+      question
+      answer
+    }
+  }
+}

@@ -1,0 +1,13 @@
+query travelPlanItineraryMap($request: TravelplanGetItineraryMapRequestInput!) {
+  itineraryMap(request: $request) {
+    date
+    dayNumber
+    items {
+      type
+      latitude
+      longitude
+      id
+      orm_name
+    }
+  }
+}

@@ -1,0 +1,9 @@
+#import "./SavedCardsFragment.graphql"
+
+mutation deleteUserCard($input: PaymentDeleteUserCardParamsInput!) {
+  deleteUserCard(input: $input) {
+    savedCards {
+      ...SavedCardsFragment
+    }
+  }
+}

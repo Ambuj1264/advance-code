@@ -1,0 +1,46 @@
+#import "./LandingPageContentPlaceFragment.graphql"
+query landingPageContentQuery(
+  $where: GraphCMSLandingPageWhereInput
+  $locale: [GraphCMSLocale!]!
+  $stage: GraphCMSStage = DRAFT
+) {
+  landingPages(where: $where, locales: $locale, stage: $stage) {
+    id
+    uniqueId
+    title
+    metadataTitle
+    metadataDescription
+    subtitle
+    pageVariation
+    pageType
+    destination {
+      alpha2Code
+      ...LandingPageContentPlaceFragment
+    }
+    origin {
+      ...LandingPageContentPlaceFragment
+    }
+    subType {
+      id
+      subtype
+      name {
+        value
+      }
+      pluralName {
+        value
+      }
+      tagId
+      parentSubType {
+        subtype
+      }
+    }
+    image(locales: en) {
+      id
+      caption
+      handle
+      videoId
+      videoStartingTime
+      videoEndTime
+    }
+  }
+}

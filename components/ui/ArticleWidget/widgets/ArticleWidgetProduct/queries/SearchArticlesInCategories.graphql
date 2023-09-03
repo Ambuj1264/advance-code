@@ -1,0 +1,16 @@
+query SearchArticlesInCategories ($categoryIDs: [Int!], $limit: Int = 100, $excludeID: Int) {
+    searchArticlesInCategories (categoryIDs: $categoryIDs, limit: $limit, excludeID: $excludeID) {
+        id
+        title
+        metadata {
+          description
+        }
+        url: frontUrl
+        image {
+          id
+          url: front_url
+          name
+          alt
+        }
+    }
+}

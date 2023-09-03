@@ -1,0 +1,42 @@
+{
+  "__schema": {
+    "types": [
+      {
+        "kind": "UNION",
+        "name": "contentPageWidgets",
+        "possibleTypes": [
+          {
+            "name": "contentPageTableOfContents"
+          },
+          {
+            "name": "htmlContentPageWidget"
+          },
+          {
+            "name": "jsonContentPageWidget"
+          },
+          {
+            "name": "teaserContentPageWidget"
+          },
+          {
+            "name": "listOfTeasersContentPageWidget"
+          },
+          {
+            "name": "listOfProductsContentPageWidget"
+          },
+          {
+            "name": "listOfToursContentPageWidget"
+          },
+          {
+            "name": "listOfHotelsContentPageWidget"
+          },
+          {
+            "name": "listOfCarsContentPageWidget"
+          },
+          {
+            "name": "listOfQuickFactsContentPageWidget"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+query itinerary($slug: String!) {
+  tour(slug: $slug, lightweight: false) {
+    id
+    itinerary: itinerary_days {
+      id
+      contentTemplates: content_templates {
+        id
+        name
+        information: description
+        items {
+          id
+          name
+          information: description
+          images {
+            id
+            url: front_url
+          }
+        }
+      }
+    }
+  }
+}

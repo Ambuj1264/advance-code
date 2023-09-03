@@ -1,0 +1,10 @@
+mutation removeCartItemMutation(
+  $cartItemId: String
+) {
+  removeCartItemFromCart(
+    input: { cartItemId: $cartItemId }
+  ) {
+    success
+    message
+  }
+}

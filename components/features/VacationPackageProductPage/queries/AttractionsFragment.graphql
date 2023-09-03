@@ -1,0 +1,40 @@
+fragment AttractionsFragment on GraphCMSAttractionLandingPage {
+  id
+  title
+  type
+  country
+  city
+  address
+  yearlyVisitors
+  inception
+  region
+  architect
+  namedAfter
+  size
+  elevationAboveSea
+  width
+  weight
+  height
+  quickfactsList {
+    quickfacts {
+      id
+      title
+      name {
+        id
+        value
+      }
+      icon(locales: en) {
+        id
+        handle
+      }
+    }
+  }
+  mainImage(locales: en) {
+    id
+    handle
+    caption
+  }
+  reviewScore
+  reviewCount
+  description
+}

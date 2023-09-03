@@ -1,0 +1,19 @@
+query carSearchCategories {
+  carTopTypes {
+    metadata {
+      title
+      subtitle
+    }
+    searchCategories {
+      id
+      name
+      url: front_url
+      image {
+        id
+        url: frontUrl
+        name
+        alt
+      }
+    }
+  }
+}

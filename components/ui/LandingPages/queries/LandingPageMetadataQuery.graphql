@@ -1,0 +1,25 @@
+query LandingPageMetadataQuery(
+  $where: GraphCMSLandingPageWhereInput!
+  $locale: [GraphCMSLocale!]!
+  $stage: GraphCMSStage = DRAFT,
+  $hrefLandLocales: [GraphCMSLocale!] = [en, pl]
+) {
+  metadata: landingPages(where: $where, locales: $locale, stage: $stage) {
+    id
+    metadataId: id
+    metadataTitle
+    metadataDescription
+    image(locales: en) {
+      id
+      handle
+      caption
+    }
+   canonicalUri: metadataUri
+   hreflangs: localizations(locales: $hrefLandLocales, includeCurrent: true) {
+     id: locale
+     hreflangId: id
+     locale
+     uri: metadataUri
+   }
+  }
+}

@@ -1,0 +1,10 @@
+#import "./articleSearchClientDataFragment.graphql"
+
+query articleSearchClientQuery($landing: Boolean, $slug: String) {
+  bestTravelPlans: articleSearchBestTravelPlans(landing: $landing, slug: $slug, limit: 4) {
+    tours {
+      id
+      ...ArticleSearchClientData
+    }
+  }
+}

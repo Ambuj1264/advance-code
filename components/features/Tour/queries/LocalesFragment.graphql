@@ -1,0 +1,6 @@
+fragment LocalesFragment on Query {
+  locales: allActiveLocales {
+    code: id
+    name: native
+  }
+}

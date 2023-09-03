@@ -1,0 +1,11 @@
+query currentCurrency {
+  activeSession: currentSession {
+    id
+    activeCurrency: currentCurrency {
+      id
+      currencyCode: id
+      name
+      rate
+    }
+  }
+}

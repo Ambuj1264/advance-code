@@ -1,0 +1,10 @@
+query LandingPageNLGQuery (
+    $pageType: GraphCMSPageType
+    $pageVariation: GraphCMSPageVariation
+    $website: GraphCMSWebsites
+    $stage: GraphCMSStage = DRAFT
+){
+  nlgContents(where: {pageType: $pageType, pageVariation: $pageVariation, website: $website}, stage: $stage) {
+    id
+  }
+}

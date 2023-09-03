@@ -1,0 +1,8 @@
+query CartTermsOfServiceQueryNew($marketplace: GraphCMSMarketplace!) {
+  cartTermsOfService(where: { marketplace: $marketplace }) {
+    id
+    content {
+      html
+    }
+  }
+}

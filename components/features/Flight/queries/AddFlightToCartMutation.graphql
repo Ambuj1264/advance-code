@@ -1,0 +1,6 @@
+mutation addFlightToCart($input: OrderAddToCartFlightParamsInput) {
+  addFlightToCart(input: $input) {
+    available
+    success
+  }
+}

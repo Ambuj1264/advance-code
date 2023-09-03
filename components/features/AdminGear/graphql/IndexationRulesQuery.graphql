@@ -1,0 +1,11 @@
+query IndexationRulesQuery(
+  $url: String!,
+  $locale: String!,
+) {
+  indexationRule: indexationRuleByURL(url: $url, locale: $locale) {
+    id
+    allowChanging
+    object
+    objectId
+  }
+}

@@ -1,0 +1,49 @@
+#import "./LandingPageStayQueryFragment.graphql"
+query staySectionsQuery(
+  $where: GraphCMSSectionWhereInput
+  $sectionWhere: GraphCMSStaysProductPageWhereInput
+  $locale: [GraphCMSLocale!]!
+  $stage: GraphCMSStage = DRAFT
+  $first: Int
+  $before: String
+  $after: String
+) {
+  sections(where: $where, locales: $locale, stage: $stage) {
+    id
+    displayType
+    sectionType
+    useSubTypeImage
+    useSubTypeTitle
+    sectionAdjective
+    applicationStringTitle {
+      id
+      value
+    }
+    shortTitle: sectionContentTitle {
+      id
+      value
+    }
+  }
+  sectionContent: staysProductPagesConnection(
+    where: $sectionWhere
+    locales: $locale
+    stage: $stage
+    first: $first
+    before: $before
+    after: $after
+    orderBy: combinedRating_DESC
+  ) {
+    edges {
+      cursor
+      node {
+         ...LandingPageStayQueryFragment
+      }
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+  }
+}

@@ -1,0 +1,10 @@
+query GetWeatherQuery($slug: String, $id: Int, $type: WeatherEntityTypes!) {
+    getWeather(slug: $slug, id: $id, type: $type) {
+        id
+        attractionId
+        conditionCode
+        cityName
+        countryName
+        highTemperatureCelsius
+        highTemperatureFahrenheit
+    }}

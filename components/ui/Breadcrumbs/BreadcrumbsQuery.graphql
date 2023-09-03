@@ -1,0 +1,16 @@
+query breadcrumbsQuery(
+  $slug: String
+  $id: Int
+  $type: type
+  $landingPageType: landingPageType
+) {
+  breadcrumbs: breadcrumbList(
+    slug: $slug
+    id: $id
+    type: $type
+    landingPage: $landingPageType
+  ) {
+    name
+    url
+  }
+}

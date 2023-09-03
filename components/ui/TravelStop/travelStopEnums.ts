@@ -1,0 +1,30 @@
+export enum TravelStopDestinationQF {
+  TYPE = "type",
+  COUNTRY = "country",
+  REGION = "region",
+  TIMEZONE = "timezone",
+  SIZE = "size",
+  POPULATION = "population",
+  LANGUAGE = "language",
+  LIFE_EXPECTANCY = "lifeExpectancy",
+  YEARLY_VISITORS = "yearlyVisitors",
+  WEBSITE = "website",
+  ELEVATION_ABOVE_SEA = "elevationAboveSea",
+}
+
+export enum TravelStopAttractionQF {
+  TYPE = "type",
+  COUNTRY = "country",
+  CITY = "city",
+  ADDRESS = "address",
+  YEARLY_VISITORS = "yearlyVisitors",
+  REGION = "region",
+  ARCHITECT = "architect",
+  NAMED_AFTER = "namedAfter",
+  SIZE = "size",
+  ELEVATION_ABOVE_SEA = "elevationAboveSea",
+  WIDTH = "width",
+  WEIGHT = "weight",
+  HEIGHT = "height",
+  INCEPTION = "inception",
+}

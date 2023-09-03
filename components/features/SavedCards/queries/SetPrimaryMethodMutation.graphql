@@ -1,0 +1,9 @@
+#import "./SavedCardsFragment.graphql"
+
+mutation setCardAsPrimary($input: PaymentSetCardAsPrimaryParamsInput!) {
+  setCardAsPrimary(input: $input) {
+    savedCards {
+      ...SavedCardsFragment
+    }
+  }
+}

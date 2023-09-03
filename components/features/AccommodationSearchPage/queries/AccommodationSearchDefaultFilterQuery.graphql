@@ -1,0 +1,15 @@
+query AccommodationSearchDefaultFilterQuery {
+  accommodationSearch: hotelSearchV2(only_available: false) {
+    searchFilters {
+      name
+      iconId
+      isPrefilledFilter
+      options {
+        optionId
+        name
+        count
+        isPrefilled
+      }
+    }
+  }
+}

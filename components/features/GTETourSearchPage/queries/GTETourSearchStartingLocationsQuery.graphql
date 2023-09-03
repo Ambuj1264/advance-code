@@ -1,0 +1,7 @@
+query gteTourSearchStartingLocationsQuery($query: String) {
+  toursAndTicketsLocations(input: { query: $query, limit: 10 }) {
+    locationId
+    name
+    type
+  }
+}

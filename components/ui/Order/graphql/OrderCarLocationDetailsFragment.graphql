@@ -1,0 +1,13 @@
+#import "./OrderCarLocationOpeningHours.graphql"
+fragment OrderCarLocationDetailsFragment on OrderCarCartLocation {
+  address
+  streetNumber
+  cityName
+  postalCode
+  state
+  country
+  phoneNumber
+  openingHours {
+    ...OrderCarLocationOpeningHours
+  }
+}

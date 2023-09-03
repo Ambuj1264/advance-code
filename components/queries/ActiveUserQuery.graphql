@@ -1,0 +1,16 @@
+query activeUser {
+  activeUser: currentUser {
+    id
+    name
+    email
+    countryCode
+    avatarImage: face_image {
+      id
+      url: front_url
+    }
+    roles {
+      id
+    }
+  }
+  cartItemCount
+}

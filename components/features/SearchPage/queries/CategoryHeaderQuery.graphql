@@ -1,0 +1,14 @@
+query CategeryHeaderQuery($slug: String) {
+  tourCategoryHeader(slug: $slug) {
+    id,
+    name,
+    tours,
+    description,
+    url,
+    imageUrl,
+    averageReviewScore,
+    reviewCount,
+    pageAboutTitle,
+    pageAboutDescription
+  }
+}

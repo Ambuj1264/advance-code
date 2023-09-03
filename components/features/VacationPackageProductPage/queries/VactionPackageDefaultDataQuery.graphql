@@ -1,0 +1,22 @@
+query VacationPackageDefaultDataQuery(
+  $where: GraphCMSVacationPackagesProductPageWhereInput
+  $locale: [GraphCMSLocale!]!
+  $stage: GraphCMSStage = DRAFT
+) {
+  vacationPackagesProductPages(where: $where, locales: $locale, stage: $stage) {
+    id
+    cheapestMonth
+    days
+    endPlace(locales: $locale) {
+      id
+      country {
+        id: alpha2Code
+        alpha2Code
+        name {
+          id
+          value
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+#import "components/ui/Order/graphql/StaysCartFragment.graphql"
+query CurrentStaysCartQuery($cartId: String) {
+  cart(input: { cartId: $cartId }) {
+    stays {
+      ...StaysCartFragment
+    }
+  }
+}

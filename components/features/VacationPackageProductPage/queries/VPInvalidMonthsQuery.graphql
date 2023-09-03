@@ -1,0 +1,6 @@
+query vpInvalidMonths($id: String!) {
+	invalidMonths(id: $id) {
+		from,
+		to
+	}
+}

@@ -1,0 +1,7 @@
+fragment PaymentLinkMutationFragment on OrderPayForPayForLinkResult {
+  success
+  resultCode
+  refusalReason
+  paymentProvider
+  jsonAction
+}

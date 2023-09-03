@@ -1,0 +1,7 @@
+fragment OrderInfoFragment on OrderInfo {
+  id: orderStatus
+  orderStatus
+  paymentMethod
+  paymentCurrency
+  paymentAmount
+}

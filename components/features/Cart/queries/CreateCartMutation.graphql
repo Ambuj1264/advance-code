@@ -1,0 +1,5 @@
+mutation createCartMutation($input: OrderCreateCartParamsInput!) {
+  createCart(input: $input) {
+    success
+  }
+}

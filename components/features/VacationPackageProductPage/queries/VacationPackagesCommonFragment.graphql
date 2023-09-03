@@ -1,0 +1,40 @@
+fragment VacationPackagesCommonData on GraphCMSVacationPackagesProductPage {
+  id
+  title
+  fromPrice
+  images(locales: en) {
+    id
+    handle
+    caption
+  }
+  cheapestMonth
+  startsIn
+  endsIn
+  available
+  reviewCount
+  reviewScore
+  valuePropsList {
+    valueProps(first: 4) {
+      id
+      title
+      icon(locales: [en] ) {
+        id
+        handle
+        svgAsString @client
+      }
+    }
+  }
+  includedList {
+    includedItems{
+      id: includedItemId
+      title
+      icon(locales: [en] ) {
+        id
+        handle
+      }
+    }
+  }
+  subType {
+    subtype
+  }
+}

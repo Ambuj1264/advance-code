@@ -1,0 +1,32 @@
+#import "./VacationPackagesSearchNodeFragment.graphql"
+
+query vacationPackagesSectionSearch(
+  $input: VacationPackageSearchInputV2Input
+  $where: GraphCMSSectionWhereInput
+  $locale: [GraphCMSLocale!]!
+  $stage: GraphCMSStage = DRAFT
+) {
+  sections(where: $where, locales: $locale, stage: $stage) {
+    id
+    displayType
+    sectionType
+    useSubTypeImage
+    useSubTypeTitle
+    applicationStringTitle {
+      value
+    }
+    sectionAdjective
+    shortTitle: sectionContentTitle {
+      id
+      value
+    }
+  }
+  vacationPackages: vacationPackageSections(
+    input: $input
+  ) {
+    totalCount
+    nodes: vacationPackages {
+      ...VacationPackagesSearchNodeFragment
+    }
+  }
+}

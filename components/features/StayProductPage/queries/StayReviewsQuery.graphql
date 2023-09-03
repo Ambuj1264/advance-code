@@ -1,0 +1,14 @@
+query StayReviewsQuery($productId: Int!, $language: String) {
+  staysProductReviews(request: { productId: $productId, language: $language }) {
+    locales
+    reviews {
+      authorName
+      language
+      profilePhotoUrl
+      rating
+      text
+      relativeTimeDescription
+      time
+    }
+  }
+}

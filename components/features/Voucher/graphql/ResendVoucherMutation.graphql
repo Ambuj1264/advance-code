@@ -1,0 +1,5 @@
+mutation resendVoucher($email: String!, $voucherId: String!) {
+  resendVoucher(input: {emailAddress: $email, voucherId: $voucherId}) {
+    success
+  }
+}

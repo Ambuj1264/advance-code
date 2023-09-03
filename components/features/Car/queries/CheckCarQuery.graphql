@@ -1,0 +1,9 @@
+query checkCarOffer($input: CarGetSingleOfferInput!) {
+  carOffer: carGetSingleOffer(input: $input) {
+    offer {
+        carInfo {
+            unavailable
+        }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+query publishStayProductPage (
+  $productId: Int!
+) {
+  publishProductPage(parameters: {
+      productId: $productId,
+  }) {
+    success
+    errorMessage
+  }
+}

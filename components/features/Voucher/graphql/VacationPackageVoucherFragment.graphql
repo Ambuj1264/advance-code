@@ -1,0 +1,63 @@
+#import "./FlightVoucherProductFragment.graphql"
+#import "./CarsVoucherProductFragment.graphql"
+#import "./GTEStaysVoucherProductFragment.graphql"
+#import "./StaysVoucherProductFragment.graphql"
+#import "./GTETourVoucherProductFragment.graphql"
+
+fragment VacationPackageVoucherFragment on OrderVacationPackageVoucher {
+  id: internalId
+  bookingNumber: internalId
+  externalId
+  bookingDate
+  editableStatus
+  price
+  vatAmount
+  voucherPriceObjects: priceDatas {
+    priceObject: priceData {
+      price
+      currency
+      priceDisplayValue: displayValue
+    }
+    vatPriceObject: vatPriceData {
+      price
+      currency
+      priceDisplayValue: displayValue
+    }
+  }
+  vatPercentage
+  cart {
+    id
+    title
+    cartItemId
+    totalPrice
+    imageUrl
+    currency
+    discountAmount
+    # TODO - enable once discount price data is provided by backend
+    # discountAmountPriceObject: discountPriceData {
+    #   price
+    #   currency
+    #   priceDisplayValue: displayValue
+    # }
+    discountPercentage
+    startPlace
+    endPlace
+    from
+    to
+  }
+  flights {
+    ...FlightVoucherProductFragment
+  }
+  cars {
+    ...CarsVoucherProductFragment
+  }
+  gteStays: stayProducts {
+    ...GTEStaysVoucherProductFragment
+  }
+  stays {
+    ...StaysVoucherProductFragment
+  }
+  toursAndTickets {
+    ...GTETourVoucherProductFragment
+  }
+}

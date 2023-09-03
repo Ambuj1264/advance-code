@@ -1,0 +1,39 @@
+query stayQuery (
+  $where: GraphCMSStaysProductPageWhereInput
+  $locale: [GraphCMSLocale!]!
+  $stage: GraphCMSStage = DRAFT
+) {
+  staysProductPages(where: $where, locales: $locale, stage: $stage) {
+    id
+    title
+    location {
+      latitude
+      longitude
+    }
+    starClass
+    placeId
+    productId: stayProductId
+    breadcrumbs
+    metadataUri
+    fromPrice
+    place {
+      id
+      name: nameNew (locales: $locale) {
+        id
+        value
+      }
+      alpha2Code
+      countries {
+        id
+        name: nameNew {
+          id
+          value
+        }
+        alpha2Code
+      }
+    }
+    cityOsmId
+    countryOsmId
+    isIndexed
+  }
+}

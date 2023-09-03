@@ -1,0 +1,33 @@
+query TGTopDestinationsQuery($input: DestinationTravelGuidesInput! $where: TravelGuideDestinationDtoFilterInput) {
+  travelGuidesDestinations(input: $input) {
+    destinations(where: $where){
+    	id
+      name
+      countryCode
+      description
+      url
+      countryName
+      flagImageHandle
+      coverImageHandle
+      reviewCount
+      reviewScore
+      location {
+        latitude
+        longitude
+      }
+      isCapital
+  	}
+    filters{
+      countries: countryFilter {
+          id
+          name
+          available
+        }
+        cities: cityFilter {
+          id
+          name
+        }
+    }
+    totalPages
+  }
+}

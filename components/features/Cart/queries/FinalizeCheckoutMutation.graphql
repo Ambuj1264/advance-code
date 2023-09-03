@@ -1,0 +1,17 @@
+mutation finalizeCheckoutMutation($input: OrderFinalizeCheckoutParamsInput) {
+  finalizeCheckout(input: $input) {
+    success
+    message
+    refusalReason
+    voucherId
+    resultCode
+    bookedProducts {
+      cartItemId
+      revenue
+      currency
+    }
+    paymentProvider
+    forgotPasswordUrl
+    userCreated
+  }
+}

@@ -1,0 +1,23 @@
+query getGTETourReviews($input: ToursProductReviewInput!) {
+  toursAndTicketsSingleProductReviews(input: $input) {
+    totalReviews
+    availableLanguages
+    reviews {
+      id
+      language
+      createdDate: publishDate
+      avatarUrl
+      username
+      rating
+      text
+      title
+      helpfulVotes
+      ownerResponse {
+        createdDate: publishDate
+        username
+        avatarUrl
+        text
+      }
+    }
+  }
+}

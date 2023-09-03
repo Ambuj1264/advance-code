@@ -1,0 +1,20 @@
+query hotelSerchCategories($type: String!, $slug: String!) {
+  getHotelSearchCategories(type: $type, slug: $slug) {
+    metadata {
+      title
+      subtitle
+    }
+    categories {
+      id
+      name
+      url: front_url
+      bindCity
+      image {
+        id
+        url: front_url
+        name
+        alt
+      }
+    }
+  }
+}

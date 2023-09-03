@@ -1,0 +1,12 @@
+query publishStayCityPage (
+  $cityOsmId: Int!,
+  $productType: StaysNlgStaysProductType
+) {
+  publishCityPage(parameters: {
+      cityOsmId: $cityOsmId,
+      productType: $productType,
+  }) {
+    success
+    errorMessage
+  }
+}

@@ -1,0 +1,32 @@
+#import "../../../ui/Order/graphql/CarCartFragment.graphql"
+
+fragment CarsVoucherProductFragment on OrderCarVoucher {
+  id: internalId
+  bookingNumber: internalId
+  externalId
+  bookingDate
+  bookingDate
+  editableStatus
+  accountingNumber
+  rateCode
+  aVNumber
+  iata
+  vendorBookingReference
+  vatAmount
+  voucherPriceObjects: priceDatas {
+    priceObject: priceData {
+      price
+      currency
+      priceDisplayValue: displayValue
+    }
+    vatPriceObject: vatPriceData {
+      price
+      currency
+      priceDisplayValue: displayValue
+    }
+  }
+  vatPercentage
+  cart {
+    ...CarCartFragment
+  }
+}

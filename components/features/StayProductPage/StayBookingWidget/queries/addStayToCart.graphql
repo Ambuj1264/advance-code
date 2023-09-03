@@ -1,0 +1,6 @@
+mutation addStayToCart($input: OrderAddStayProductToCartInput!) {
+  addStayProductToCart(input: $input) {
+    success
+    message
+  }
+}

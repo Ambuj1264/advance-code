@@ -1,0 +1,19 @@
+#import "./CommonVoucherFragment.graphql"
+#import "./GTETourVoucherProductFragment.graphql"
+#import "./GTEStaysVoucherProductFragment.graphql"
+#import "./VacationPackageVoucherFragment.graphql"
+
+query gteVoucherQuery($voucherId: String!) {
+  voucher(input: { voucherId: $voucherId }) {
+    ...CommonVoucherFragment
+    toursAndTickets {
+      ...GTETourVoucherProductFragment
+    }
+    gteStays: stayProducts {
+      ...GTEStaysVoucherProductFragment
+    }
+    vacationPackages {
+      ...VacationPackageVoucherFragment
+    }
+  }
+}

@@ -1,0 +1,17 @@
+query landingPageFAQQuery(
+  $where: GraphCMSLandingPageWhereInput
+  $locale: [GraphCMSLocale!]!
+  $stage: GraphCMSStage = DRAFT
+) {
+  landingPages(where: $where, locales: $locale, stage: $stage) {
+    id
+    title
+    uniqueId
+    faqs
+    faqItems {
+      id
+      question
+      answer
+    }
+  }
+}

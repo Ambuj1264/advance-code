@@ -1,0 +1,34 @@
+query similarAvailabilityQuery (
+    $input: SimilarStaysInput!
+) {
+  similarStaysProducts(input: $input) {
+    cards {
+      id: productId
+      name
+      productPageUrl
+      userRatingAverage: userRatingAverageOutOf5
+      userRatingsTotal
+      price {
+        priceDisplayValue: displayValue
+        price
+        currency
+      }
+      image {
+        id: handle
+        caption
+        handle
+      }
+      quickfacts: quickFacts {
+        breakfast
+        distanceFromCityCenter
+        hotelStarRating
+        parking
+        productType
+        timeOfCheckIn
+        timeOfCheckOut
+        wirelessInternet
+      }
+      valueProps: valueProperties
+    }
+  }
+}

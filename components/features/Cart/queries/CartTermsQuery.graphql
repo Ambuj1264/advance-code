@@ -1,0 +1,7 @@
+query cartTermsQuery {
+  frontCartTerms {
+    page {
+      content
+    }
+  }
+}

@@ -1,0 +1,36 @@
+query TGLandingPageQuery($where: GraphCMSBestPlacesCategoryPageWhereInput $stage: GraphCMSStage = DRAFT ) {
+  bestPlacesCategoryPages(where: $where, stage: $stage) {
+    id
+    place {
+      alpha2Code
+      name: nameNew {
+        id
+        value
+      }
+      mainImage {
+        id
+        handle
+        height
+        width
+        caption
+      }
+      countries {
+        id
+        name: nameNew {
+          id
+          value
+        }
+        alpha2Code
+      }
+    }
+    metadataTitle
+    metadataDescription
+    breadcrumbs {
+      metadataUri
+      title
+    }
+    title
+    uniqueId
+    type
+  }
+}

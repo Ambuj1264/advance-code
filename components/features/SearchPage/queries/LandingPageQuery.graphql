@@ -1,0 +1,44 @@
+#import "./TourServerDataFragment.graphql"
+#import "./TourSearchFiltersFragment.graphql"
+
+query tourLandingPageQuery {
+  topToursSearch {
+    metadata {
+      title
+      subtitle
+    }
+    tours {
+      id
+     ...ServerData
+    }
+
+  }
+
+  tourSearch {
+    defaultFilters: filterOptions {
+      ...Filters
+    }
+  }
+
+  newestToursSearch {
+    metadata {
+      title
+      subtitle
+    }
+    tours {
+      id
+      ...ServerData
+    }
+  }
+
+  topHolidayToursSearch {
+    metadata {
+      title
+      subtitle
+    }
+    tours {
+      id
+      ...ServerData
+    }
+  }
+}

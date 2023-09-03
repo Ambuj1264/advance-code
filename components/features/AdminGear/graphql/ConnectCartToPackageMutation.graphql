@@ -1,0 +1,6 @@
+mutation connectCartToMonolithPackage($input: OrderConnectCartToPackageParamsInput!) {
+  connectCartToPackage(input: $input) {
+    success
+    refusalReason
+  }
+}

@@ -1,0 +1,5 @@
+query purgeEdgeCacheQuery($surrogateKeys: [String], $paths: [String], $environment: String!) {
+	purgeEdgeCache(surrogateKeys: $surrogateKeys, paths: $paths, environment: $environment) {
+    success
+  }
+}

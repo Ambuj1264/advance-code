@@ -1,0 +1,10 @@
+fragment ArticleSearchClientData on Tour {
+  banner {
+    text
+    class: css_class
+  }
+  basePrice: base_price
+  price {
+    display_price
+  }
+}

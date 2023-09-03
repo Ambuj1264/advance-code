@@ -1,0 +1,33 @@
+query topCars($slug: String!) {
+  carSearchCategoryByUri(uri: $slug) {
+    id
+    metadata {
+        title
+        subtitle
+    }
+    cars(limit: 3) {
+      id
+      name
+      category: categoryString
+      seats
+      automatic
+      bags: luggage
+      image {
+        id
+        url: front_url
+        name
+        alt
+      }
+      establishment {
+        name
+        image: face_image {
+          id
+          url: front_url
+          name: alt
+        }
+        reviewTotalScore: reviews_average_formatted
+        reviewTotalCount: reviews_count
+      }
+    }
+  }
+}

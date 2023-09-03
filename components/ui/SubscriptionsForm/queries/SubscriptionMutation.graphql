@@ -1,0 +1,6 @@
+mutation SubscriptionMutation($email: String!, $type: String!) {
+    subscribe (email: $email, type: $type) {
+        status
+        errorMessages
+    }
+}

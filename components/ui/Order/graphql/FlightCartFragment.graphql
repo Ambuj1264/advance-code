@@ -1,0 +1,94 @@
+fragment FlightCartFragment on OrderFlightCartInfo {
+  id
+  bookingToken
+  title
+  cartItemId
+  available
+  adults
+  children
+  infants
+  numberOfPassengers
+  nightsInDestination
+  inboundDurationSec
+  outboundDurationSec
+  numberOfPassengers
+  totalDurationSec
+  baggage {
+    id: category
+    category
+    price
+    length
+    width
+    height
+    count
+    weight
+  }
+  isEditable: editable
+  expiredTime
+  price: totalPrice
+  outboundRoute {
+    airline {
+      code
+      name
+      imageUrl
+    }
+    bagsRecheckRequired
+    cityFrom {
+      code
+      name
+    }
+    cityTo {
+      code
+      name
+    }
+    flightClass: fareCategory
+    flightNumber
+    flyFrom {
+      code
+      name
+    }
+    flyTo {
+      code
+      name
+    }
+    layOverSec
+    durationSec
+    localArrival: localArrivalNoTimeZone
+    localDeparture: localDepartureNoTimeZone
+  }
+  inboundRoute {
+    airline {
+      code
+      name
+      imageUrl
+    }
+    bagsRecheckRequired
+    cityFrom {
+      code
+      name
+    }
+    cityTo {
+      code
+      name
+    }
+    flightClass: fareCategory
+    flightNumber
+    flyFrom {
+      code
+      name
+    }
+    flyTo {
+      code
+      name
+    }
+    layOverSec
+    durationSec
+    localArrival: localArrivalNoTimeZone
+    localDeparture: localDepartureNoTimeZone
+  }
+  priceObject: priceData {
+    price
+    currency
+    priceDisplayValue: displayValue
+  }
+}

@@ -1,0 +1,9 @@
+#import "./SavedCardsFragment.graphql"
+
+query getUserCards {
+  userCards {
+    savedCards {
+      ...SavedCardsFragment
+    }
+  }
+}

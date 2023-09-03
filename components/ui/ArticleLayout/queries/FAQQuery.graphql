@@ -1,0 +1,8 @@
+query getFAQArticles ($pageType: pageType!, $slug: String!) {
+  getFaq (pageType: $pageType, slug: $slug) {
+    questions {
+      question
+      answer
+    }
+  }
+}

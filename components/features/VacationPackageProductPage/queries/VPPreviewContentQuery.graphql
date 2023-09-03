@@ -1,0 +1,9 @@
+query VPPreviewContentQuery(
+  $where: GraphCMSPreviewVpProductPageWhereUniqueInput!
+  $stage: GraphCMSStage = DRAFT
+) {
+  cartLink: route(name: "cart", function: "index")
+  previewVpProductPage(where: $where, stage: $stage) {
+    data
+  }
+}

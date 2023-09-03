@@ -1,0 +1,21 @@
+#import "../../Tour/queries/ReviewsFragment.graphql"
+query reviews(
+  $slug: String
+  $id: Int
+  $type: String!
+  $localeFilter: String
+  $scoreFilter: Int
+  $page: Int
+) {
+  reviews(
+    itemType: $type
+    itemId: $id
+    itemSlug: $slug
+    locale: $localeFilter
+    rating: $scoreFilter
+    page: $page
+    topReviewsOverwrite: true
+  ) {
+    ...ReviewsFragment
+  }
+}

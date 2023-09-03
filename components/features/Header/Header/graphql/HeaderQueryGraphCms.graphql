@@ -1,0 +1,27 @@
+query HeaderQueryGraphCms(
+  $locale: [GraphCMSLocale!]!
+  $url: String
+) {
+  marketplaceConfig(where: {url: $url}, stage: DRAFT, locales: $locale) {
+    id
+    headerConfig {
+      id
+      currencies {
+        id
+        name
+        currencyCode
+      }
+      locales: activeLocales {
+        id
+        code
+        name
+      }
+      links: headerLinks {
+        id
+        text: title
+        url
+        pageType
+      }
+    }
+  }
+}

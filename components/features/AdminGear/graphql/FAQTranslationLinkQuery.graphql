@@ -1,0 +1,6 @@
+query getFAQTranslationLink ($landingPage: landingPage, $pageType: pageType, $slug: String) {
+  getFaq(landingPage: $landingPage, pageType: $pageType, slug: $slug) {
+    faqID: id
+    translationLink
+  }
+}

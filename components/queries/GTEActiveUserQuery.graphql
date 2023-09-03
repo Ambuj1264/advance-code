@@ -1,0 +1,13 @@
+query getProfile {
+  userProfile {
+    name
+    email
+    locale
+    nationality
+    picture
+    imageHandle
+    userRoles
+    phone
+  }
+  cartItemCount
+}

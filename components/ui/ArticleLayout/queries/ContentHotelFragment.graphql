@@ -1,0 +1,26 @@
+fragment ContentHotelFragment on Hotel {
+  id
+  name
+  linkUrl: url
+  slug: uri
+  averageRating: review_score
+  review_score_formatted
+  reviewsCount: review_count
+  stars
+  price: min_price
+  image {
+    id
+    url: frontUrl
+    name
+    alt
+  }
+  specs {
+    iconId: id
+    name
+    value
+  }
+  props {
+    iconId: id
+    title
+  }
+}

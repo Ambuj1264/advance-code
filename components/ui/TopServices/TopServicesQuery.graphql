@@ -1,0 +1,23 @@
+query topServicesQuery {
+  settings {
+    frontTopServices: frontTopCategories {
+      metadata {
+        title
+        subtitle
+      }
+      categories {
+        id: title
+        title
+        uri
+        image {
+          id
+          url: frontUrl
+          name
+          alt
+        }
+        isLegacy
+        pageType
+      }
+    }
+  }
+}

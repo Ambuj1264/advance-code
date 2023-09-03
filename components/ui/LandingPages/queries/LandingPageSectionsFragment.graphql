@@ -1,0 +1,73 @@
+fragment LandingPageSectionsFragment on GraphCMSSection {
+  id
+  displayType
+  sectionType
+  useSubTypeImage
+  useSubTypeTitle
+  useGoogleStaticImage
+  sectionAdjective
+  applicationStringTitle {
+    id
+    value
+  }
+  shortTitle: sectionContentTitle {
+    id
+    value
+  }
+}
+
+fragment SectionContentFragment on GraphCMSLandingPage {
+   id
+   title
+   linkUrl: metadataUri
+   slug
+   destinationNumberOfPlaces
+   pageType
+   pageVariation
+   staticMap (locales: en) {
+     id
+     handle
+     caption
+   }
+   destination {
+     ...LandingPageSectionContentPlaceFragmentWithOptionalFields
+     images(locales: en) {
+      id
+      handle
+      caption
+    }
+   }
+   origin {
+     ...LandingPageSectionContentPlaceFragmentWithOptionalFields
+   }
+   subType(locales: en) {
+     id
+     subtype
+     name(locales: $locale) {
+       value
+     }
+     pluralName(locales: $locale) {
+       value
+     }
+     parentSubType {
+       name {
+         value
+       }
+       pluralName {
+         value
+       }
+     }
+     typeImage(locales: en) {
+       id
+       handle
+       caption
+     }
+     subTypeModifiers {
+      modifierType
+      modifierTitle {
+        value
+      }
+     }
+   }
+
+}

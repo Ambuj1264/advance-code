@@ -1,0 +1,142 @@
+#import "./ContentTourFragment.graphql"
+#import "./ContentHotelFragment.graphql"
+#import "./ContentCarFragment.graphql"
+
+fragment TeaserContentPageFragment on Teaser {
+  id: orm_id
+  ormName: orm_name
+  action
+  url
+  title
+  variant
+  description
+  subtitle: distance_text
+  image {
+    id
+    url: front_url
+    name
+  }
+  duration
+  reviewsCount
+  reviewScore
+  isGoogleReview
+  minAge
+  price
+}
+
+fragment ContentWidgetsFragment on contentPageWidgets {
+  ... on htmlContentPageWidget {
+    type
+    data {
+      value
+    }
+  }
+  ... on jsonContentPageWidget {
+    type,
+    value
+  }
+  ... on contentPageTableOfContents {
+    type
+    data {
+      tableOfContentsList {
+        value
+        link
+        level
+        firstImageUrl
+      }
+    }
+  }
+  ... on teaserContentPageWidget {
+    type,
+    data {
+      ...TeaserContentPageFragment
+    }
+  }
+  ... on listOfTeasersContentPageWidget {
+    type
+    data {
+      icon
+      title
+      titleLink
+      variant
+      teasers {
+        ...TeaserContentPageFragment
+      }
+    }
+  }
+... on listOfToursContentPageWidget {
+    type
+    data {
+      title
+      titleLink
+      icon
+      variant
+      listOfTours {
+        ...ContentTourFragment
+      }
+    }
+  }
+  ... on listOfHotelsContentPageWidget {
+    type
+    data {
+      title
+      titleLink
+      icon
+      variant
+      listOfHotels {
+        ...ContentHotelFragment
+      }
+    }
+  }
+  ... on listOfCarsContentPageWidget {
+    type
+    data {
+      title
+      titleLink
+      icon
+      variant
+      listOfCars {
+        ...ContentCarFragment
+      }
+    }
+  }
+  ... on listOfProductsContentPageWidget {
+    type,
+    data {
+      title,
+      titleLink,
+      icon,
+      variant,
+      tours {
+        limit
+        categories
+      }
+      cars {
+        limit
+        categories
+      }
+      blogs {
+        limit
+        categories
+      }
+      articles {
+        limit
+        categories
+      }
+    }
+  }
+   ... on listOfQuickFactsContentPageWidget {
+    type
+    data {
+      title
+      icon
+      variant
+      listOfQuickFacts {
+        id
+        quickfactField
+        name: title
+        value
+      }
+    }
+  }
+}

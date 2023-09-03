@@ -1,0 +1,37 @@
+#import "components/ui/LandingPages/queries/LandingPageContentPlaceNameFragment.graphql"
+query gteTourLandingPageQuery(
+  $where: GraphCMSLandingPageWhereInput
+  $locale: [GraphCMSLocale!]!
+  $stage: GraphCMSStage = DRAFT
+) {
+  landingPages(where: $where, locales: $locale, stage: $stage) {
+    id
+    uniqueId
+    title
+    subtitle
+    pageVariation
+    pageType
+    image(locales: en) {
+      id
+      caption
+      handle
+      videoId
+      videoStartingTime
+      videoEndTime
+    }
+    destination {
+      id
+      tourId
+      alpha2Code
+      ...LandingPageContentPlaceNameFragment
+    }
+    subType {
+      id
+      subtype
+      tagId
+      parentSubType {
+        subtype
+      }
+    }
+  }
+}

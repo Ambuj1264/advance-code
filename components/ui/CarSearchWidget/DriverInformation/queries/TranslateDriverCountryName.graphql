@@ -1,0 +1,13 @@
+query translateDriverCountryName($countryCode: String!, $locale: [GraphCMSLocale!]! ) {
+  getCountryList: place(
+    where: { alpha2Code: $countryCode }
+    stage: DRAFT
+    locales: $locale
+  ) {
+    id
+    name: nameNew {
+      id
+      value
+    }
+  }
+}

@@ -1,0 +1,7 @@
+query AutocompleteStaysQuery($text: String) {
+  autoCompletePlaces(text: $text, searchType: "hotel", limit: 10) {
+    id
+    name
+    type
+  }
+}

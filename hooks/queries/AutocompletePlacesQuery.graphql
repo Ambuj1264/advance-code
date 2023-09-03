@@ -1,0 +1,9 @@
+query autoCompletePlacesQuery($countryCode: String!, $searchValue: String!, $sessionToken: String, $isNeedFilterResults: Boolean ) {
+  getAutoCompletePlaces(countryCode: $countryCode, searchValue: $searchValue, sessionToken: $sessionToken, isNeedFilterResults: $isNeedFilterResults) {
+    places {
+      id
+      name
+      types
+    }
+  }
+}

@@ -1,0 +1,21 @@
+#import "./GTIVpOptionsFragment.graphql"
+query GTIVpPriceQuery(
+  $slug: String!
+  $startDate: String
+  $travelers: Int!
+  $childrenAges: [Int]
+  $isCachedPrice: Boolean!
+  $priceDataType: priceDataType!
+) {
+  monolithVacationPackage(
+    slug: $slug
+    startDate: $startDate
+    travelers: $travelers
+    childrenAges: $childrenAges
+    isCachedPrice: $isCachedPrice
+    priceDataType: $priceDataType
+  ) {
+    uuid
+    ...GTIVpOptionsData
+  }
+}

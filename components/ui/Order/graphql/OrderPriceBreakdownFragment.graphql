@@ -1,0 +1,29 @@
+fragment OrderPriceBreakdownFragment on OrderCartPriceBreakdown {
+  id
+  name
+  currency
+  quantity
+  pricePerUnit
+  pricePerUnitDisplay
+  totalPrice
+  totalPriceDisplay
+  isMinAmount
+  isMaxAmount
+  includeInBasePrice
+  type
+  translationKeys {
+    keys {
+      key
+      variables {
+        key
+        value
+      }
+    }
+  }
+
+  priceObject: priceData {
+    price
+    currency
+    priceDisplayValue: displayValue
+  }
+}

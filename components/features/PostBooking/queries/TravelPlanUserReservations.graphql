@@ -1,0 +1,34 @@
+#import "./CardFragment.graphql"
+query travelPlanUserReservations {
+  userReservations: userReservationsV2 {
+    reservationCards {
+      ...CardFragment
+    }
+    vacationPackages {
+      title
+      card {
+        id
+        cardType
+        name
+        bookingId
+        orderId
+        isExpired
+        imageHandle
+        imageUrl
+        numberOfTravelers
+        numberOfAdults
+        numberOfChildren
+        numberOfInfants
+        numberOfStayNights
+        dateOfVacationEnd
+        dateOfVacationStart
+        hasFlights
+        hasCarRentals
+      }
+      reservationCards {
+        ...CardFragment
+      }
+    }
+  }
+}
+

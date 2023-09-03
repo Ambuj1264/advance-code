@@ -1,0 +1,22 @@
+#import "../../Cart/queries/PaymentProvidersFragment.graphql"
+#import "../../Cart/queries/CartFragment.graphql"
+#import "./PaymentLinkFragment.graphql"
+
+query payByLinkWithPaymentProvidersQuery(
+  $payByLinkId: String!
+  $currencyCode: String!
+) {
+  payByLinkWithPaymentProviders(
+    input: { payByLinkId: $payByLinkId, currency: $currencyCode }
+  ) {
+    payByLink {
+      ...PaymentLinkFragment
+      cart {
+        ...CartFragment
+      }
+    }
+    paymentProviderSettings {
+      ...PaymentProvidersFragment
+    }
+  }
+}

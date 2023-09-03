@@ -1,0 +1,54 @@
+query GetProfile {
+  userProfile {
+    name
+    firstName
+    lastName
+    birthDate
+    email
+    phone
+    locale
+    picture
+    imageHandle
+    gender
+    nationality
+    passport {
+      number
+      expirationDate
+      noExpiration
+    }
+    frequentTravelers {
+      id
+      relation
+      firstName
+      lastName
+      birthDate
+      email
+      phone
+      picture
+      imageHandle
+      nationality
+      gender
+      passport {
+        number
+        expirationDate
+        noExpiration
+      }
+    }
+    preferences {
+      travelStyles {
+        id
+      }
+      interests {
+        id
+      }
+      budget {
+        minimum
+        maximum
+        currency
+      }
+    }
+    profileData {
+      cardOnFile
+    }
+  }
+}

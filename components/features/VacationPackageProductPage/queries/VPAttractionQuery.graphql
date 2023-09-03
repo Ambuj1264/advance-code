@@ -1,0 +1,14 @@
+#import "./AttractionsFragment.graphql"
+query VPAttraction(
+  $where: GraphCMSAttractionLandingPageWhereUniqueInput!
+  $locale: [GraphCMSLocale!]! = [en]
+  $stage: GraphCMSStage = DRAFT
+) {
+    attractionLandingPage(where: $where, locales: $locale, stage: $stage) {
+      location {
+        latitude
+        longitude
+      }
+      ...AttractionsFragment
+    }
+}

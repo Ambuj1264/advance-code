@@ -1,0 +1,121 @@
+query vpFlight(
+  $requestId: String!
+  $vacationPackageId: String!
+  $adults: Int!
+  $children: Int!
+  $infants: Int!
+  $departureTime: VacationPackageDateTime!
+  $flyFrom: String!
+  $cabinType: String
+  $flightType: String
+  $preFetchRequestId: String
+  $usePrefetch: Boolean
+){
+  vacationPackageFlightSearch(
+    input: {
+      requestId: $requestId
+      vacationPackageId: $vacationPackageId
+      adults: $adults
+      children: $children
+      infants: $infants
+      departureTime: $departureTime
+      flyFrom: $flyFrom
+      cabinType: $cabinType
+      flightType: $flightType
+      preFetchRequestId: $preFetchRequestId,
+      usePrefetch: $usePrefetch
+    }
+  )
+  {
+    searchId
+    resultCount
+    filters {
+      price {
+        count
+        minValue
+        maxValue
+      }
+      durationSec {
+        count
+        minValue
+        maxValue
+      }
+      lengthOfLayoverSec {
+        count
+        minValue
+        maxValue
+      }
+    }
+    itineraries {
+      selected
+      nightsInDestination
+      bookingToken
+      inboundDurationSec
+      outboundDurationSec
+      totalDurationSec
+      price
+      outboundRoute {
+        airline {
+          code
+          name
+          imageUrl
+        }
+        cityFrom {
+          code
+          name
+        }
+        cityTo {
+          code
+          name
+        }
+        bagsRecheckRequired
+        guarantee
+        flightClass: fareCategory
+        flightNumber
+        flyFrom {
+          code
+          name
+        }
+        flyTo {
+          code
+          name
+        }
+        layOverSec
+        durationSec
+        localArrival
+        localDeparture
+      }
+      inboundRoute {
+        airline {
+          code
+          name
+          imageUrl
+        }
+        cityFrom {
+          code
+          name
+        }
+        cityTo {
+          code
+          name
+        }
+        bagsRecheckRequired
+        guarantee
+        flightClass: fareCategory
+        flightNumber
+        flyFrom {
+          code
+          name
+        }
+        flyTo {
+          code
+          name
+        }
+        layOverSec
+        durationSec
+        localArrival
+        localDeparture
+      }
+    }
+  }
+}

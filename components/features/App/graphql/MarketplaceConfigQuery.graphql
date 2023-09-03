@@ -1,0 +1,25 @@
+query marketplaceConfigQuery($url: String!) {
+  marketplaceConfig(where: {url: $url}, stage: DRAFT) {
+    id
+    adminUrl
+    baiduApiKey
+    contactEmail
+    cookiebotId
+    countryCode
+    createdAt
+    facebookAppId
+    facebookPixelId
+    googleApiKey
+    googleClientId
+    googleTagManagerId
+    id
+    imageHostingUrl
+    isGoogleOneTapLoginEnabled
+    marketplace: marketplaceId
+    marketplaceCurrency
+    newGoogleTagManagerId
+    theme
+    url
+    websiteName
+  }
+}

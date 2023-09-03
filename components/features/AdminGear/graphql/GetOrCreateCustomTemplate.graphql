@@ -1,0 +1,5 @@
+query GetorCreateCustomTemplate($request: TravelplanGetOrCreateCustomTemplateRequestInput) {
+  orCreateCustomTemplate(request: $request) {
+    url
+  }
+}

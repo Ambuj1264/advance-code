@@ -1,0 +1,9 @@
+#import "./TourClientDataFragment.graphql"
+query CategoryLandingPageClientQuery($filters: TourSearchFilters) {
+    tourSearch(filters: $filters) {
+      tours {
+        id
+        ...ClientData
+      }
+    }
+}

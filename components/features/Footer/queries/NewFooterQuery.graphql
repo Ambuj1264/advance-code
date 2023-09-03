@@ -1,0 +1,18 @@
+query newFooterQuery($marketplaceUrl: String!, $locale: GraphCMSLocales = en) {
+  footers(where: { marketplaceUrl: $marketplaceUrl, footerLocale: $locale }, stage: DRAFT) {
+    id
+    columns: footerColumns {
+      id
+      sections: footerSections {
+        id
+        title
+        items: footerItems {
+          id
+          text
+          type
+          url
+        }
+      }
+    }
+  }
+}

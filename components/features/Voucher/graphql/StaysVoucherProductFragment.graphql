@@ -1,0 +1,26 @@
+#import "../../../ui/Order/graphql/StaysCartFragment.graphql"
+
+fragment StaysVoucherProductFragment on OrderStayVoucher {
+  id: internalId
+  bookingNumber: internalId
+  externalId
+  bookingDate
+  editableStatus
+  vatAmount
+  voucherPriceObjects: priceDatas {
+    priceObject: priceData {
+      price
+      currency
+      priceDisplayValue: displayValue
+    }
+    vatPriceObject: vatPriceData {
+      price
+      currency
+      priceDisplayValue: displayValue
+    }
+  }
+  vatPercentage
+  cart {
+    ...StaysCartFragment
+  }
+}

@@ -1,0 +1,6 @@
+query fetchPackageList($term: String!) {
+  packageOrderTours(term: $term) {
+    id
+    name: label
+  }
+}

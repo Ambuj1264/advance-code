@@ -1,0 +1,23 @@
+fragment Filters on TourSearchFilterOptions {
+  durations {
+        id
+        name
+    }
+    activities {
+        id
+        name
+    }
+    attractions {
+        id
+        name
+    }
+    startingLocations(limit: 5) {
+        id,
+        name
+    }
+    priceRange: price_range {
+        min
+        max
+        count
+    }
+}

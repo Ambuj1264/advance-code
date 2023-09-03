@@ -1,0 +1,11 @@
+query attractionsItems($slug: String!) {
+  tour(slug: $slug, lightweight: true) {
+    id
+    attractionsItems: attractions {
+      id
+      name
+      description
+      hasContent: has_content
+    }
+  }
+}

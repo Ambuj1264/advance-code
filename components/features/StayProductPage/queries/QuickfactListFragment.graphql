@@ -1,0 +1,17 @@
+fragment QuickfactListFragment on GraphCMSStaysProductPage {
+    quickfactList {
+      quickfacts {
+        id
+        quickfactId
+        title
+        name {
+          id
+          value
+        }
+        icon(locales: [en] ) {
+          id
+          handle
+        }
+      }
+    }
+}

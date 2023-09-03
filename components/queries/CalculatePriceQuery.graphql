@@ -1,0 +1,34 @@
+query calculatePriceQuery(
+  $id: Int!
+  $from: String!
+  $to: String!
+  $type: String!
+  $currency: String!
+  $adults: Int
+  $children: Int
+  $rooms: [inputRooms]
+  $extras: [inputExtra]
+  $insurances: [String]
+  $carPickupId: Int
+  $carDropoffId: Int
+) {
+  prices: calcPrices(
+    type: $type
+    from: $from
+    to: $to
+    id: $id
+    currency: $currency
+    adults: $adults
+    children: $children
+    rooms: $rooms
+    options: $extras
+    insurances: $insurances
+    car_pickup_id: $carPickupId
+    car_dropoff_id: $carDropoffId
+  ) {
+    totalPrice: total_display
+    fullPrice: price_display
+    discountPrice: discount_display
+    cancellationPolicy
+  }
+}

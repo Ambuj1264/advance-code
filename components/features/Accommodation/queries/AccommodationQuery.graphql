@@ -1,0 +1,86 @@
+query accommodationQuery($slug: String!, $locale: String!) {
+  accommodation(slug: $slug) {
+    id
+    name
+    description
+    url
+    minDays: days_minimum
+    information: description
+    basePrice: min_price
+    isExternal: is_external
+    isIndexed
+    isDirectBooking: directBooking
+    isSingleUnit
+    type
+    latitude
+    longitude
+    location
+    category {
+      id
+      type
+      name: namePlural
+      singularName: name
+      uri
+    }
+    image {
+      id
+      url: front_url
+      name
+    }
+    images {
+      id
+      url: front_url
+      name: alt
+    }
+    amenities {
+      id
+      name
+    }
+    translations {
+      locale: locale_id
+      uri
+    }
+    metadata {
+      title
+      description
+    }
+    wifiAvailable
+    wifiPrice
+    breakfastAvailable
+    rooms {
+      id
+      type
+      name
+      privateBathroom: private_bathroom
+      size: sq
+      maxPersons: max_persons
+      bedOptions: bed_options
+      roomImages: room_images {
+        id
+        url: front_url
+        name: alt
+      }
+    }
+    localePrice: locale_price(locale_id: $locale) {
+      price
+      currency
+    }
+    establishment {
+      id
+      name
+    }
+    props {
+      iconId: id
+      title
+    }
+    specs {
+      iconId: id
+      name
+      value
+    }
+    reviewTotalScore: review_score_formatted
+    reviewTotalCount: review_count
+    showReviews
+  }
+  cartLink: route(name: "cart", function: "index")
+}

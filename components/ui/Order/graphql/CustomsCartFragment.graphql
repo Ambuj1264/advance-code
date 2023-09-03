@@ -1,0 +1,50 @@
+fragment CustomsCartFragment on OrderCustomCartInfo {
+  id
+  description
+  date
+  days
+  options {
+    attachments
+    includedKm {
+      km
+      unlimited
+    }
+    quantity
+    pickup
+    dropoff
+    flightNumber
+    travelers
+    email
+    phone
+  }
+  price
+  title
+  cartItemId
+  totalPrice
+  imageUrl
+  available
+  editable
+  currency
+  discountAmount
+  discountAmountPriceObject: discountPriceData {
+    price
+    currency
+    priceDisplayValue: displayValue
+  }
+  discountPercentage
+  from
+  to
+  updated
+  createdTime
+  isPaymentLink
+  invoiceNumber
+  bookingId
+  numberOfTravelers
+  pickupLocation
+  deliveryDate
+  priceObject: priceData {
+    price
+    currency
+    priceDisplayValue: displayValue
+  }
+}

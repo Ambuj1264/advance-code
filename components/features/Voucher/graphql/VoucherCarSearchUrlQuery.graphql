@@ -1,0 +1,3 @@
+query voucherCarSearchUrlQuery {
+  carSearchUrl: routePrefix(route: "cars_front")
+}

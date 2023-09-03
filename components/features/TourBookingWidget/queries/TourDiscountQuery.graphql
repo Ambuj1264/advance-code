@@ -1,0 +1,9 @@
+query tourDiscount($slug: String!, $dateFrom: String) {
+  tour(slug: $slug, lightweight: false) {
+    id
+    discount(dateFrom: $dateFrom){
+      value
+      isFullPriceDiscount: is_full_price
+    }
+  }
+}

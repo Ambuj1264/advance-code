@@ -1,0 +1,6 @@
+query GTEStaysAutocompleteQuery($request: StaysAutocompleteRequestInput!) {
+  staysLocations (request: $request) {
+    id
+    name
+  }
+}

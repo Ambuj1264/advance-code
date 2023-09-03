@@ -1,0 +1,38 @@
+query calculateCarPriceQuery($input: CarCalculatePriceInput!) {
+  carCalculatePrice(
+    input: $input
+  ) {
+    basePrice
+    discount
+    totalPrice
+    totalOnArrival
+    payOnArrival {
+      id
+      name
+      totalPrice
+      translationKeys {
+          keys {
+            key
+            variables {
+              key
+              value
+            }
+          }
+        }
+    }
+     priceBreakdown {
+      id
+      name
+      totalPrice
+      translationKeys {
+          keys {
+            key
+            variables {
+              key
+              value
+            }
+          }
+        }
+    }
+  }
+}

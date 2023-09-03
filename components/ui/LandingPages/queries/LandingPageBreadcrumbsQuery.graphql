@@ -1,0 +1,17 @@
+query landingPageBreadcrumbsQuery(
+  $where: GraphCMSLandingPageWhereInput
+  $locale: [GraphCMSLocale!]!
+  $stage: GraphCMSStage = DRAFT
+) {
+  landingPages(where: $where, locales: $locale, stage: $stage) {
+    id
+    title
+    uniqueId
+    breadcrumbs
+    breadcrumbsNew
+    breadcrumbList {
+      url: metadataUri
+      name: title
+    }
+  }
+}

@@ -1,0 +1,32 @@
+#import "../../../ui/Order/graphql/TourCartFragment.graphql"
+
+fragment TourVoucherProductFragment on OrderTourVoucher {
+  id: internalId
+  bookingNumber: internalId
+  externalId
+  bookingDate
+  bookingDate
+  editableStatus
+  provider {
+    name
+    phoneNumber
+  }
+  vatAmount
+  voucherPriceObjects: priceDatas {
+    priceObject: priceData {
+      price
+      currency
+      priceDisplayValue: displayValue
+    }
+    vatPriceObject: vatPriceData {
+      price
+      currency
+      priceDisplayValue: displayValue
+    }
+  }
+  vatPercentage
+  cart {
+    departurePoint
+    ...TourCartFragment
+  }
+}

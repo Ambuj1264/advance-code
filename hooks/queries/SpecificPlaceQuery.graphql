@@ -1,0 +1,11 @@
+query specificPlaceQuery($placeId: String!, $sessionToken: String) {
+  place: getSpecificPlace(placeId: $placeId, sessionToken: $sessionToken) {
+    id
+    name
+    location {
+      lng
+      lat
+      distance
+    }
+  }
+}

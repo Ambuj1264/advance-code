@@ -1,0 +1,49 @@
+#import "./travelCommunityServerDataFragment.graphql"
+
+query travelCommunityQuery($pageType: String!) {
+  topAttractions: frontTopAttractions {
+    metadata {
+      title
+      subtitle
+    }
+    attractions {
+      id
+      name
+      title
+      url
+      image {
+        id
+        url: frontUrl
+        name: alt
+      }
+    }
+  }
+
+  bestTravelPlans: frontBestTravelPlans(limit: 4) {
+    metadata {
+      title
+      subtitle
+      url
+    }
+    tours {
+      id
+      ...TravelCommunityServerData
+    }
+  }
+
+  settings {
+    pageHeader: frontTravelCommunityLandingPageHeader(type: $pageType) {
+      metadata {
+        title
+        subtitle
+      },
+      header {
+        image {
+          id
+          url: frontUrl
+          name: alt
+        }
+      }
+    }
+  }
+}

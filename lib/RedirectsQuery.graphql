@@ -1,0 +1,6 @@
+query redirectsQuery ($url:String!, $marketplace:String="guidetoeurope-com") {
+  redirects: get_redirect(args:{from: $url, marketplace: $marketplace}) {
+    to
+    code
+  }
+}

@@ -1,0 +1,17 @@
+#import "../../../Tour/queries/LocalesFragment.graphql"
+query header {
+  links: allHeaders {
+    linkClass: link_class
+    url
+    text
+    visible
+  }
+  currencies: allCurrencies {
+    currencyCode: id
+    name
+  }
+  searchLink: route(name: "search", function: "index")
+  cartLink: route(name: "cart", function: "index")
+  forgotPasswordLink: route(name: "login" param: "forgot")
+  ...LocalesFragment
+}

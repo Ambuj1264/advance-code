@@ -1,0 +1,13 @@
+query defaultCountryQuery($url: String!, $locale: [GraphCMSLocale!]!) {
+  marketplaceConfig(where: {url: $url} , stage: DRAFT, locales: $locale ) {
+    id
+    countryCode
+    marketplaceCountry {
+      id
+      name {
+        id
+         value
+      } 
+    }
+  }
+}

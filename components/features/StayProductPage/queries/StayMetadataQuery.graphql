@@ -1,0 +1,25 @@
+query StayMetadataQuery(
+  $where: GraphCMSStaysProductPageWhereInput!
+  $locale: [GraphCMSLocale!]!
+  $stage: GraphCMSStage = DRAFT,
+  $hrefLangLocales: [GraphCMSLocale!] = [en]
+) {
+  metadata: staysProductPages(where: $where, locales: $locale, stage: $stage) {
+    id
+    metadataTitle
+    metadataDescription
+    metadataUri
+    image: mainImage(locales: en) {
+      id
+      handle
+      caption
+    }
+   canonicalUri: metadataUri
+   # TODO: pass stays language array here
+   hreflangs: localizations(locales: $hrefLangLocales, includeCurrent: true) {
+     id
+     locale
+     uri: metadataUri
+   }
+  }
+}

@@ -1,0 +1,72 @@
+fragment TourCartFragment on OrderTourCartInfo {
+  tourId
+  linkUrl: uri
+  category {
+    id
+    name
+    uri
+  }
+  type
+  adults
+  teenagers
+  children
+  discountAmount
+  discountAmountPriceObject: discountPriceData {
+    price
+    currency
+    priceDisplayValue: displayValue
+  }
+  discountPercentage
+  extras {
+    extraId: id
+    name
+    answer
+    answers
+    included
+    price
+    required
+  }
+  valueProps {
+    iconId
+    title
+    description
+  }
+  specs {
+    iconId
+    name
+    value
+  }
+  durationSec
+  durationText
+  title
+  cartItemId
+  totalPrice
+  imageUrl
+  available
+  editable
+  from
+  to
+  updated
+  createdTime
+  createdTime
+  advancedNoticeSec
+  departureInformation
+  whatToBringItems {
+    id
+    name
+    included
+  }
+  pickup
+  pickupLocation
+  startingLocation {
+    locationName
+  }
+  endingLocation {
+    locationName
+  }
+  priceObject: priceData {
+    price
+    currency
+    priceDisplayValue: displayValue
+  }
+}

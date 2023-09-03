@@ -1,0 +1,10 @@
+query GTETourProductUrlQuery (
+  $where: GraphCMSTourProductPageWhereInput!
+  $locale: [GraphCMSLocale!]!
+  $stage: GraphCMSStage = DRAFT
+) {
+  tourProductPages(where: $where, locales: $locale, stage: $stage) {
+    id
+    url: metadataUri
+  }
+}

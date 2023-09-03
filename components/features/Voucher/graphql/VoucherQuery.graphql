@@ -1,0 +1,11 @@
+#import "./CommonVoucherFragment.graphql"
+#import "./TourVoucherProductFragment.graphql"
+
+query voucherQuery($voucherId: String!) {
+  voucher(input: { voucherId: $voucherId }) {
+    ...CommonVoucherFragment
+    tours {
+      ...TourVoucherProductFragment
+    }
+  }
+}

@@ -1,0 +1,11 @@
+query carPickupLocationsQuery ($input: CarGetAvailableLocationsParamsInput!) {
+  availableLocations (input: $input) {
+    locations {
+      id
+      locationId: id
+      name
+      type
+      geoLocation
+    }
+  }
+}

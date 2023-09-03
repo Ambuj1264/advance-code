@@ -1,0 +1,33 @@
+#import "../../../ui/Order/graphql/FlightCartFragment.graphql"
+
+fragment FlightVoucherProductFragment on OrderFlightVoucher {
+  id: internalId
+  bookingNumber: internalId
+  externalId
+  bookingDate
+  editableStatus
+  cart {
+    ...FlightCartFragment
+  }
+  passengers {
+    title
+    name
+    surname
+    nationality
+    email
+  }
+  vatAmount
+  voucherPriceObjects: priceDatas {
+    priceObject: priceData {
+      price
+      currency
+      priceDisplayValue: displayValue
+    }
+    vatPriceObject: vatPriceData {
+      price
+      currency
+      priceDisplayValue: displayValue
+    }
+  }
+  vatPercentage
+}

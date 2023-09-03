@@ -1,0 +1,38 @@
+query similarTours($slug: String!, $dateFrom: String) {
+  similarTours(slug: $slug, date_from: $dateFrom limit: 3, ) {
+    seeMoreLink
+    tours {
+      id
+      name
+      slug: uri
+      lowestPricePerAdult: base_price
+      priceGroups: price_groups {
+        adults {
+          lowestPriceGroupSize: lowest_price_group_size
+        }
+      }
+      image {
+        id
+        name
+        url: front_url
+      }
+      reviewTotalScore: review_score_formatted
+      reviewTotalCount: review_count
+      durationAsText
+      linkUrl: front_url
+      props {
+        iconId: id
+        title
+      }
+      specs{
+        iconId: id
+        name
+        value
+      }
+      banner {
+        text
+      }
+    }
+    totalQuantity: totalTourCount
+  }
+}

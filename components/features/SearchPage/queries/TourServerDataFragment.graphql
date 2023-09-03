@@ -1,0 +1,23 @@
+fragment ServerData on TourSearchTour {
+  id
+  name
+  linkUrl: frontUrl
+  slug
+  description: descriptionExcerpt
+  averageRating
+  reviewsCount
+  ssrPrice: price
+  image {
+      url
+      alt
+  }
+  specs {
+      iconId: id
+      name
+      value
+  }
+  props {
+      iconId: id
+      title
+  }
+}

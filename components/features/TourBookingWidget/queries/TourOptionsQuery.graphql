@@ -1,0 +1,25 @@
+query tourOptionsQuery($id: Int!) {
+  tour(id: $id, lightweight: true) {
+    id
+    tourOptions: tour_options {
+      id
+      name
+      answers
+      required
+      externalLimitByPax: external_limit_by_pax
+      externalMaxLimit: external_max_per_booking
+      questions {
+        id
+        question
+        answers {
+          label
+          value
+        }
+        selector
+        required
+        externalId: external_id
+      }
+      calculatePricePerPerson: per_person
+    }
+  }
+}

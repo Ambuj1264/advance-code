@@ -1,0 +1,6 @@
+mutation addGTETourToCart($input: OrderAddToursToCartInput!) {
+  addToursAndTicketToCart(input: $input) {
+    success
+    message
+  }
+}

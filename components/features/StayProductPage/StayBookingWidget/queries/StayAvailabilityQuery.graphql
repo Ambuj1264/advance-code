@@ -1,0 +1,37 @@
+query stayAvailabilityQuery (
+    $input: StaysProductPageAvailabilitiesInput!
+) {
+    productPageAvailabilites(input: $input) {
+        roomCombinations: availabilityBundles {
+            rooms {
+                roomName: roomNameGiata
+                images {
+                    id
+                    caption
+                    handle
+                }
+                numberOfPersons
+                roomSize: roomSizeFrom
+                beds {
+                    bedType: type
+                    count 
+                }
+                privateShower
+                wifiAvailability
+                amenities
+            }
+            availabilities {
+                availabilityId
+                freeCancellationUntil
+                priceObject: price {
+                    price
+                    currency
+                    priceDisplayValue: displayValue
+                }
+                mealType
+                cancellationType
+                isSelected
+            }
+        }
+    }
+}

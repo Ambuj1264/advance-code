@@ -1,0 +1,64 @@
+#import "./AccommodationServerDataFragment.graphql"
+#import "./AccommodationClientDataFragment.graphql"
+query accommodationSearchQuery(
+  $date_from: String
+  $date_to: String
+  $extra_option_ids: [Int]
+  $amenity_ids: [Int]
+  $category_ids: [Int]
+  $stars: [Int]
+  $rooms: [roomFilterArgument]
+  $searchPlace: searchPlace
+  $limit: Int
+  $page: Int
+  $country: String
+  $slug: String
+  $selectionType: String
+  $order_by: String
+  $order_direction: String
+) {
+  accommodationSearch: hotelSearchV2(
+    date_from: $date_from
+    date_to: $date_to
+    extra_option_ids: $extra_option_ids
+    amenity_ids: $amenity_ids
+    category_ids: $category_ids
+    stars: $stars
+    rooms: $rooms
+    searchPlace: $searchPlace
+    limit: $limit
+    page: $page
+    country: $country
+    slug: $slug
+    selectionType: $selectionType
+    order_by: $order_by
+    order_direction: $order_direction
+  ) {
+    totalAccommodations: total_results_count
+    accommodations: hotels {
+      ...HotelServerData
+      ...HotelClientData
+      stars
+      popularity
+      amenityIds {
+        id
+      }
+      category {
+        id
+      }
+      isHighlight
+      isAvailable
+    }
+    searchFilters {
+      name
+      iconId
+      isPrefilledFilter
+      options {
+        optionId
+        name
+        count
+        isPrefilled
+      }
+    }
+  }
+}

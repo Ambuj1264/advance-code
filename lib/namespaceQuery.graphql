@@ -1,0 +1,21 @@
+query namespaceQuery(
+  $locale: [GraphCMSLocale!]!,
+  $namespaces: [GraphCMSNamespace!]
+) {
+  applicationNamespaces(
+    where: { namespaceName_in: $namespaces },
+    stage: DRAFT,
+    locales: $locale
+  ) {
+    id
+    namespaceName
+    applicationStrings(
+      where: { stringStatus: PUBLISHED },
+      first: 1000,
+    ) {
+      id
+      stringId
+      value
+    }
+  }
+}

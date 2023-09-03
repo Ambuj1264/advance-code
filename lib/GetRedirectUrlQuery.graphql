@@ -1,0 +1,6 @@
+query RedirectQuery($url: String! ) {
+  getRedirectUrl(url: $url) {
+    url
+    code
+  }
+}

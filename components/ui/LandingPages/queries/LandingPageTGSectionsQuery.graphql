@@ -1,0 +1,62 @@
+query tGSectionsQuery(
+  $where: GraphCMSSectionWhereInput
+  $input: TravelGuideDestinationInput!
+  $order: [TravelGuideDestinationDtoSortInput!]
+  $locale: [GraphCMSLocale!]!
+  $stage: GraphCMSStage = DRAFT
+  $first: Int
+  $before: String
+  $after: String
+) {
+  sections(where: $where, locales: $locale, stage: $stage) {
+    id
+    displayType
+    sectionType
+    useSubTypeImage
+    useSubTypeTitle
+    sectionAdjective
+    applicationStringTitle {
+      id
+      value
+    }
+    shortTitle: sectionContentTitle {
+      id
+      value
+    }
+  }
+  sectionContent: travelGuidesGetDestinations(
+    input: $input
+    order: $order
+    #locales: $locale,
+    first: $first
+    after: $after
+    before: $before
+  ) {
+    edges {
+      cursor
+      node {
+        id
+        name
+        countryCode
+        description
+        url
+        countryName
+        flagImageHandle
+        coverImageHandle
+        reviewCount
+        reviewScore
+        location {
+          latitude
+          longitude
+        }
+        isCapital
+      }
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+  }
+}
